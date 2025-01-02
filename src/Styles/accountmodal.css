@@ -1,0 +1,49 @@
+.account-background {
+  background-color: grey;
+  width: 391px;
+  height: 377px;
+  padding: 25px 30px;
+  border-radius: 25px;
+  margin: 50px auto;
+}
+
+.account-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.account-head h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.account-text {
+  line-height: 20px;
+}
+.account-text h4 {
+  font-weight: 500;
+  font-size: 17px;
+}
+.account-text p {
+  margin-top: -10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #596275;
+}
+.dyn-button {
+  width: 160px;
+  height: 48px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #f5772f;
+  color: #ffff;
+  margin-top: 20px;
+  margin-left: 28%;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dyn-button:hover {
+  background-color: #ff9e66;
+}

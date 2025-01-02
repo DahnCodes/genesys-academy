@@ -1,0 +1,65 @@
+.faq-section {
+  /* overflow: visible; */
+  padding: 80px;
+}
+.faq-section h1 {
+  font-weight: 400;
+  line-height: 60px;
+}
+.faq-section p {
+  font-weight: 400;
+  color: #596275;
+  font-size: 16px;
+}
+.accord {
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 425px) {
+  .faq-section {
+    padding: 15px;
+  }
+  .faq-section h1 {
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .faq-section p {
+    font-size: 14px;
+    margin-top: 2%;
+  }
+}
+@media screen and (max-width: 375px) {
+    .banner{
+        width: 100%;
+        margin-top: 18%;
+    }
+  .faq-section {
+    padding: 10px;
+  }
+  .faq-section h1 {
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .faq-section p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 320px) {
+    .banner{
+        width: 100%;
+        margin-top: 18%;
+    }
+  .faq-section {
+    padding: 10px;
+  }
+  .faq-section h1 {
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .faq-section p {
+    font-size: 14px;
+  }
+}

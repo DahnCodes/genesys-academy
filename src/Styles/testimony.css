@@ -1,0 +1,131 @@
+.testimony-container {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.testimonials {
+  background-color: rgba(255, 196, 162, 0.1);
+  width: 640px;
+  height: 290px;
+  border-radius: 20px;
+  border-right: 2px solid #f5772f;
+  border-bottom: 2px solid #f5772f;
+  text-align: center;
+  /* margin-bottom: 20%; */
+}
+.testimonials h2 {
+  margin-top: 5%;
+}
+.description {
+  margin-top: 5%;
+}
+.quote {
+  position: relative;
+  top: 40px;
+  left: 30px;
+}
+/* General styles for the arrow buttons */
+.slick-prev,
+.slick-next {
+  background-color: #f5772f; /* Black background */
+  color: white; /* White arrow inside */
+  border: none; /* Remove border */
+  width: 40px; /* Width of the button */
+  height: 40px; /* Height of the button */
+  border-radius: 50%; /* Make the button circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure they appear on top of the slider */
+  cursor: pointer;
+  opacity: 1;
+  z-index: 1;
+ /* Ensure full visibility */
+}
+
+/* Hover effect for arrows */
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: #333333; /* Slightly lighter black on hover */
+  color: white; /* Ensure arrow remains white */
+}
+
+/* Positioning of the previous arrow */
+.slick-prev {
+  left:   10px;
+  /* Adjust the position of the previous arrow */
+}
+
+/* Positioning of the next arrow */
+.slick-next {
+  right: 10px; /* Adjust the position of the next arrow */
+}
+
+@media screen and (max-width: 768px){
+  .testimonials {
+    width: 480px;
+    height: 221px;
+    /* padding: 0 10px; */
+  }
+}
+@media screen and (max-width: 425px) {
+  .testimony-container {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .testimonials {
+    width: 380px;
+    height: 221px;
+    padding: 0 10px;
+  }
+  .quote {
+    position: relative;
+    top: 10px;
+    left: 30px;
+    width: 24px;
+  }
+  .testimonials h2 {
+    font-size: 14px;
+  }
+  .des {
+    font-size: 10px;
+  }
+  .description {
+    font-size: 12px;
+    font-weight: 400;
+    /* margin-top: ; */
+  }
+  .slick-prev,
+.slick-next {
+display: none;
+ /* Ensure full visibility */
+}
+}
+@media screen and (max-width: 375px) {
+  .testimonials {
+    width: 320px;
+    height: 211px;
+  }
+  .quote {
+    position: relative;
+    top: 10px;
+    left: 30px;
+    width: 24px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .testimonials {
+    width: 300px;
+    height: 211px;
+  }
+  .quote {
+    position: relative;
+    top: 10px;
+    left: 30px;
+    width: 24px;
+  }
+}
+

@@ -1,0 +1,74 @@
+.invoice-background {
+  background-color: grey;
+  width: 858px;
+  height: 300px;
+  padding: 25px 30px;
+  border-radius: 25px;
+  margin: 50px auto;
+}
+
+.invoice-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.display-invoice {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0px;
+  margin-top: 40px;
+  width: 900px;
+  height: 102px;
+}
+
+.invoice-texts {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  width: 410px;
+  height: 102px;
+}
+.copy {
+  margin-left: 30px;
+  color: #B1B1B1;
+  width: 17.71px;
+height: 20.83px
+;
+}
+.invoice-texts span {
+  margin-left: 30px;
+  line-height: 3px;
+}
+.invoice {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  width: 410px;
+  height: 102px;
+}
+.invoice span{
+    margin-left: 30px;
+    line-height: 3px;
+}
+
+.dyn-btn {
+    width: 240px;
+    height: 48px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #f5772f;
+    color: #ffff;
+    margin-top: 40px;
+    margin-left: 35%;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .dyn-btn:hover {
+    background-color: #ff9e66;
+  }

@@ -1,0 +1,165 @@
+.logo1 {
+  width: 198.64px;
+}
+
+.footer-container {
+  background-color: white;
+  padding: 80px 100px;
+  margin-top: 10%;
+}
+.footer-king {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 40px;
+}
+.footer-one p {
+  margin-top: 5%;
+}
+.gets {
+  color: #596275;
+}
+.get {
+  color: #f5772f;
+}
+.direction {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  color: #596275;
+}
+.email {
+  display: flex;
+  align-items: center;
+  color: #596275;
+}
+.phone {
+  color: #f5772f;
+  margin-top: 5%;
+  font-size: 20px;
+}
+
+.footer-two p {
+  margin-top: 5%;
+  color: #596275;
+  cursor: pointer;
+}
+.footer-two p:hover{
+    color: #f5772f;
+}
+.footer-three p {
+  margin-top: 5%;
+  color: #596275;
+  cursor: pointer;
+}
+.footer-three p:hover{
+    color: #f5772f;
+}
+.follow {
+  margin-top: 5%;
+  display: flex;
+  gap: 30px;
+}
+.icon {
+  background-color: rgba(200, 200, 200, 0.1);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  color: #adadad;
+  padding: 10px;
+  cursor: pointer;
+}
+.icon:hover{
+    color: #f5772f;
+}
+.copyright{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #596275;
+}
+.copyright p{
+  
+  margin-top: 4%;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-king {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+    /* overflow: visible; */
+  }
+}
+@media screen and (max-width: 425px){
+  .footer-king{
+    overflow: visible;
+  }
+  .footer-king p{
+    font-size: 14px;
+  }
+  .direction {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    color: #596275;
+    overflow: visible;
+  }
+  .email {
+    /* display: flex; */
+    align-items: center;
+    flex-direction: column;
+/* font-size: 14px; */
+    color: #596275;
+  }
+  .phone {
+    color: #f5772f;
+    margin-top: 5%;
+    font-size: 20px;
+  }
+  .logo1 {
+    width: 158.64px;
+  }
+  .icon {
+    font-size: 46px;
+  }
+  .footer-one p {
+    margin-top: 7%;
+  }
+  .footer-two p {
+    margin-top: 7%;
+  }
+  .footer-three p {
+    margin-top: 7%;
+  }
+  .footer-four{
+    overflow: visible;
+    /* padding: 0 20px; */
+  }
+  .icon {
+    /* background-color: rgba(200, 200, 200, 0.1); */
+    /* border-radius: 50%; */
+    /* width: 46px; */
+    /* height: 46px; */
+    color: #adadad;
+    padding: 10px;
+    cursor: pointer;
+
+    
+  }
+  .icon:hover{
+      color: #f5772f;
+  }
+  .copyright{
+    flex-direction: column;
+    margin-top: 25%;
+  }
+  .copyright p{
+    text-align: center;
+    font-size: 14px;
+    gap: -10px;
+  }
+}

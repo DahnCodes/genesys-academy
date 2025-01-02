@@ -1,0 +1,954 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Avenir LT Pro", sans-serif;
+}
+body {
+  background-color: #fafafa;
+}
+.hero-container {
+  display: flex;
+  padding: 30px 100px;
+  justify-content: space-between;
+}
+.hero-writeup {
+  margin-top: 15%;
+  /* line-height: 40px; */
+}
+.hero-writeup h1 {
+  /* font-family: Avenir LT Pro; */
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 62.2px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  overflow: visible;
+}
+.hero-writeup p {
+  font-family: Avenir LT Pro;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  /* margin-top: 8%; */
+  overflow: visible;
+  color: #596275;
+  word-wrap: break-word;
+  margin-top: 8%;
+  max-width: 479px;
+}
+
+.heroimg {
+  width: 556px;
+}
+.btns {
+  margin-top: 8%;
+  display: flex;
+  gap: 20px;
+}
+.btn2 {
+  width: 194px;
+  height: 54px;
+  padding: 15px 30px 15px 30px;
+  gap: 8px;
+  border-radius: 10px;
+  opacity: 0px;
+  background-color: #f5772f;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.btn2:hover {
+  background-color: #ff9e66;
+}
+.btn3 {
+  width: Hug (247px) px;
+  height: Hug (54px) px;
+  padding: 15px 30px 15px 30px;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1.5px solid #f5772f;
+  background-color: white;
+  color: #f5772f;
+  opacity: 0px;
+  cursor: pointer;
+}
+.btn3:hover {
+  background-color: #ff9e66;
+  color: white;
+}
+.hero-image {
+  margin-top: 10%;
+}
+
+.whoweare {
+  background-color: #f4f5ff;
+  margin-top: 15%;
+  /* padding: 30px 100px; */
+}
+.gen {
+  position: relative;
+  top: 236px;
+  left: 1210px;
+  width: 150px;
+  /* gap: 0px; */
+  opacity: 60%;
+}
+.weare {
+  display: flex;
+  align-items: center;
+  margin-top: -20%;
+  gap: 50px;
+  padding: 30px 100px;
+}
+.weare-text h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+.weare-text p {
+  font-size: 16px;
+  color: #596275;
+  margin-top: 5%;
+  word-wrap: break-word;
+  max-width: 449px;
+}
+
+.pathways {
+  margin-top: 15%;
+  padding: 30px 100px;
+}
+.pathway-header {
+  text-align: center;
+}
+.pathway-cards h1 {
+  font-weight: 700;
+  font-size: 36px;
+}
+.pathway-header p {
+  margin: 2% auto;
+  font-size: 16px;
+  font-weight: 400;
+  color: #596275;
+  word-wrap: break-word;
+  max-width: 750px;
+  text-align: center;
+}
+.pathway-cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  overflow: visible;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.second-cards {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  margin-top: 5%;
+}
+
+.stand-out h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+}
+.point-container {
+  display: flex;
+  padding: 30px 100px;
+  align-items: center;
+}
+
+.point1 {
+  display: flex; /* Arrange the image and text side by side */
+  align-items: center; /* Vertically align the content */
+  gap: 15px; /* Add spacing between the image and text */
+  margin-bottom: 20px;
+  margin-left: 35px; /* Add space below each .point1 element */
+}
+
+.point1 img.one {
+  width: 50px; 
+  height: auto; 
+}
+
+.point-p h2 {
+  font-size: 28px; /* Adjust the font size for the heading */
+  font-weight: 400; /* Remove default margin */
+}
+
+.point-p p {
+  margin-top: 8px;
+  color: #596275;
+  font-size: 14px;
+  font-weight: 400; /* Add some space between the heading and paragraph */
+  word-wrap: break-word;
+  max-width: 451px;
+}
+
+.second-point {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 30px 100px;
+  align-items: center;
+}
+.point2 {
+  display: flex; /* Arrange the image and text side by side */
+  align-items: center; /* Vertically align the content */
+  gap: 15px; /* Add spacing between the image and text */
+  margin-bottom: 20px;
+  margin-right: 35px;
+}
+
+.meet-interns {
+  background-color: rgba(245, 119, 47, 0.02);
+  padding: 30px 100px;
+  margin-top: 10%;
+}
+.meet-interns h1 {
+  text-align: center;
+}
+.first-team {
+  display: flex;
+  gap: 120px;
+  align-items: center;
+  margin-top: 8%;
+  /* justify-content: center;    */
+  overflow: visible;
+}
+.second-team {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 120px;
+  align-items: center;
+  margin-top: 8%;
+  overflow: visible;
+}
+.icons {
+  overflow: visible;
+}
+.curve {
+  width: 82.16px;
+  position: relative;
+  right: 30px;
+  bottom: -50px;
+}
+.wifi {
+  width: 75.85px;
+  position: relative;
+  left: 360px;
+  top: 190px;
+  z-index: 1;
+  /* overflow: visible; */
+}
+.core {
+  background-color: #ffffff;
+  width: 499px;
+  height: 166px;
+  border: 0.5px solid rgba(245, 119, 47, 0.5);
+  border-radius: 20px;
+  padding: 35px;
+  overflow: visible;
+}
+.core p {
+  color: #596275;
+  font-size: 16px;
+  font-weight: 400;
+}
+.testimonies h1 {
+  text-align: center;
+  margin-top: 8%;
+}
+.testimony-card {
+  display: flex;
+  overflow: visible;
+  align-items: center;
+  justify-content: center;
+}
+.cohort {
+  padding: 30px 100px;
+  margin-top: 10%;
+}
+.cohort h1 {
+  text-align: center;
+}
+.cohort-wrap {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin-top: 5%;
+}
+
+.cohort-text p {
+  margin-top: 5%;
+  color: #596275;
+  word-wrap: break-word;
+  max-width: 454px;
+}
+
+.btn4 {
+  width: 142px;
+  height: 48px;
+  background-color: #f5772f;
+  border: none;
+  color: #ffff;
+  border-radius: 10px;
+  margin-top: 5%;
+  cursor: pointer;
+}
+.btn4:hover {
+  background-color: #ff9e66;
+}
+.stay-connected {
+  margin: auto;
+  margin-top: 8%;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+.stay-connected p {
+  margin-top: 5%;
+  font-size: 16px;
+  color: #596275;
+  font-weight: 400;
+}
+.subscribe {
+  display: flex;
+  margin-top: 5%;
+}
+.subs {
+  width: 636px;
+  height: 52px;
+  border-radius: 10px 0px 0px 10px;
+  border: 0.5px solid #596275;
+  padding: 10px 20px;
+}
+.btn5 {
+  width: 146px;
+  height: 52px;
+  background-color: #f5772f;
+  border: none;
+  color: #ffff;
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+}
+.btn5:hover {
+  background-color: #ff9e66;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .heroimg {
+    width: 380px;
+  }
+  .gen {
+    position: relative;
+    top: 566px;
+    left: 620px;
+    width: 150px;
+    /* gap: 0px; */
+    opacity: 60%;
+    z-index: 1;
+  }
+  .weare {
+    flex-direction: column-reverse;
+  }
+  .man1 {
+    margin-right: 25%;
+  }
+  .weare-text {
+    text-align: center;
+  }
+  .pathway-cards {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .second-cards {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .point-container {
+    flex-direction: column; /* Arrange the image and text side by side */
+    /* Add space below each .point1 element */
+  }
+  .second-point {
+    flex-direction: column;
+  }
+  .first-team {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .second-team {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cohort-wrap {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    text-align: center;
+  }
+  .subs {
+    width: 936px;
+    height: 52px;
+    border-radius: 10px 0px 0px 10px;
+    border: 1px solid #596275;
+    padding: 10px 20px;
+  }
+  .btn5 {
+    width: 346px;
+    height: 52px;
+    background-color: #f5772f;
+    border: none;
+    color: #ffff;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .hero-container {
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-writeup h1 {
+    text-align: center;
+    /* font-size: 28px; */
+  }
+  .hero-writeup p {
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn2 {
+    width: 380px;
+    height: 50px;
+  }
+  .btn3 {
+    width: 380px;
+    height: 50px;
+  }
+  .gen {
+    position: relative;
+    top: 266px;
+    left: 320px;
+    width: 80px;
+  }
+
+  .weare-text {
+    margin-top: -15%;
+  }
+  .weare-text p {
+    line-height: 20px;
+    font-size: 14px;
+  }
+  .weare {
+    overflow: visible;
+    text-align: center;
+    padding: 30px 10px;
+  }
+  .man1 {
+    width: 238px;
+    height: 237.3px;
+    margin-left: -10%;
+  }
+  .pathway-cards {
+    overflow: visible;
+  }
+  .pathways {
+    margin-top  : 20%;
+    padding: 10px;
+  }
+  .pathway-header h1 {
+    font-size: 24px;
+  }
+  .pathway-header p {
+    font-size: 14px;
+  }
+  
+  .second-cards {
+    overflow: visible;
+  }
+  .illustration {
+    display: none;
+  }
+  .stand-out {
+    margin-top: 20%;
+  }
+  .stand-out h1 {
+    font-size: 28px;
+  }
+  .group1 {
+    width: 380px;
+  }
+  .group2 {
+    width: 380px;
+  }
+  .point-container {
+    display: flex;
+    padding: 30px 10px;
+    text-align: left;
+  }
+  .point-lists {
+    margin-top: 3%;
+  }
+  .point1 {
+    align-items: center;
+    gap: 15px;
+    margin: 0 2%
+  }
+
+  .one {
+    margin-top: -7%;
+    width: 56px;
+    /* height: 36px; */
+  }
+  .point-p {
+    margin-top: 5%;
+  }
+  .point-p h2 {
+    font-size: 20px; /* Adjust the font size for the heading */
+    font-weight: 400;
+    /* Remove default margin */
+  }
+
+  .point-p p {
+    font-size: 14px;
+  }
+  .second-point {
+    display: flex;
+    /* align-items: center; */
+    padding: 30px 10px;
+    margin-top: -8%;
+
+  }
+  .point2 {
+    /* align-items: center; */
+    gap: 20px;
+    /* margin-left: 3%; */
+    margin: 0 2%
+  }
+  .team1 {
+    width: 380px;
+  }
+  .wifi {
+    width: 45.85px;
+    position: relative;
+    left: 210px;
+    top: 180px;
+    /* z-index: 1; */
+    /* overflow: visible; */
+  }
+  .curve {
+    width: 52.4px;
+    height: 52.22px;
+    left: -20px;
+    top: 35px;
+  }
+
+  .core {
+    background-color: #ffffff;
+    width: 300px;
+    /* height: 166px; */
+    border: 0.5px solid rgba(245, 119, 47, 0.5);
+    border-radius: 20px;
+    padding: 35px;
+    /* text-align: center; */
+    overflow: visible;
+    /* margin-top: -5%; */
+  }
+  .core p {
+    font-size: 14px;
+  }
+  .first-team {
+    margin-top: 8%;
+  }
+  .icons {
+    margin-top: -20%;
+    /* padding: 0 -150px; */
+  }
+
+  .second-team {
+    gap: 10px;
+    margin-top: 15%;
+  }
+
+  .meet-interns {
+    margin-top: 20%;
+    background-color: #f4f5ff;
+  }
+  .testimonies {
+    margin-top: 20%;
+  }
+  .paul {
+    width: 380px;
+  }
+  .cohort {
+    padding: 0 10px;
+    margin-top: 30%;
+  }
+  .cohort-wrap {
+    gap: 30px;
+  }
+
+  .cohort-text p {
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+  .btn4 {
+    margin-top: 10%;
+  }
+  .stay-connected {
+    margin: auto;
+    margin-top: 20%;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+  .stay-connected p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hero-container {
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-writeup h1 {
+    text-align: center;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .hero-writeup p {
+    text-align: center;
+    font-size: 14px;
+  }
+  .btns {
+    flex-direction: column;
+  }
+  .btn2 {
+    width: 350px;
+    height: 50px;
+  }
+  .btn3 {
+    width: 350px;
+    height: 50px;
+  }
+  .heroimg {
+    width: 350px;
+  }
+  .gen {
+    position: relative;
+    top: 306px;
+    left: 283px;
+    width: 80px;
+  }
+
+  .weare-text h1 {
+    font-size: 28px;
+  }
+  .weare-text p {
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 350px;
+  }
+  .man1 {
+    width: 238px;
+    height: 237.3px;
+  }
+  .pathways {
+    padding: 30px 20px;
+    margin-top: 20%;
+    overflow: visible;
+  }
+  .pathway-header h1 {
+    font-size: 24px;
+  }
+  .pathway-header p {
+    font-size: 14px;
+  }
+
+  .illustration {
+    display: none;
+  }
+  .stand-out {
+    margin-top: 30%;
+  }
+  .stand-out h1 {
+    font-size: 28px;
+  }
+  .group1 {
+    width: 350px;
+  }
+  .group2 {
+    width: 350px;
+  }
+  .point-container {
+    padding: 30px 9px;
+  }
+
+  .point-p {
+    margin-top: 5%;
+  }
+  .point-p h2 {
+    font-size: 20px; /* Adjust the font size for the heading */
+    font-weight: 400;
+    /* Remove default margin */
+  }
+
+  .point-p p {
+    font-size: 14px;
+  }
+  .second-point {
+    padding: 30px 10px;
+    margin-top: -8%;
+
+  }
+  .team1 {
+    width: 350px;
+  }
+  .core {
+    width: 300px;
+    /* margin-top: -10%; */
+  }
+  .core p {
+    font-size: 14px;
+  }
+  .wifi {
+    width: 45.85px;
+    position: relative;
+    left: 210px;
+    top: 180px;
+    /* z-index: 1; */
+    /* overflow: visible; */
+  }
+  .first-team {
+    display: flex;
+    gap: -50px;
+    align-items: center;
+    margin-top: 8%;
+    overflow: visible;
+  }
+  .second-team {
+    gap: 0px;
+    margin-top: 25%;
+  }
+
+  .paul {
+    width: 350px;
+  }
+  .cohort {
+    padding: 0px 10px;
+    margin-top: 20%;
+  }
+
+  .cohort-text h2 {
+    font-size: 24px;
+  }
+  .cohort-text p {
+    font-size: 14px;
+  }
+  .stay-connected {
+    margin: auto;
+    margin-top: 8%;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20%;
+  }
+  .stay-connected h1 {
+    font-size: 24px;
+  }
+  .stay-connected p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 320px){
+  .hero-container {
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-writeup h1 {
+    text-align: center;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .hero-writeup p {
+    text-align: center;
+    font-size: 14px;
+  }
+  .btns {
+    flex-direction: column;
+  }
+  .btn2 {
+    width: 300px;
+    height: 50px;
+  }
+  .btn3 {
+    width: 300px;
+    height: 50px;
+  }
+  .heroimg {
+    width: 300px;
+  }
+  .gen {
+    position: relative;
+    top: 306px;
+    left: 253px;
+    width: 80px;
+  }
+  .weare-text h1 {
+    font-size: 28px;
+  }
+  .weare-text p {
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 350px;
+  }
+  .man1 {
+    width: 238px;
+    height: 237.3px;
+    margin-left: 2%;
+  }
+  .pathways {
+    padding: 30px 0px;
+    margin-top: 20%;
+    overflow: visible;
+  }
+
+  .pathway-header h1 {
+    font-size: 24px;
+  }
+  .pathway-header p {
+    font-size: 14px;
+  }
+
+  .illustration {
+    display: none;
+  }
+  .stand-out {
+    margin-top: 30%;
+  }
+  .stand-out h1 {
+    font-size: 28px;
+  }
+  .group1 {
+    width: 300px;
+  }
+  .group2 {
+    width: 300px;
+  }
+  .point-container {
+    padding: 30px 9px;
+  }
+
+  .point-p {
+    margin-top: 5%;
+    /* width: 260px; */
+  }
+  .point-p h2 {
+    font-size: 20px; /* Adjust the font size for the heading */
+    font-weight: 400;
+    /* Remove default margin */
+  }
+
+  .point-p p {
+    font-size: 14px;
+  }
+  .second-point {
+    padding: 30px 10px;
+  }
+  .meet-interns h1{
+    font-size: 24px;
+  }
+  .team1 {
+    width: 300px;
+  }
+  .core {
+    width: 300px;
+    /* margin-top: -10%; */
+  }
+  .core p {
+    font-size: 14px;
+  }
+  .wifi {
+    width: 45.85px;
+    position: relative;
+    left: 210px;
+    top: 180px;
+    /* z-index: 1; */
+    /* overflow: visible; */
+  }
+  .curve {
+    width: 52.4px;
+    height: 52.22px;
+    left: -10px;
+    top: 35px;
+  }
+  .first-team {
+    display: flex;
+    gap: -50px;
+    align-items: center;
+    margin-top: 8%;
+    overflow: visible;
+  }
+  .second-team {
+    gap: 0px;
+  }
+
+  .paul {
+    width: 300px;
+  }
+  .cohort {
+    padding: 0px 10px;
+    margin-top: 20%;
+  }
+
+  .cohort-text h2 {
+    font-size: 24px;
+  }
+  .cohort-text p {
+    font-size: 14px;
+  }
+  .stay-connected {
+    margin: auto;
+    margin-top: 8%;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20%;
+  }
+  .stay-connected h1 {
+    font-size: 24px;
+  }
+  .stay-connected p {
+    font-size: 14px;
+  } 
+}

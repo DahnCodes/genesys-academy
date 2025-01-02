@@ -1,0 +1,90 @@
+.pay-background {
+  background-color: grey;
+  width: 650px;
+  height: 700px;
+  padding: 25px 30px;
+  border-radius: 25px;
+  margin: 50px auto;
+}
+
+.pay-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closer {
+  width: 30px;
+  height: 30px;
+  color: #b1b1b1;
+  cursor: pointer;
+}
+
+.subhead {
+  margin-top: -5px;
+}
+.pay-fields {
+  margin: 50px 0px;
+}
+.forms {
+  line-height: 40px;
+}
+label {
+  margin-left: 10px;
+}
+.inputs {
+  width: 600px;
+  height: 40px;
+  border: 1px solid #b1b1b1;
+  border-radius: 10px;
+  padding: 15px 20px;
+}
+.email {
+  margin-top: 10px;
+}
+.receipt {
+  margin-top: 10px;
+}
+.choose {
+  border: 1px dashed #b1b1b1;
+  width: 600px;
+  height: 188px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 20px;
+  padding: 10px 20px;
+}
+.cloud {
+  width: 52px;
+  height: 52px;
+  color: #d0d0d0;
+}
+.choose p {
+  font-size: 14px;
+  color: #596275;
+}
+.choose span {
+  color: #f5772f;
+}
+.file{
+    margin-left: 10%;
+}
+
+.dynamic-btn {
+  width: 270px;
+  height: 56px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #f5772f;
+  color: #ffff;
+  margin-top: -15px;
+  margin-left: 28%;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dynamic-btn:hover {
+  background-color: #ff9e66;
+}
