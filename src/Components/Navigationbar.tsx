@@ -1,16 +1,11 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import logo from "../assets/Logo.png";
 import "../Styles/navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Navigationbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string, hash?: string) => {
-    navigate(path, { state: { hash } });
-  };
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,7 +13,8 @@ const Navigationbar = () => {
     // Add or remove the no-scroll class on the body
     const burger: HTMLInputElement | null = document.getElementById(
       "burger"
-    ) as HTMLInputElement;
+    ) as HTMLInputElement
+
 
     if (burger) {
       burger.addEventListener("change", () => {
@@ -29,8 +25,9 @@ const Navigationbar = () => {
         }
       });
     }
-  };
 
+  };
+  
   return (
     <>
       <nav className="navbar">
@@ -38,12 +35,9 @@ const Navigationbar = () => {
           <img src={logo} alt="" className="logo" />
         </Link>
         <ul className="navlinks">
-          <button
-            onClick={() => handleNavigate("/", "#pathways")}
-            className="link"
-          >
+          <a href="#pathways" className="link">
             <li className="navs">Pathways</li>
-          </button>
+          </a>
           <a href="#testimonies" className="link">
             <li className="navs">Testimonies</li>
           </a>
@@ -68,9 +62,7 @@ const Navigationbar = () => {
         </label>
 
         {/* Dimming Overlay */}
-        {isMenuOpen && (
-          <div className="overlay" onClick={handleMenuToggle}></div>
-        )}
+        {isMenuOpen && <div className="overlay" onClick={handleMenuToggle}></div>}
 
         {isMenuOpen && (
           <>
