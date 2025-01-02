@@ -1,12 +1,16 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import logo from "../assets/Logo.png";
 import "../Styles/navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Navigationbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+const navigate = useNavigate();
 
+const toggleHome = () => {
+  navigate("/")
+}
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
 
@@ -35,7 +39,7 @@ const Navigationbar = () => {
           <img src={logo} alt="" className="logo" />
         </Link>
         <ul className="navlinks">
-          <a href="#pathways" className="link">
+          <a href="#pathways" className="link" >
             <li className="navs">Pathways</li>
           </a>
           <a href="#testimonies" className="link">
@@ -67,7 +71,7 @@ const Navigationbar = () => {
         {isMenuOpen && (
           <>
             <ul className={`navlink-active ${isMenuOpen ? "show" : ""}`}>
-              <a href="#pathways" className="link">
+              <a href="#pathways" className="link" onClick={toggleHome}>
                 <li className="navs">Pathways</li>
               </a>
               <a href="#testimonies" className="link">
