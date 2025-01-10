@@ -58,6 +58,9 @@
 .btn1:hover {
   background-color: #ff9e66;
 }
+.opp{
+  all: unset;
+}
 .arrow1 {
   width: 24px;
   height: 24px;
@@ -147,7 +150,6 @@
         gap: 20px;
         transition: all 0.3s ease;
         z-index: 998;
-
       }
       
       /* When the menu is active, slide it in from the right */

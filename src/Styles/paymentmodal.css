@@ -1,36 +1,46 @@
-
+* {
+  font-family: "Avenir LT Pro", sans-serif;
+}
+.headpayment {
+  font-family: "Avenir LT Pro";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
 .payment-background {
-  background-color: grey;
+  background: #ffffff;
   width: 640px;
   height: 351px;
   padding: 25px 30px;
-  border-radius: 25px;
-  margin: 50px auto;
+  /* border-radius: 25px; */
+  /* margin: 50px auto; */
 }
 .head-text {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 30px;
+  margin-bottom: 20px;
 }
 .head-text h4 {
   font-weight: 400;
   font-size: 18px;
 }
-.close{
+.close {
   width: 24px;
   height: 24px;
-  color: #B1B1B1;
+  color: #b1b1b1;
   cursor: pointer;
 }
 .options {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
   justify-content: center;
 }
-
 .options .full-pay {
   border: 1px solid #cdcdcd;
   display: flex;
@@ -39,10 +49,11 @@
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
+  overflow: visible;
 }
 
 .options .full-pay.active {
-  border: 2.5px solid #f5772f; 
+  /* border: 2.5px solid #f5772f; */
   border-radius: 10px;
 }
 
@@ -79,8 +90,10 @@
 }
 
 .fullpay-text {
-  line-height: 10px;
   margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .top {
@@ -92,20 +105,151 @@
   color: #596275;
 }
 
-.dynamic-button{
+.dynamic-button {
   width: 250px;
   height: 56px;
   padding: 15px 30px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  background-color: #F5772F;
+  background-color: #f5772f;
   color: #ffff;
   margin: 0px 60%;
   font-size: 16px;
   font-weight: 700;
 }
 
-.dynamic-button:hover{
-  background-color: #FF9E66;
+.dynamic-button:hover {
+  background-color: #ff9e66;
+}
+.payment-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Style for the actual modal container */
+.payment-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+}
+
+@media only screen and (max-width: 480px) {
+  .payment-modal {
+    padding: 0px;
+    padding: 20px 15px;
+    gap: 24px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .options {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .options .full-pay {
+    width: 300px;
+    /* border: 1px solid red; */
+  }
+
+  .dynamic-button {
+    width: 300px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .head-text {
+    margin-bottom: 8px;
+  }
+
+  .headpayment {
+    font-size: 16px;
+    font-weight: 500;
+    color: #273043;
+  }
+
+  .top {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+
+  .down {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .options .full-pay {
+    width: 100%;
+  }
+
+  .dynamic-button {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .payment-modal {
+    padding: 20px 10px;
+    width: 100%;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+
+  .options .full-pay {
+    width: 100%;
+  }
+
+  .dynamic-button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .head-text {
+    margin-bottom: 8px;
+  }
+
+  .headpayment {
+    font-size: 16px;
+    font-weight: 500;
+    color: #273043;
+  }
+
+  .top {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+
+  .down {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+}
+
+/* Hover state - orange border shows up */
+.full-pay:hover {
+  border: 1px solid #f5772f; /* Only the orange border appears on hover */
 }

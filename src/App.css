@@ -325,6 +325,9 @@ body {
   display: flex;
   margin-top: 5%;
 }
+.btnsubscribe {
+  display: flex;
+}
 .subs {
   width: 636px;
   height: 52px;
@@ -953,3 +956,10 @@ body {
     font-size: 14px;
   } 
 }
+
+/* 
+.success-message {
+}
+
+.error-message {
+} */

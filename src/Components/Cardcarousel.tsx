@@ -1,52 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Styles/testimony.css";
 import quote from "../assets/quote.png";
 
-interface CardProps {
-  title: string;
-  role: string;
-  description: string;
+// Interface for data structure
+interface TestimonialData {
+  _id: string;
+  name: string;
+  comment: string;
+  designation: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
-const testimonials: CardProps[] = [
-  {
-    title: "John Doe",
-    role: "Software Engineer",
-    description:
-      "Genesys Academy gave me the skills and confidence to excel in my career.",
-  },
-  {
-    title: "Jane Smith",
-    role: "UI/UX Designer",
-    description:
-      "The mentorship program was exceptional and invaluable to my journey.",
-  },
-  {
-    title: "Samuel Lee",
-    role: "Data Scientist",
-    description:
-      "The learning environment and curriculum were truly world-class.",
-  },
-];
-
-// Custom Previous Button
-const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
-  <button className="slick-prev" onClick={onClick}>
-    &#x2190; {/* Left Arrow */}
-  </button>
-);
-
-// Custom Next Button
-const NextArrow = ({ onClick }: { onClick?: () => void }) => (
-  <button className="slick-next" onClick={onClick}>
-    &#8594; {/* Right Arrow */}
-  </button>
-);
-
 const TestimonialCarousel: React.FC = () => {
+  const [testimonials, setTestimonials] = useState<TestimonialData[]>([]);
+
+  // Fetch the testimonials from the API
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch("https://genesys-web-app-revamp.onrender.com/api/v1/review/"); // Replace with your endpoint
+        const data = await response.json();
+        if (data.success) {
+          setTestimonials(data.data); // Set the response data to state
+        }
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  // Custom Previous Button
+  const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
+    <button className="slick-prev" onClick={onClick}>
+      &#x2190; {/* Left Arrow */}
+    </button>
+  );
+
+  // Custom Next Button
+  const NextArrow = ({ onClick }: { onClick?: () => void }) => (
+    <button className="slick-next" onClick={onClick}>
+      &#8594; {/* Right Arrow */}
+    </button>
+  );
+
   const settings = {
     infinite: true, // Infinite loop
     speed: 500, // Transition speed
@@ -60,14 +62,14 @@ const TestimonialCarousel: React.FC = () => {
 
   return (
     <Slider {...settings}>
-      {testimonials.map((testimonial, index) => (
-        <div key={index}>
+      {testimonials.map((testimonial) => (
+        <div key={testimonial._id}>
           <div className="testimony-container">
             <img src={quote} alt="Quote" className="quote" />
             <div className="testimonials">
-              <h2>{testimonial.title}</h2>
-              <p>{testimonial.role}</p>
-              <p className="description">{testimonial.description}</p>
+              <h2>{testimonial.name}</h2>
+              <p>{testimonial.designation}</p>
+              <p className="description">{testimonial.comment}</p>
             </div>
           </div>
         </div>
