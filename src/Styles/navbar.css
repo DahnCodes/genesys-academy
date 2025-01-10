@@ -221,6 +221,16 @@
   }
 
 }
+@media screen and (max-width: 500px){
+    .navbar{
+        padding: 30px 30px;
+        height: 70px;
+    }
+    .logo{
+        width: 155px;
+        height: 22px;
+    }
+}
 @media screen and (max-width: 425px){
     .navbar{
         padding: 30px 30px;

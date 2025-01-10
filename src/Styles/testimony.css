@@ -70,6 +70,40 @@
     /* padding: 0 10px; */
   }
 }
+@media screen and (max-width: 500px) {
+  .testimony-container {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .testimonials {
+    width: 380px;
+    height: 221px;
+    padding: 0 10px;
+  }
+  .quote {
+    position: relative;
+    top: 10px;
+    left: 30px;
+    width: 24px;
+  }
+  .testimonials h2 {
+    font-size: 14px;
+  }
+  .des {
+    font-size: 10px;
+  }
+  .description {
+    font-size: 12px;
+    font-weight: 400;
+    /* margin-top: ; */
+  }
+  .slick-prev,
+.slick-next {
+display: none;
+ /* Ensure full visibility */
+}
+}
 @media screen and (max-width: 425px) {
   .testimony-container {
     text-align: center;

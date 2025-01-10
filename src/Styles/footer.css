@@ -94,6 +94,75 @@
     /* overflow: visible; */
   }
 }
+@media screen and (max-width: 500px){
+  .footer-king{
+    overflow: visible;
+  }
+  .footer-king p{
+    font-size: 14px;
+  }
+  .direction {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    color: #596275;
+    overflow: visible;
+  }
+  .email {
+    /* display: flex; */
+    align-items: center;
+    flex-direction: column;
+/* font-size: 14px; */
+    color: #596275;
+  }
+  .phone {
+    color: #f5772f;
+    margin-top: 5%;
+    font-size: 20px;
+  }
+  .logo1 {
+    width: 158.64px;
+  }
+  .icon {
+    font-size: 46px;
+  }
+  .footer-one p {
+    margin-top: 7%;
+  }
+  .footer-two p {
+    margin-top: 7%;
+  }
+  .footer-three p {
+    margin-top: 7%;
+  }
+  .footer-four{
+    overflow: visible;
+    /* padding: 0 20px; */
+  }
+  .icon {
+    /* background-color: rgba(200, 200, 200, 0.1); */
+    /* border-radius: 50%; */
+    /* width: 46px; */
+    /* height: 46px; */
+    color: #adadad;
+    padding: 10px;
+    cursor: pointer;
+
+    
+  }
+  .icon:hover{
+      color: #f5772f;
+  }
+  .copyright{
+    flex-direction: column;
+    margin-top: 25%;
+  }
+  .copyright p{
+    text-align: center;
+    font-size: 14px;
+    gap: -10px;
+  }
+}
 @media screen and (max-width: 425px){
   .footer-king{
     overflow: visible;
