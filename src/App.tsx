@@ -9,6 +9,8 @@ import Dataanalysis from "./Pages/Dataanalysis";
 import Qualityassurance from "./Pages/Qualityassurance";
 import Contact from "./Pages/Contact";
 import Faq from "./Pages/Faq";
+import Personaldata from "./Components/Personaldata";
+import PaySmall from "./Components/PaySmall";
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
     <Route path="/contactus" element={<Contact/>}/>
     <Route path="/faq" element={<Faq/>}/>
     <Route path="/pathways" element={<LandingPage/>}/>
+    <Route path="/personaldata" element={<Personaldata />}/>    
+    <Route path="/pay-small" element={<PaySmall />}/>    
     </Routes>
     </BrowserRouter>
     </>

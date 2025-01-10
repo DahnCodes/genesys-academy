@@ -1,0 +1,418 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+}
+.personaldatawrapper {
+  background: #fafafa;
+}
+.pagnition {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 100px 10px 100px;
+}
+.pdpad {
+  padding: 15px 100px 10px 100px;
+}
+.pdspaceinfo {
+  padding-bottom: 15px;
+}
+
+.pinfo {
+  /* width: 344px; */
+  /* height: 43px; */
+  /* font-family: "Avenir LT Pro"; */
+  font-size: 36px;
+  /* font-weight: 500; */
+  /* line-height: 43.2px; */
+}
+.aboutselfinfo {
+  width: 244px;
+  height: 24px;
+  font-family: "Avenir LT Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.no_1 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  align-items: center;
+}
+.horizontal {
+  display: flex;
+  height: 100px;
+  border: 0.5px solid #f5772f;
+}
+.startpersonal {
+  display: flex;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50px;
+  border: 1.5px solid #f5772f;
+  background-color: #fafafa;
+  cursor: pointer;
+  align-items: center;
+  color: #f5772f;
+  transition: transform 0.3s ease-in-out;
+}
+.startpersonal:hover {
+  color: #fff;
+  background-color: #ff9e66;
+  transform: scale(0.9);
+}
+.personaldatapd {
+  font-family: "Avenir LT Pro";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  color: #f5772f;
+}
+/* ---kmk */
+.pagnition1.active,
+.pagnition2.active {
+  border-radius: 200px;
+  width: 100px;
+  height: 100px;
+  background-color: #ff9659;
+}
+.pagnition1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagnationjr1 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 35px;
+}
+.formwrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+.pinfofn {
+  font-family: " Avenir LT Pro";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  display: block;
+  margin-bottom: 8px;
+}
+.selectinfo {
+  font-family: "Avenir LT Pro";
+  font-size: 16px;
+  font-weight: 400;
+  width: 580px;
+  padding: 25px 20px 25px 20px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px;
+  border: 1px solid #b1b1b1;
+  outline: none;
+  cursor: pointer;
+}
+.personal-data-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.btninformationsentence {
+  display: flex;
+  height: 100px;
+  justify-content: flex-end;
+  width: 580px;
+  align-items: last baseline;
+}
+.btnsubmitinfo {
+  width: 200px;
+  height: 52px;
+  padding: 15px 16px 15px 16px;
+  gap: 8px;
+  border-radius: 10px;
+  background-color: #f5772f;
+  color: #ffffff;
+  border: none;
+  font-family: " Avenir LT Pro";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  overflow: visible;
+}
+.btnsubmitinfo:hover {
+  transform: scale(0.9);
+  border: 3px solid #f5772f;
+  color: #f5772f;
+  background-color: #ff9659;
+}
+
+@media only screen and (max-width: 768px) {
+  .pagnition,
+  .pdpad {
+    padding: 20px 40px 10px 40px;
+  }
+  /* .pdpad {
+    padding: 15px 40px 10px 40px;
+  } */
+
+  .formwrapper {
+    /* display: grid; */
+    grid-template-columns: auto;
+    justify-content: space-between;
+  }
+}
+/* ----gp---   */
+
+/* For Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Container Padding */
+  .pinfo {
+    /* font-size: 20px; */
+    width: 100%;
+    overflow: visible;
+  }
+
+  .disappearmobile {
+    display: none;
+  }
+
+  .aboutselfinfo {
+    width: 100%;
+    overflow: visible;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  /* Form Inputs and Selects */
+  .selectinfo {
+    width: 670px;
+    padding: 20px;
+    /* font-size: 1rem; */
+    /* margin-bottom: 15px; */
+    margin-bottom: 4%;
+    border-radius: 8px; /* Slightly rounded borders for mobile */
+  }
+
+  .pinfofn {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  /* Submit Button */
+  .btnsubmitinfo {
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .btninformationsentence {
+    width: 100%;
+  }
+
+  /* Error Message Styling */
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  /* Image resizing */
+
+  /* Adjust text for mobile */
+  .personaldatapd {
+    font-size: 1.4rem;
+    text-align: center; /* Center title */
+  }
+
+  .aboutselfinfo {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* For Extra Small Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .pdpad {
+    padding: 10px;
+  }
+
+  /* Adjust Title Font Size */
+  .personaldatapd {
+    font-size: 14px; /* Make title smaller on very small screens */
+  }
+
+  /* Form Inputs and Selects */
+  .selectinfo {
+    width: 370px;
+    height: 50px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #b1b1b1;
+    /* border: 1px solid red;  */
+  }
+
+  .pinfofn {
+    font-size: 14px;
+    /* margin-bottom: 4%; */
+    /* border: 1px solid red; */
+  }
+
+  .btninformationsentence {
+    height: 60px;
+  }
+
+  .error-message {
+    font-size: 0.8rem; /* Slightly smaller error message */
+  }
+  /* Reduce the space between elements */
+  /* .formwrapper {
+    gap: 22px;
+       border: 1px solid red;
+  } */
+
+  .pagnition {
+    padding: 10px;
+    /* coem back  */
+  }
+
+  .pagnationjr1 {
+    width: 15px;
+  }
+  .pagnition1.active,
+  .pagnition2.active {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .no_1 {
+    gap: 10px;
+  }
+
+  .horizontal {
+    height: 50px;
+  }
+
+  .pinfo {
+    font-size: 36px;
+    color: #273043;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.8px;
+  }
+
+  .aboutselfinfo {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #596275;
+  }
+  .pdspaceinfo {
+    padding-bottom: 0px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .selectinfo {
+    width: 350px;
+    /* border: 1px solid red; */
+  }
+  .btninformationsentence {
+    width: 350px;
+  }
+}
+
+/* @media only screen and (max-width: 368px) {
+  .selectinfo {
+    width: 340px;
+    border: 1px solid red;
+  }
+
+} */
+
+@media only screen and (max-width: 320px) {
+  .selectinfo {
+    width: 296px;
+  }
+
+  .btninformationsentence {
+    width: 296px;
+  }
+
+  .pinfo {
+    width: 300px;
+  }
+}
+
+
+/* For larger screens (default behavior) */
+
+/* Media Query for Tablet Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .formwrapper {
+    grid-template-columns: 1fr;  /* Stack inputs vertically */
+    gap: 20px;
+  }
+
+  .selectinfo {
+    width: 100%;  /* Full width of the container */
+    max-width: none;  /* Avoid restricting the width */
+  }
+
+  .btnsubmitinfo {
+    width: 100%;  /* Full width on smaller screens */
+  }
+
+  .no_1{
+    display: none;
+  }
+}
+
+/* Media Query for Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .selectinfo {
+    width: 100%;
+    /* max-width: 370px;  */
+    height: 50px;
+    padding: 10px 15px;
+  }
+
+  .btnsubmitinfo {
+    width: 100%;  /* Full width of the screen */
+    padding: 12px 16px;  /* Slightly reduced padding for small screens */
+  }
+}
+
+/* For Extra Small Mobile Screens (max-width: 380px) */
+@media (max-width: 375px) {
+  .selectinfo {
+    width: 100%;
+    max-width: 350px;  /* Adjust width for very small screens */
+  }
+
+  .btninformationsentence {
+    width: 100%;  /* Adjust the button container to be full width */
+  }
+
+  .pinfo {
+    font-size: 1.2rem;  /* Adjust title size for extra small screens */
+  }
+}
+
+/* For Very Small Screens (max-width: 320px) */
+@media (max-width: 320px) {
+  .selectinfo {
+    width: 100%;
+    max-width: 296px;  /* Maximum width for very small screens */
+  }
+
+  .btninformationsentence {
+    width: 100%;  /* Ensure the button takes full width */
+  }
+}

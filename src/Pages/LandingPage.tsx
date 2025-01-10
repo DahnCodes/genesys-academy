@@ -26,7 +26,64 @@ import Footer from "../Components/Footer";
 // import Testimonalcard from "../Components/Testimonalcard";
 // import Carousel from "../Components/Carousel";
 import CardCarousel from "../Components/Cardcarousel";
+import { Link } from "react-router-dom";
+import OfflineModal from "../Components/OfflineModal";
+import { useState } from "react";
+
 const LandingPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  const [email, setEmail] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<boolean>(false);
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!email) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        "https://genesys-web-app-revamp.onrender.com/api/v1/subscriber/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      if (response.ok) {
+        setSuccess(true);
+        setEmail("");
+        setError(null);
+      } else {
+        const errorData = await response.json();
+        setError(
+          errorData.message || "Something went wrong. Please try again."
+        );
+      }
+    } catch (error) {
+      setError("There was an issue with the subscription. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Navigationbar />
@@ -41,13 +98,19 @@ const LandingPage = () => {
             the skills you need to excel!
           </p>
           <div className="btns">
-            <button className="btn2">Begin Application</button>
-            <button className="btn3">Validate Offline Payment</button>
+            <Link to="/personaldata">
+              <button className="btn2">Begin Application</button>
+            </Link>
+            <button className="btn3" onClick={openModal}>
+              Validate Offline Payment
+            </button>
           </div>
         </div>
         <div className="hero-image">
           <img src={heroimg} alt="" className="heroimg" />
         </div>
+
+        {isModalOpen && <OfflineModal closeModal={closeModal} />}
       </header>
 
       <section className="whoweare">
@@ -62,10 +125,6 @@ const LandingPage = () => {
               world-class learning environment to give students an exceptional
               learning experience.
             </p>
-            {/* <p className="second-p">
-              We primarily educate and groom software developers and <br />{" "}
-              designers, preparing them for the tech industry.
-            </p> */}
           </div>
         </div>
       </section>
@@ -214,8 +273,6 @@ const LandingPage = () => {
         <h1>Testimonies Of Past Interns</h1>
 
         <div className="testimony-card">
-          {/* <Testimonalcard/> */}
-          {/* <Carousel/> */}
           <CardCarousel />
         </div>
       </section>
@@ -234,7 +291,9 @@ const LandingPage = () => {
               next cohort. After a successful application online, your Tech
               journey can Begin.
             </p>
-            <button className="btn4">Apply Now</button>
+            <Link to="/personaldata">
+              <button className="btn4">Apply Now</button>
+            </Link>
           </div>
         </div>
       </section>
@@ -246,17 +305,29 @@ const LandingPage = () => {
           learning opportunities.
         </p>
         <div className="subscribe">
-          <form action="">
+          <form onSubmit={handleSubmit} className="btnsubscribe">
             <input
               type="email"
               name="email"
               placeholder="Enter your email"
               className="subs"
+              value={email}
+              onChange={handleEmailChange}
+              required
             />
+            <button
+              type="submit"
+              className="btn5"
+              disabled={loading}
+            >
+              {loading ? "SUBSCRIBING..." : "SUBSCRIBE"}
+            </button>
           </form>
-          <button className="btn5">SUBSCRIBE</button>
+          {success && (
+            <p className="success-message">Thank you for subscribing!</p>
+          )}
+          {error && <p className="error-message">{error}</p>}
         </div>
-      
       </div>
 
       <Footer />
