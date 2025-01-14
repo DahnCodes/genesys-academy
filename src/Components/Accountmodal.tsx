@@ -24,7 +24,7 @@ const Accountmodal = () => {
       <div className="acctnumber">
         <section className="account-background">
           <header className="account-head">
-            <h3>Account Details</h3>
+            <h3 className="acces">Account Details</h3>
             <IoIosCloseCircleOutline
               className="closer"
               onClick={handleCloseModal}

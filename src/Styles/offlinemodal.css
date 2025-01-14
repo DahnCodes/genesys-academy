@@ -32,32 +32,35 @@
 .pay-text {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 
 /* Close Button */
 .closer {
-  font-size: 1.5rem;
+  font-size: 30px;
   /* color: #aaa; */
   cursor: pointer;
+  /* color: red; */
+  color: #b1b1b1;
+}
+
+.closer:hover{
   color: red;
 }
 
 /* Modal Header */
 .cpmodalheader {
-  font-size: 1.5rem;
+  font-size: 24px;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
 .subhead {
-  /* font-size: 1rem;
-  color: #555; */
-  margin-bottom: 15px;
-
   color: #596275;
   font-family: "Avenir LT Pro";
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 24px;
 }
 
 /* Form Styling */
@@ -67,9 +70,6 @@
 }
 
 .labelupdated {
-  /* font-size: 1rem; */
-  /* margin-bottom: 10px; */
-
   color: #273043;
   font-family: "Avenir LT Pro";
   font-size: 16px;
@@ -78,21 +78,16 @@
 
 .inputss {
   width: 100%;
-  padding: 0.8rem;
-  /* border-radius: 4px; */
-  /* font-size: 1rem; */
-
   margin-bottom: 1rem;
-  /* height: 60px; */
   border-radius: 10px;
   color: #ffffff;
   border: 1px solid #b1b1b1;
-  font-family: " Avenir LT Pro";
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   color: #b1b1b1;
   outline: none;
   margin-top: 10px;
+  padding: 20px;
 }
 
 /* File Upload Section */
@@ -106,13 +101,25 @@
   text-align: center;
   border-radius: 8px;
   margin-top: 10px;
+  font-size: 14px;
+  font-weight: 200;   
 }
 
-.cloud {
-  font-size: 2rem;
-  /* color: #4a90e2; */
+.modcolor{
   color: #f5772f;
-  margin-bottom: 1rem;
+}
+.png{
+  color: #596275;
+}
+.file{
+  margin-top: 16px;
+}
+
+
+.cloud {
+  font-size: 52px;
+  color: #d0d0d0;
+  margin-bottom: 8px;
 }
 
 .dynamicbtn {
@@ -125,7 +132,7 @@
   color: white;
   border: none;
   padding: 1rem 2rem;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
 }
