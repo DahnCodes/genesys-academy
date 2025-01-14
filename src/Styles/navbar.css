@@ -54,6 +54,7 @@
   border: none;
   color: #ffff;
   cursor: pointer;
+
 }
 .btn1:hover {
   background-color: #ff9e66;
@@ -69,10 +70,29 @@
   color: white;
 }
 
-.burger input{
+.burger{
     display: none;
 }
-
+@media screen and(max-width: 1024px){
+  .logo {
+    width: 215px;
+    height: 42px;
+    gap: 32px;
+    opacity: 0px;
+  }
+  .navbar{
+    padding: 50px;
+    overflow: hidden ;
+  }
+  .navlinks {
+    display: flex;
+    gap: 30px;
+    color: #596275;
+    cursor: pointer;
+    overflow: hidden;
+  }
+ 
+}
 @media screen and (max-width: 768px) {
   body.no-scroll{
     overflow: hidden;

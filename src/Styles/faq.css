@@ -30,10 +30,10 @@
   }
 }
 @media screen and (max-width: 375px) {
-    .banner{
-        width: 100%;
-        margin-top: 18%;
-    }
+  .banner {
+    width: 100%;
+    margin-top: 18%;
+  }
   .faq-section {
     padding: 10px;
   }
@@ -47,10 +47,10 @@
   }
 }
 @media screen and (max-width: 320px) {
-    .banner{
-        width: 100%;
-        margin-top: 18%;
-    }
+  .banner {
+    width: 100%;
+    margin-top: 18%;
+  }
   .faq-section {
     padding: 10px;
   }

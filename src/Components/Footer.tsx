@@ -16,8 +16,8 @@ const Footer = () => {
           <div className="footer-one">
             <img src={logo} alt="" className="logo1" />
             <p className="gets">
-              Kilometer 7, Enugu/Port Harcourt <br /> Expressway, Centenary
-              City, Enugu, <br /> Nigeria.
+              Kilometer 7, Enugu/Port Harcourt Expressway, Centenary
+              City, Enugu, Nigeria.
             </p>
             <p className="get">Get Direction</p>
             <div className="direction">

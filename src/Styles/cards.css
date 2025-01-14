@@ -47,7 +47,12 @@
     text-decoration: none;
     color: #596275;
   }
+@media screen and (max-width: 1024px){
+  .card{
 
+
+}
+}
   @media screen and (max-width: 425px){
     .card{
       width: 380px;

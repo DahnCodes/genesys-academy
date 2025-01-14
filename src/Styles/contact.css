@@ -197,7 +197,7 @@
   }
   .contact-us {
     display: block;
-    max-width: 350px;
+    max-width: 330px;
   }
   .contact-us h1 {
     font-size: 24px;
@@ -208,21 +208,21 @@
     /* font-weight: 700; */
   }
   .fname {
-    width: 350px;
+    width: 330px;
     height: 60px;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     padding: 25px 20px;
   }
   .message {
-    width: 350px;
+    width: 330px;
     height: 166px;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     padding: 25px 20px;
   }
   .btn7 {
-    width: 350px;
+    width: 330px;
   }
   .locations {
     margin-top: 15%;
@@ -250,7 +250,7 @@
   }
   .contact-us {
     display: block;
-    max-width: 300px;
+    max-width: 280px;
   }
   .contact-us h1 {
     font-size: 24px;
@@ -261,21 +261,21 @@
     /* font-weight: 700; */
   }
   .fname {
-    width: 300px;
+    width: 280px;
     height: 60px;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     padding: 25px 20px;
   }
   .message {
-    width: 300px;
+    width: 280px;
     height: 166px;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     padding: 25px 20px;
   }
   .btn7 {
-    width: 300px;
+    width: 280px;
   }
   .locations {
     margin-top: 15%;

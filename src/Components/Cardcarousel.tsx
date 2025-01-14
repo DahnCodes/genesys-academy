@@ -67,8 +67,9 @@ const TestimonialCarousel: React.FC = () => {
           <div className="testimony-container">
             <img src={quote} alt="Quote" className="quote" />
             <div className="testimonials">
-              <h2>{testimonial.name}</h2>
-              <p>{testimonial.designation}</p>
+           <img src={testimonial.imageUrl} alt="" className="past-intern"/>
+              <h3>{testimonial.name}</h3>
+              <p className="role">{testimonial.designation}</p>
               <p className="description">{testimonial.comment}</p>
             </div>
           </div>

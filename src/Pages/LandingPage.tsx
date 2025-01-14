@@ -1,4 +1,4 @@
-import heroimg from "../assets/hero2.png";
+import heroimg from "../assets/landing.png";
 import gen from "../assets/Vector.png";
 import man1 from "../assets/man1.png";
 import Navigationbar from "../Components/Navigationbar";
@@ -20,6 +20,9 @@ import team1 from "../assets/team1.png";
 import team2 from "../assets/team2.png";
 import curve from "../assets/curve.png";
 import wifi from "../assets/wifi.png";
+import sider from "../assets/sider.png";
+import rightside from "../assets/rightside.png";
+import leftside from "../assets/leftside.png";
 // import Testimonycarousel from "../Components/Carousel";
 import paul from "../assets/paul.png";
 import Footer from "../Components/Footer";
@@ -78,7 +81,9 @@ const LandingPage = () => {
         );
       }
     } catch (error) {
-      setError("There was an issue with the subscription. Please try again later.");
+      setError(
+        "There was an issue with the subscription. Please try again later."
+      );
     } finally {
       setLoading(false);
     }
@@ -108,6 +113,11 @@ const LandingPage = () => {
         </div>
         <div className="hero-image">
           <img src={heroimg} alt="" className="heroimg" />
+          <div className="hero-illustrations">
+            <img src={sider} alt="" className="sider" />
+            <img src={rightside} alt="" className="sides" />
+            <img src={leftside} alt="" className="siding" />
+          </div>
         </div>
 
         {isModalOpen && <OfflineModal closeModal={closeModal} />}
@@ -123,7 +133,9 @@ const LandingPage = () => {
               Genesys Academy is a Software Development Institute with certified
               experts as trainers, a well-structured curriculum and a
               world-class learning environment to give students an exceptional
-              learning experience.
+              learning experience. 
+              <p>We primarily educate and groom software
+              developers and designers, preparing them for the tech industry.</p>
             </p>
           </div>
         </div>
@@ -259,10 +271,9 @@ const LandingPage = () => {
             <img src={wifi} alt="" className="wifi" />
             <div className="core">
               <p>
-                We believe that Excellence is a culture and we are committed to
-                a philosophy of consistent Improvement in everything we do, we
-                are Passionate and Candid we trust in the power of
-                Collaboration.
+                We believe that every problem has a solution and we are
+                committed to a live of constant research to help people and
+                business reach their maximum potential, one step at a time.
               </p>
             </div>
           </div>
@@ -315,11 +326,7 @@ const LandingPage = () => {
               onChange={handleEmailChange}
               required
             />
-            <button
-              type="submit"
-              className="btn5"
-              disabled={loading}
-            >
+            <button type="submit" className="btn5" disabled={loading}>
               {loading ? "SUBSCRIBING..." : "SUBSCRIBE"}
             </button>
           </form>

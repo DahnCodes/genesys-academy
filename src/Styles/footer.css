@@ -10,13 +10,16 @@
 .footer-king {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 80px;
 }
 .footer-one p {
   margin-top: 5%;
+  line-height: 24px;
 }
 .gets {
   color: #596275;
+  line-height: 24px;
 }
 .get {
   color: #f5772f;
@@ -26,33 +29,51 @@
   /* flex-direction: column; */
   align-items: center;
   color: #596275;
+  gap: 10px;
 }
 .email {
   display: flex;
   align-items: center;
   color: #596275;
+  gap: 10px ;
 }
 .phone {
   color: #f5772f;
   margin-top: 5%;
   font-size: 20px;
 }
-
+.footer-two h4{
+  color: #273043;
+}
 .footer-two p {
-  margin-top: 5%;
+  margin-top: 20%;
   color: #596275;
   cursor: pointer;
+  line-height: 24px;
+
 }
 .footer-two p:hover{
     color: #f5772f;
 }
+
+.footer-three h4{
+  color: #273043;
+
+}
 .footer-three p {
-  margin-top: 5%;
+
+  margin-top: 13.5%;
   color: #596275;
   cursor: pointer;
+  line-height: 24px;
+
 }
 .footer-three p:hover{
     color: #f5772f;
+}
+.footer-four h4{
+  color: #273043;
+
 }
 .follow {
   margin-top: 5%;
@@ -77,6 +98,7 @@
   justify-content: center;
   gap: 10px;
   color: #596275;
+  margin-top: 3%;
 }
 .copyright p{
   
@@ -163,19 +185,25 @@
     gap: -10px;
   }
 }
-@media screen and (max-width: 425px){
+@media screen and (max-width: 430px){
+  
   .footer-king{
     overflow: visible;
   }
   .footer-king p{
     font-size: 14px;
   }
+  
   .direction {
     /* display: flex; */
     flex-direction: column;
     align-items: center;
     color: #596275;
     overflow: visible;
+    margin-top: 5%;
+  }
+  .direction p{
+    margin-top: 5%;
   }
   .email {
     /* display: flex; */
@@ -190,24 +218,27 @@
     font-size: 20px;
   }
   .logo1 {
-    width: 158.64px;
+    width: 250px;
   }
   .icon {
     font-size: 46px;
   }
+
   .footer-one p {
-    margin-top: 7%;
+    margin-top: 1%;
   }
   .footer-two p {
-    margin-top: 7%;
+    margin-top: 5%;
   }
   .footer-three p {
-    margin-top: 7%;
+    margin-top: 5%;
   }
   .footer-four{
     overflow: visible;
+    margin-bottom: 3%;
     /* padding: 0 20px; */
   }
+ 
   .icon {
     /* background-color: rgba(200, 200, 200, 0.1); */
     /* border-radius: 50%; */
@@ -216,6 +247,7 @@
     color: #adadad;
     padding: 10px;
     cursor: pointer;
+    margin-top: 1%;
 
     
   }
@@ -224,11 +256,12 @@
   }
   .copyright{
     flex-direction: column;
-    margin-top: 25%;
+    margin-top: 15%;
   }
   .copyright p{
     text-align: center;
     font-size: 14px;
     gap: -10px;
+
   }
 }
