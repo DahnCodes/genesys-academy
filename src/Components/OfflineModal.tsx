@@ -301,11 +301,15 @@ const OfflineModal = ({ closeModal }: OfflineModalProps) => {
               </label>
               <div className="choose">
                 <IoCloudUploadOutline className="cloud" />
-                <p>
-                  <span>Drag and drop your file</span>
-                  <br />
+                <p className="modcolorII">
+                  <span className="modcolor">Drag and drop your file</span>
+                  <br /> 
+                  <p className="png">
                   (png, jpg, jpeg, and pdf) <br />
                   Maximum Size: 5MB
+                  </p>
+                  {/* (png, jpg, jpeg, and pdf) <br />
+                  Maximum Size: 5MB */}
                 </p>
                 <input
                   type="file"

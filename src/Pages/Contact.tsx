@@ -10,23 +10,43 @@ import mail from "../assets/mail.png";
 import hours from "../assets/hours.png";
 import axios from "axios";
 
+// Import Toastify for notifications
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Contact = () => {
   // Step 1: Define state for form inputs
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [responseMessage, setResponseMessage] = useState(""); // For displaying the success or error message
-  const [isError, setIsError] = useState(false); // For determining if the message is an error or success
 
   // Step 2: Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate form fields
-    if (!fullName || !email || !message) {
-      setResponseMessage("Please fill in all fields");
-      setIsError(true); // Set to true for error message
+    // Validate form fields with specific error messages
+    if (!fullName) {
+      toast.error("Full Name is required. Example: John Doe.");
+      return;
+    }
+
+    if (!email) {
+      toast.error("Email Address is required. Example: johndoe@example.com.");
+      return;
+    }
+
+    // Simple email validation regex
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(email)) {
+      toast.error(
+        "Please provide a valid email address. Example: johndoe@example.com."
+      );
+      return;
+    }
+
+    if (!message) {
+      toast.error("Message is required. Please type in your message.");
       return;
     }
 
@@ -44,8 +64,7 @@ const Contact = () => {
       );
 
       if (response.data.success) {
-        setResponseMessage(response.data.message); // Success message from API
-        setIsError(false); // Set to false for success message
+        toast.success(response.data.message); // Success message from API
         // Optionally, reset form fields after success
         setFullName("");
         setEmail("");
@@ -53,12 +72,17 @@ const Contact = () => {
       }
     } catch (error) {
       console.error("Error submitting message:", error);
-      setResponseMessage("Something went wrong. Please try again."); // Error message
-      setIsError(true); // Set to true for error message
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false); // Re-enable submit button
     }
   };
+
+  const address =
+    "Kilometer 7, Enugu/Port Harcourt Expressway, Centenary City, Enugu, Nigeria";
+  const googleMapsLink = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+    address
+  )}`;
 
   return (
     <>
@@ -66,7 +90,7 @@ const Contact = () => {
       <img src={banner} alt="" className="banner" />
       <div className="contact-section">
         <div className="contact-us">
-          <h1>Let’s hear from you!</h1>
+          <h1 className="hear">Let’s hear from you!</h1>
           <p>
             Do you have any questions or in need of assistance? Reach out to our
             committed support team. We value your feedback and inquiry. We are
@@ -84,7 +108,7 @@ const Contact = () => {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
               />
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email Address</label>
               <input
                 type="email"
                 id="email"
@@ -111,13 +135,6 @@ const Contact = () => {
               </div>
             </form>
           </div>
-
-          {/* Display Success/Error Message Below the Form */}
-          {responseMessage && (
-            <div className={`response-message ${isError ? "error" : "success"}`}>
-              <p>{responseMessage}</p>
-            </div>
-          )}
         </div>
 
         <div className="details-section">
@@ -127,10 +144,15 @@ const Contact = () => {
                 <img src={location} alt="" />
               </div>
               <div className="detail-text">
-                <h3>Location</h3>
+                <h3 className="info_location">Location</h3>
                 <p>
-                  Kilometer 7, Enugu/Port Harcourt Expressway, Centenary City,
-                  Enugu, Nigeria.
+                  <a
+                    href={googleMapsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {address}
+                  </a>
                 </p>
               </div>
             </div>
@@ -139,8 +161,10 @@ const Contact = () => {
                 <img src={tele} alt="" />
               </div>
               <div className="detail-text">
-                <h3>Phone</h3>
-                <p>+234 814 012 0539</p>
+                <h3 className="info_location">Phone</h3>
+                <a href="tel:+234 814 012 0539">
+                  <p>+234 814 012 0539</p>
+                </a>
               </div>
             </div>
             <div className="location-container">
@@ -148,8 +172,10 @@ const Contact = () => {
                 <img src={mail} alt="" />
               </div>
               <div className="detail-text">
-                <h3>Mail</h3>
-                <p>academy@genesystechhub.com</p>
+                <h3 className="info_location">Mail</h3>
+                <a href="mailto:academy@genesystechhub.com">
+                  <p>academy@genesystechhub.com</p>
+                </a>
               </div>
             </div>
             <div className="location-container">
@@ -157,7 +183,7 @@ const Contact = () => {
                 <img src={hours} alt="" />
               </div>
               <div className="detail-text">
-                <h3>Business Hours</h3>
+                <h3 className="info_location">Business Hours</h3>
                 <div className="hours">
                   <p>Monday - Friday </p>
                   <div className="hourline"></div>
@@ -175,6 +201,8 @@ const Contact = () => {
       </div>
 
       <Footer />
+      {/* ToastContainer to display the notifications */}
+      <ToastContainer />
     </>
   );
 };
