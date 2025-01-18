@@ -151,14 +151,24 @@ const LandingPage = () => {
           </p>
         </div>
         <div className="pathway-cards">
+          <Link to="/productdesign" className="link">
           <Productcard />
+          </Link>
+          <Link to="/frontend" className="link">
           <Frontcard />
+          </Link>
+          <Link to="/backend" className="link">
           <Backcard />
+          </Link>
         </div>
 
         <div className="second-cards">
+          <Link to="/dataanalysis" className="link">
           <Datacard />
+          </Link>
+          <Link to="qualityassurance" className="link">
           <Qualitycard />
+          </Link>
         </div>
       </section>
 

@@ -13,6 +13,7 @@ interface TestimonialData {
   designation: string;
   createdAt: string;
   updatedAt: string;
+  imageUrl: string;
 }
 
 const TestimonialCarousel: React.FC = () => {
@@ -22,7 +23,9 @@ const TestimonialCarousel: React.FC = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch("https://genesys-web-app-revamp.onrender.com/api/v1/review/"); // Replace with your endpoint
+        const response = await fetch(
+          "https://genesys-web-app-revamp.onrender.com/api/v1/review/"
+        ); // Replace with your endpoint
         const data = await response.json();
         if (data.success) {
           setTestimonials(data.data); // Set the response data to state
@@ -57,7 +60,8 @@ const TestimonialCarousel: React.FC = () => {
     prevArrow: <PrevArrow />, // Custom previous button
     nextArrow: <NextArrow />, // Custom next button
     centerMode: true,
-    centerPadding: "5",
+    centerPadding: "10",
+  
   };
 
   return (
@@ -67,10 +71,12 @@ const TestimonialCarousel: React.FC = () => {
           <div className="testimony-container">
             <img src={quote} alt="Quote" className="quote" />
             <div className="testimonials">
-           <img src={testimonial.imageUrl} alt="" className="past-intern"/>
-              <h3>{testimonial.name}</h3>
-              <p className="role">{testimonial.designation}</p>
-              <p className="description">{testimonial.comment}</p>
+              <img src={testimonial.imageUrl} alt="" className="past-interns" />
+              <div className="testimonial-text">
+                <h3>{testimonial.name}</h3>
+                <p className="role">{testimonial.designation}</p>
+                <p className="description">{testimonial.comment}</p>
+              </div>
             </div>
           </div>
         </div>
