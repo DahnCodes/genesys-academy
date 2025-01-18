@@ -6,9 +6,9 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
-  text-align: left;
+  /* text-align: left;
   text-underline-position: from-font;
-  text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none; */
 }
 .payment-background {
   background: #ffffff;
@@ -37,12 +37,14 @@
 .options {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 25px;
+  /* gap: 25px; */
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }
 .options .full-pay {
   border: 1px solid #cdcdcd;
+  /* border: 1px solid red; */
   display: flex;
   width: 280px;
   height: 90px;
@@ -50,10 +52,11 @@
   border-radius: 10px;
   cursor: pointer;
   overflow: visible;
+  /* border: 1px solid red; */
 }
 
 .options .full-pay.active {
-  /* border: 2.5px solid #f5772f; */
+  border: 2px solid #f5772f;
   border-radius: 10px;
 }
 
@@ -138,8 +141,8 @@
 /* Style for the actual modal container */
 .payment-modal {
   background-color: white;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 30px;
+  border-radius: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 10000;
 }
@@ -205,7 +208,8 @@
 
 @media only screen and (max-width: 480px) {
   .payment-modal {
-    padding: 20px 10px;
+    /* padding: 20px 10px; */
+    padding: 15px;
     width: 100%;
   }
 
@@ -224,10 +228,11 @@
   .dynamic-button {
     width: 100%;
     font-size: 14px;
+    margin-top: 16px;
   }
 
   .head-text {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   .headpayment {
@@ -249,7 +254,10 @@
   }
 }
 
-/* Hover state - orange border shows up */
-.full-pay:hover {
-  border: 1px solid #f5772f; /* Only the orange border appears on hover */
-}
+/* .full-pay:hover {
+  border: 1px solid #f5772f; 
+} */
+
+
+
+

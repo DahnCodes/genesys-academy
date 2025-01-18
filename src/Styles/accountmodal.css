@@ -14,6 +14,7 @@
 .homepagebtnacct {
   width: 100%;
   text-align: center;
+  margin-top: 28px;
 }
 .dyn-button:hover {
   background-color: #ff9e66;
@@ -35,17 +36,24 @@
 }
 .account-background {
   width: 391px;
-  height: 377px;
+  /* height: 377px; */
   top: 6105px;
   left: 8461px;
   padding: 30px;
   gap: 28px;
   border-radius: 15px;
   background-color: #ffffff;
+  overflow: hidden;
 }
 .account-head {
   display: flex;
   justify-content: space-between;
+}
+.acces {
+  font-family: "Avenir LT Pro";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
 }
 .account-text {
   /* border: 1px solid red; */
@@ -53,20 +61,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 16px;
+  gap: 4px;
   margin-top: 20px;
 }
+.acnumber {
+  font-family: "Avenir LT Pro";
+  color: #273043;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+}
 
-/* @media only screen and (max-width: 375px) {
-  .account-background{
-    width: 300px;
-  }
-} */
+.acnumber2 {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 18px;
+  color: #596275;
+  margin-bottom: 15px;
+}
 
 @media only screen and (max-width: 480px) {
   .account-background {
     width: 320px;
-    height: 308px;
+    height: 340px;
     padding: 20px 15px;
     gap: 24px;
     border-radius: 10px;
@@ -74,24 +91,27 @@
   }
 
   .account-text {
-    /* border: 1px solid red; */
-    gap: 10px;
-    margin-top: 8px;
+    gap: 2px;
+    margin-top: 12px;
   }
 
   .acnumber {
-    font-family: "Avenir LT Pro";
-    color: #273043;
-
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .acnumber2 {
-    font-family: " Avenir LT Pro";
     font-size: 12px;
     font-weight: 300;
     line-height: 18px;
+  }
+
+  .acces {
+    font-size: 20px;
+  }
+
+  .homepagebtnacct {
+    margin-top: 16px;
   }
 }
 
@@ -100,9 +120,3 @@
     width: 300px;
   }
 }
-
-/* @media only screen and (max-width: 375px) {
-  .account-background{
-    width: 300px;
-  }
-} */
