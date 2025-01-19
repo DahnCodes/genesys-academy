@@ -1,7 +1,6 @@
 .testimony-container {
   text-align: center;
-  width: 50%;
-  margin: 0 auto;
+  margin: 0 30%;
   overflow: visible;
 }
 
@@ -13,19 +12,26 @@
   border-right: 2px solid #f5772f;
   border-bottom: 2px solid #f5772f;
   text-align: center;
+  overflow: visible;
+  position: relative;
 
   /* margin-bottom: 20%; */
 }
-.past-intern{
-  margin: auto;
-
+.past-interns {
+  top: -60px;
+  left: 40%;
+  position: absolute;
 }
-.testimonials h3{
-  margin-top: 5%;
+.testimonial-text {
+  position: relative;
+  top: 80px;
+}
+.testimonials h3 {
+  /* margin-bottom: 30px; */
   font-weight: 400;
   font-size: 24px;
 }
-.role{
+.role {
   font-size: 14px;
   font-weight: 400;
   color: #596275;
@@ -33,6 +39,9 @@
 }
 .description {
   margin-top: 5%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
 }
 .quote {
   position: relative;
@@ -55,7 +64,7 @@
   cursor: pointer;
   opacity: 1;
   z-index: 1;
- /* Ensure full visibility */
+  /* Ensure full visibility */
 }
 
 /* Hover effect for arrows */
@@ -67,7 +76,7 @@
 
 /* Positioning of the previous arrow */
 .slick-prev {
-  left:   10px;
+  left: 10px;
   /* Adjust the position of the previous arrow */
 }
 
@@ -76,10 +85,20 @@
   right: 10px; /* Adjust the position of the next arrow */
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
+  .testimony-container {
+    text-align: center;
+    margin: 0 10%;
+    /* padding: 20px; */
+    overflow: hidden;
+  }
+
   .testimonials {
-    width: 480px;
-    height: 221px;
+    width: 580px;
+    height: 321px;
+    overflow: visible;
+    padding: 0 10px;
+
     /* padding: 0 10px; */
   }
 }
@@ -112,20 +131,22 @@
     /* margin-top: ; */
   }
   .slick-prev,
-.slick-next {
-display: none;
- /* Ensure full visibility */
+  .slick-next {
+    display: none;
+    /* Ensure full visibility */
+  }
 }
-}
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 475px) {
   .testimony-container {
     text-align: center;
-    width: 100%;
-    margin: 0 auto;
+    /* width: 10%; */
+    padding: 0px 10px;
+    margin: 5% 0;
+    overflow: visible;
   }
   .testimonials {
     width: 380px;
-    height: 221px;
+    height: 281px;
     padding: 0 10px;
   }
   .quote {
@@ -134,7 +155,13 @@ display: none;
     left: 30px;
     width: 24px;
   }
-  .testimonials h2 {
+  .past-interns {
+    width: 86px;
+    top: -30px;
+    left: 40%;
+    position: absolute;
+  }
+  .testimonials h3 {
     font-size: 14px;
   }
   .des {
@@ -146,15 +173,57 @@ display: none;
     /* margin-top: ; */
   }
   .slick-prev,
-.slick-next {
-display: none;
- /* Ensure full visibility */
+  .slick-next {
+    display: none;
+    /* Ensure full visibility */
+  }
 }
+@media screen and (max-width: 425px) {
+  .testimony-container {
+    text-align: center;
+    width: 100%;
+    padding: 0px 10px;
+    margin: 5% 0;
+    overflow: visible;
+  }
+  .testimonials {
+    width: 380px;
+    height: 281px;
+    padding: 0 10px;
+  }
+  .quote {
+    position: relative;
+    top: 10px;
+    left: 30px;
+    width: 24px;
+  }
+  .past-interns {
+    width: 86px;
+    top: -30px;
+    left: 40%;
+    position: absolute;
+  }
+  .testimonials h3 {
+    font-size: 14px;
+  }
+  .des {
+    font-size: 10px;
+  }
+  .description {
+    font-size: 12px;
+    font-weight: 400;
+    /* margin-top: ; */
+  }
+  .slick-prev,
+  .slick-next {
+    display: none;
+    /* Ensure full visibility */
+  }
 }
 @media screen and (max-width: 375px) {
   .testimonials {
     width: 320px;
-    height: 211px;
+    height: 251px;
   }
   .quote {
     position: relative;
@@ -164,9 +233,17 @@ display: none;
   }
 }
 @media screen and (max-width: 320px) {
+  .testimony-container {
+    text-align: center;
+    margin:10% 1%;
+    /* padding: 20px; */
+    overflow: visible;
+  }
   .testimonials {
-    width: 300px;
-    height: 211px;
+    width: 280px;
+    height: 251px;
+    /* margin: 5% 0%; */
+
   }
   .quote {
     position: relative;
@@ -174,5 +251,10 @@ display: none;
     left: 30px;
     width: 24px;
   }
+  .past-interns {
+    width: 86px;
+    top: -20px;
+    left: 35%;
+    position: absolute;
+  }
 }
-
