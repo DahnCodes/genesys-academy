@@ -81,7 +81,8 @@
   width: 63px;
   height: 30px;
   padding: 6px 12px;
-  gap: 10px;
+  /* padding: 5px 8px; */
+  /* gap: 10px; */
   border-radius: 200px;
   border: none;
   font-family: "Avenir LT Pro";
@@ -89,6 +90,7 @@
   font-weight: 300;
   line-height: 18px;
   color: #596275;
+  background-color:  #E7E7E7;
 }
 
 .ksks {
@@ -249,4 +251,24 @@
   .amount{
       overflow: hidden;
   }
+}
+
+
+
+.blurred {
+  filter: blur(1px); /* Apply blur */
+  opacity: 0.5; /* Add slight opacity for a dimmed effect */
+  pointer-events: none; /* Prevent interaction with blurred boxes */
+}
+
+
+/* Apply smooth transition to blur effect */
+.card1 {
+  transition: filter 0.5s ease, opacity 0.5s ease; /* Smooth transitions for blur and opacity */
+}
+
+.blurred {
+  /* filter: blur(5px);  */
+  opacity: 0.5; /* Dimmed effect */
+  pointer-events: none; /* Prevent interaction with blurred boxes */
 }

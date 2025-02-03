@@ -1,0 +1,176 @@
+/* Original Styles for Modal Container */
+.payment-invoice-modal__container_xyz123 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  width: 700px;
+}
+
+.payment-invoice-modal__header_abc456 {
+  font-family: "Avenir LT Pro";
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.hfgcgcv{
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-invoice-modal__options-list_qwe789 {
+  margin-bottom: 20px;
+  display: flex; /* Changed from grid to flex to align items horizontally */
+  gap: 25px;
+}
+
+.payment-invoice-modal__option-item_hjk321 {
+  display: flex; /* Make sure the radio buttons and text are side by side */
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  width: 48%; /* This ensures two items fit side by side */
+}
+
+.mgvngcv{
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Avenir LT Pro";
+  color: #273043;
+}
+
+.payment-invoice-modal__option-item_hjk321:hover{
+  cursor: pointer;
+}
+
+.xfacvg{
+  font-size: 14px;
+  font-weight: 200;
+  /* font-family: "Avenir LT Pro"; */
+  color: #576275;
+}
+
+.payment-invoice-modal__radio-btn_lmn987 {
+  margin-right: 10px;
+}
+
+.payment-invoice-modal__generate-btn_zxc654 {
+  margin-top: 4px;
+  background-color: #f5772f;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 35%;
+  height: 56px;
+  font-family: "Avenir LT Pro";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.payment-invoice-modal__generate-btn_zxc654:hover {
+  background-color: #ff9e66;
+}
+
+.payment-invoice-modal__option-item_hjk321.highlighted {
+  border: 1px solid  #f5772f;
+}
+
+.firstInstallment {
+  background-color: red;
+}
+
+/* --- radio -- Styles for the radio buttons */
+.payment-invoice-modal__radio-btn_lmn987 {
+  appearance: none; /* Hide default radio */
+  width: 20px;
+  height: 20px;
+  border: 1px solid #f5772f;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.payment-invoice-modal__radio-btn_lmn987:checked::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #f5772f;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.payment-invoice-modal__option-item_hjk321 {
+  display: flex;
+  gap: 10px;
+  align-items: center; /* Ensure the text and radio button are aligned */
+}
+
+.revampsecond {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 600px) {
+  /* Adjust Modal Container */
+  .payment-invoice-modal__container_xyz123 {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .payment-invoice-modal__header_abc456 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+  }
+
+  /* Ensure options are displayed next to each other */
+  .payment-invoice-modal__options-list_qwe789 {
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 15px;
+  }
+
+  .payment-invoice-modal__option-item_hjk321 {
+    flex-direction: row; /* Keep radio button and text next to each other */
+    padding: 15px;
+    font-size: 14px;
+    width: 100%; /* Allow the options to take full width on mobile */
+  }
+
+  .revampsecond {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  /* Adjust the button size */
+  .payment-invoice-modal__generate-btn_zxc654 {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* Adjust radio button size */
+  .payment-invoice-modal__radio-btn_lmn987 {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.activeOption{
+  display: none;
+}
+
