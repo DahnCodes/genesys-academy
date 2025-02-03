@@ -5,6 +5,8 @@
 }
 .personaldatawrapper {
   background: #fafafa;
+  max-width: 1440px;
+  margin: auto;
 }
 .pagnition {
   display: flex;
@@ -97,10 +99,8 @@
 .formwrapper {
   display: grid;
   grid-template-columns: auto auto;
-  /* justify-content: space-between;
-  align-items: center;
-  justify-content: center; */
-  gap: 150px;
+
+  gap: 60px;
 }
 .pinfofn {
   /* font-family: " Avenir LT Pro"; */
@@ -114,7 +114,7 @@
   font-family: "Avenir LT Pro";
   font-size: 16px;
   font-weight: 350;
-  width: 580px;
+  width: 540px;
   gap: 10px;
   border-radius: 10px;
   border: 1px solid #b1b1b1;
@@ -124,8 +124,8 @@
   /* color: red; */
   padding: 20px;
 }
-input::placeholder{
-    color: #b1b1b1;
+input::placeholder {
+  color: #b1b1b1;
 }
 select {
   /* color: #b1b1b1;  */
@@ -162,11 +162,11 @@ option {
   font-weight: 700;
   line-height: 24px;
   cursor: pointer;
-    overflow: hidden;
-
-    padding: 12px 30px;
-    /* transition: all 0.3s ease; */
-
+  overflow: hidden;
+  margin-right: 45px;
+  padding: 12px 30px;
+  margin-bottom: 10px;
+  /* transition: all 0.3s ease; */
 }
 .btnsubmitinfo:hover {
   /* transform: scale(0.9); */
@@ -377,26 +377,25 @@ option {
   }
 }
 
-
 /* For larger screens (default behavior) */
 
 /* Media Query for Tablet Screens (max-width: 768px) */
 @media (max-width: 768px) {
   .formwrapper {
-    grid-template-columns: 1fr;  /* Stack inputs vertically */
+    grid-template-columns: 1fr; /* Stack inputs vertically */
     gap: 20px;
   }
 
   .selectinfo {
-    width: 100%;  /* Full width of the container */
-    max-width: none;  /* Avoid restricting the width */
+    width: 100%; /* Full width of the container */
+    max-width: none; /* Avoid restricting the width */
   }
 
   .btnsubmitinfo {
-    width: 100%;  /* Full width on smaller screens */
+    width: 100%; /* Full width on smaller screens */
   }
 
-  .no_1{
+  .no_1 {
     display: none;
   }
 }
@@ -409,22 +408,21 @@ option {
     height: 50px;
     padding: 10px 15px;
   }
-  
+
   .personal-data-form {
     gap: 0px;
   }
 
   .btnsubmitinfo {
-    width: 100%;  /* Full width of the screen */
-    padding: 12px 16px;  /* Slightly reduced padding for small screens */
+    width: 100%; /* Full width of the screen */
+    padding: 12px 16px; /* Slightly reduced padding for small screens */
   }
 
-  
   .pinfo {
     font-size: 24px;
   }
 
-  .personal-data-form{
+  .personal-data-form {
     /* background-color: red; */
     /* gap: 190px; */
   }
@@ -438,11 +436,11 @@ option {
   }
 
   .btninformationsentence {
-    width: 100%;  /* Adjust the button container to be full width */
+    width: 100%; /* Adjust the button container to be full width */
   }
 
   .pinfo {
-    font-size: 1.2rem;  /* Adjust title size for extra small screens */
+    font-size: 1.2rem; /* Adjust title size for extra small screens */
   }
 }
 
@@ -450,10 +448,10 @@ option {
 @media (max-width: 320px) {
   .selectinfo {
     width: 100%;
-    max-width: 296px;  /* Maximum width for very small screens */
+    max-width: 296px; /* Maximum width for very small screens */
   }
 
   .btninformationsentence {
-    width: 100%;  /* Ensure the button takes full width */
+    width: 100%; /* Ensure the button takes full width */
   }
 }

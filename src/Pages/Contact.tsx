@@ -85,7 +85,8 @@ const Contact = () => {
   )}`;
 
   return (
-    <>
+    <div className="body-container">
+    <div>
       <Navigationbar />
       <img src={banner} alt="" className="banner" />
       <div className="contact-section">
@@ -203,7 +204,9 @@ const Contact = () => {
       <Footer />
       {/* ToastContainer to display the notifications */}
       <ToastContainer />
-    </>
+    </div>
+
+    </div>
   );
 };
 

@@ -24,7 +24,7 @@ const Productcard = () => {
               with good marketing strategies.
             </p>
             <Link
-              to="productdesign"
+              to="/productdesign"
               state={{ from: location.pathname }}
               className="links"
             >

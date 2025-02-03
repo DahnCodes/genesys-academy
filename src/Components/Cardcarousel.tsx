@@ -60,25 +60,70 @@ const TestimonialCarousel: React.FC = () => {
     speed: 500, // Transition speed
     slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1, // Scroll one slide at a time
-    prevArrow: <PrevArrow />, // Custom previous button
-    nextArrow: <NextArrow />, // Custom next button
+    prevArrow: <PrevArrow />, 
+    nextArrow: <NextArrow />, 
     centerMode: true,
-    centerPadding: "10",
-  
+    centerPadding: "250px",
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768, // For screens smaller than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for smaller screens
+          centerPadding: "100px", // Remove center padding
+        },
+      },
+      {
+        breakpoint: 425, // For screens smaller than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for smaller screens
+          centerPadding: "100px", // Remove center padding
+        },
+      },
+      {
+        breakpoint: 375, // For screens smaller than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for smaller screens
+          centerPadding: "0", // Remove center padding
+        },
+      },
+      {
+        breakpoint: 320, // For screens smaller than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for smaller screens
+          centerPadding: "0", // Remove center padding
+        },
+      },
+    ]
   };
 
   return (
-    <Slider {...settings}>
-      {testimonials.map((testimonial) => (
-        <div key={testimonial._id}>
-          <div className="testimony-container">
-            <img src={quote} alt="Quote" className="quote" />
-            <div className="testimonials">
-              <img src={testimonial.imageUrl} alt="" className="past-interns" />
-              <div className="testimonial-text">
-                <h3>{testimonial.name}</h3>
-                <p className="role">{testimonial.designation}</p>
-                <p className="description">{testimonial.comment}</p>
+    <div className="slider-container">
+      <Slider {...settings}>
+        {testimonials.map((testimonial) => (
+          <div key={testimonial._id}>
+            <div className="testimony-container">
+              <img src={quote} alt="Quote" className="quote" />
+              <div className="testimonials">
+                <img
+                  src={testimonial.imageUrl}
+                  alt=""
+                  className="past-interns"
+                />
+                <div className="testimonial-text">
+                  <h3>{testimonial.name}</h3>
+                  <p className="role">{testimonial.designation}</p>
+                  <p className="description">{testimonial.comment}</p>
+                </div>
               </div>
               {/* <img src={testimonial.imageUrl} alt="" className="past-intern"/> */}
               {/* <h3>{testimonial.name}</h3>
@@ -86,9 +131,9 @@ const TestimonialCarousel: React.FC = () => {
               <p className="description">{testimonial.comment}</p> */}
             </div>
           </div>
-        </div>
-      ))}
-    </Slider>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

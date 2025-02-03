@@ -8,6 +8,10 @@
 body {
   background-color: #fafafa;
 }
+.body-container {
+  max-width: 1440px;
+  margin: auto;
+}
 .hero-container {
   display: flex;
   padding: 30px 100px;
@@ -63,7 +67,7 @@ body {
 }
 .siding {
   position: relative;
-  bottom: 95px;
+  bottom: 120px;
   right: 974px;
 }
 .btns {
@@ -109,13 +113,17 @@ body {
 
 .whoweare {
   background-color: #f4f5ff;
-  margin-top: -6%;
+  margin-top: 170px;
+  position: relative;
+  /* display: flex; */
   /* padding: 30px 100px; */
+  overflow: visible;
 }
 .gen {
-  position: relative;
-  top: 236px;
-  left: 1190px;
+  position: absolute;
+  top: 145px;
+  /* left: 0; */
+  right: 0px;
   width: 150px;
   /* gap: 0px; */
   opacity: 90%;
@@ -142,7 +150,7 @@ body {
 }
 
 .pathways {
-  margin-top: 8%;
+  margin-top: 80px;
   padding: 30px 0px;
 }
 .pathway-header {
@@ -164,7 +172,7 @@ body {
   text-align: center;
   line-height: 24px;
 }
-.pathway-cards {
+/* .pathway-cards {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 15px;
@@ -182,9 +190,30 @@ body {
   grid-template-columns: auto auto;
   gap: 15px;
   margin-top: 3%;
+} */
+.pathway-card-container {
+  margin-top: 30px;
+}
+.pathway-cards {
+  display: flex; /* Use flexbox for alignment consistency */
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  justify-content: center; /* Center the items horizontally */
+  gap: 15px; /* Space between cards */
+  margin-top: 2%; /* Maintain spacing from other sections */
+}
+
+.pathway-cards .link {
+  text-align: left; /* Center-align content inside cards */
+}
+.illustration {
+  position: relative;
+  bottom: 50px;
+}
+.illustrations {
+  width: 120px;
 }
 .stand-out {
-  margin-top: -5%;
+  margin-top: -50px;
 }
 .stand-out h1 {
   text-align: center;
@@ -265,7 +294,7 @@ body {
 .meet-interns {
   background-color: rgba(245, 119, 47, 0.02);
   padding: 30px 100px;
-  margin-top: 10%;
+  margin-top: 6%;
 }
 .meet-interns h1 {
   text-align: center;
@@ -301,13 +330,30 @@ body {
   right: 35px;
   /* top: 50px; */
   bottom: -53px;
+  z-index: -1;
 }
 .wifi {
   width: 75.85px;
   position: relative;
-  left: 365px;
-  top: 192px;
-  z-index: 1;
+  left: 367px;
+  top: 200px;
+  z-index: -1;
+  /* overflow: visible; */
+}
+.curve2 {
+  width: 82.16px;
+  position: relative;
+  left: 445px;
+  /* top: 50px; */
+  bottom: -55px;
+  z-index: -1;
+}
+.wifi2 {
+  width: 75.85px;
+  position: relative;
+  right: 120px;
+  top: 212px;
+  z-index: -1;
   /* overflow: visible; */
 }
 .core {
@@ -326,8 +372,51 @@ body {
   font-weight: 400;
   line-height: 24px;
 }
+.pay-small {
+  padding: 30px 100px;
+  margin-top: 100px;
+}
+.pay-container {
+  display: flex;
+  /* gap: 20px; */
+  align-items: center;
+  justify-content: center;
+}
+.pay-woman {
+  width: 600px;
+}
+.pay-texts {
+  width: 533px;
+  /* margin-top: 30px; */
+}
+.pay-texts h3 {
+  color: #f5772f;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.pay-texts h1 {
+  color: #273043;
+}
+.pay-texts p {
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #596275;
+}
+.btn13 {
+  width: 142px;
+  height: 52px;
+  padding: 15px 30px 15px 30px;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1.5px solid #f5772f;
+  background-color: white;
+  color: #f5772f;
+  margin-top: 15px;
+  cursor: pointer;
+}
 .testimonies {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 .testimonies h1 {
   text-align: center;
@@ -344,7 +433,7 @@ body {
 }
 .cohort {
   padding: 30px 100px;
-  margin-top: 10%;
+  margin-top: 4%;
 }
 .cohort h1 {
   text-align: center;
@@ -386,7 +475,7 @@ body {
 }
 .stay-connected {
   margin: auto;
-  margin-top: 8%;
+  margin-top: 4%;
   width: 50%;
   padding: 10px;
   text-align: center;
@@ -397,7 +486,7 @@ body {
   color: #273043;
 }
 .stay-connected p {
-  margin-top: 5%;
+  margin-top: 2%;
   font-size: 16px;
   color: #596275;
   font-weight: 400;
@@ -436,6 +525,18 @@ body {
     width: 415px;
     /* overflow: hidden; */
   }
+  .weare {
+    padding: 30px 50px;
+  }
+  .gen {
+    position: relative;
+    top: 186px;
+    left: 940px;
+    width: 80px;
+  }
+  .pathways {
+    padding: 30px 50px;
+  }
   .pathway-cards {
     overflow: visible;
     padding: 30px 20px;
@@ -449,19 +550,31 @@ body {
     grid-template-columns: auto auto;
     overflow: visible;
   }
+  .stand-out {
+    padding: 30px 50px;
+  }
+
+  .point-lists {
+    height: 380px;
+    overflow: hidden;
+  }
   .point-container {
     display: flex;
-    padding: 30px 70px;
+    padding: 30px;
     align-items: center;
   }
   .second-point {
     display: flex;
-    padding: 30px 70px;
+    padding: 30px;
     align-items: center;
+  }
+
+  .meet-interns {
+    padding: 30px 50px;
   }
   .first-team {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
     margin-top: 8%;
     /* justify-content: center;    */
@@ -470,7 +583,7 @@ body {
   .second-team {
     display: flex;
     flex-direction: row-reverse;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
     margin-top: 8%;
     overflow: visible;
@@ -483,6 +596,21 @@ body {
     border-radius: 20px;
     padding: 35px;
     overflow: visible;
+  }
+  .curve {
+    width: 82.16px;
+    position: relative;
+    right: 30px;
+    /* top: 50px; */
+    bottom: -53px;
+  }
+  .wifi {
+    width: 75.85px;
+    position: relative;
+    left: 265px;
+    top: 192px;
+    z-index: 1;
+    /* overflow: visible; */
   }
 }
 @media only screen and (max-width: 768px) {
@@ -537,6 +665,22 @@ body {
     flex-direction: column;
     gap: 10px;
   }
+
+  .pay-container {
+    flex-direction: column-reverse;
+    overflow: visible;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+  }
+
+  .pay-texts {
+    max-width: 350px;
+    /* text-align: center; */
+    /* margin: auto; */
+  }
+
   .cohort-wrap {
     flex-direction: column;
     align-items: center;
@@ -560,6 +704,22 @@ body {
     border-radius: 0px 10px 10px 0px;
     cursor: pointer;
   }
+  .curve2 {
+    width: 82.16px;
+    position: relative;
+    left: 845px;
+    /* top: 50px; */
+    bottom: -15px;
+    z-index: -1;
+  }
+  .wifi2 {
+    width: 75.85px;
+    position: relative;
+    right: 120px;
+    top: 212px;
+    z-index: -1;
+    /* overflow: visible; */
+  }
 }
 @media only screen and (max-width: 475px) {
   .hero-container {
@@ -567,6 +727,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* padding: 30px 50px; */
   }
 
   .hero-writeup h1 {
@@ -660,6 +821,7 @@ body {
   }
   .stand-out {
     margin-top: 20%;
+    padding: 30px 10px;
   }
   .stand-out h1 {
     font-size: 28px;
@@ -720,16 +882,35 @@ body {
     position: relative;
     left: 210px;
     top: 180px;
-    /* z-index: 1; */
+    z-index: 1;
     /* overflow: visible; */
   }
+
   .curve {
     width: 52.4px;
     height: 52.22px;
-    left: -20px;
-    top: 35px;
+    left: -120px;
+    bottom: 135px;
   }
-
+  .curve2 {
+    width: 82.16px;
+    position: relative;
+    left: 845px;
+    /* top: 50px; */
+    bottom: -15px;
+    z-index: -1;
+  }
+  .wifi2 {
+    width: 75.85px;
+    position: relative;
+    right: 120px;
+    top: 212px;
+    z-index: -1;
+    /* overflow: visible; */
+  }
+.pay-texts p{
+  font-size: 16px;
+}
   .core {
     background-color: #ffffff;
     width: 300px;
@@ -819,6 +1000,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: visible;
+    /* padding: 30px 100px; */
   }
 
   .hero-writeup h1 {
@@ -830,6 +1013,7 @@ body {
     line-height: 20px;
     font-size: 14px;
   }
+
   .sider {
     position: relative;
     bottom: 470px;
@@ -1011,6 +1195,24 @@ body {
     margin-top: 15%;
   }
 
+  .pay-container{
+    flex-direction: column-reverse;
+    /* overflow: visible; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+  }
+.pay-woman{
+  margin-left: 180px;
+  width: 500px;
+}
+  .pay-texts {
+    max-width: 350px;
+    /* text-align: center; */
+    /* margin: auto; */
+  }
+
   .meet-interns {
     margin-top: 10%;
     background-color: #f4f5ff;
@@ -1073,6 +1275,178 @@ body {
   }
 }
 
+@media screen and (max-width: 385px) {
+  .hero-container {
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-writeup h1 {
+    text-align: center;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .hero-writeup p {
+    text-align: center;
+    font-size: 14px;
+  }
+  .sider {
+    position: relative;
+    bottom: 440px;
+    left: 2px;
+    width: 66px;
+  }
+  .sides {
+    position: relative;
+    bottom: 470px;
+    left: 240px;
+    width: 66px;
+    z-index: -1;
+  }
+  .siding {
+    position: relative;
+    bottom: 95px;
+    right: 974px;
+  }
+  .btns {
+    flex-direction: column;
+  }
+  .btn2 {
+    width: 350px;
+    height: 50px;
+  }
+  .btn3 {
+    width: 350px;
+    height: 50px;
+  }
+  .heroimg {
+    width: 350px;
+  }
+  .gen {
+    position: relative;
+    top: 356px;
+    left: 293px;
+    width: 80px;
+  }
+
+  .weare-text h1 {
+    font-size: 28px;
+  }
+  .weare-text p {
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 350px;
+  }
+  .man1 {
+    width: 238px;
+    height: 237.3px;
+  }
+  .pathways {
+    margin-top: 20%;
+    /* overflow-x: visible; */
+  }
+  .pathway-header h1 {
+    font-size: 24px;
+  }
+  .pathway-header p {
+    font-size: 14px;
+  }
+
+  .illustration {
+    display: none;
+  }
+  .stand-out {
+    margin-top: 30%;
+  }
+  .stand-out h1 {
+    font-size: 28px;
+  }
+  .group1 {
+    width: 350px;
+  }
+  .group2 {
+    width: 350px;
+  }
+  .point-container {
+    padding: 30px 9px;
+  }
+
+  .point-p {
+    margin-top: 5%;
+  }
+  .point-p h2 {
+    font-size: 20px; /* Adjust the font size for the heading */
+    font-weight: 400;
+    /* Remove default margin */
+  }
+
+  .point-p p {
+    font-size: 14px;
+  }
+  .second-point {
+    padding: 30px 10px;
+    margin-top: -8%;
+  }
+  .team1 {
+    width: 350px;
+  }
+  .core {
+    width: 300px;
+    /* margin-top: -10%; */
+  }
+  .core p {
+    font-size: 14px;
+  }
+  .wifi {
+    width: 45.85px;
+    position: relative;
+    left: 210px;
+    top: 180px;
+    /* z-index: 1; */
+    /* overflow: visible; */
+  }
+  .first-team {
+    display: flex;
+    gap: -50px;
+    align-items: center;
+    margin-top: 8%;
+    overflow: visible;
+  }
+  .second-team {
+    gap: 0px;
+    margin-top: 25%;
+  }
+
+  .paul {
+    width: 350px;
+  }
+  .cohort {
+    padding: 0px 10px;
+    margin-top: 20%;
+  }
+
+  .cohort-text h2 {
+    font-size: 24px;
+  }
+  .cohort-text p {
+    font-size: 14px;
+  }
+  .stay-connected {
+    margin: auto;
+    margin-top: 8%;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20%;
+  }
+  .stay-connected h1 {
+    font-size: 24px;
+  }
+  .stay-connected p {
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 375px) {
   .hero-container {
     margin-top: 10%;
@@ -1141,7 +1515,6 @@ body {
     height: 237.3px;
   }
   .pathways {
-    
     margin-top: 20%;
     /* overflow-x: visible; */
   }
@@ -1367,6 +1740,24 @@ body {
   .team1 {
     width: 300px;
   }
+  .pay-container{
+    flex-direction: column-reverse;
+    /* overflow: visible; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+  }
+.pay-woman{
+  margin-left: 160px;
+  width: 400px;
+}
+  .pay-texts {
+    max-width: 300px;
+    /* text-align: center; */
+    /* margin: auto; */
+  }
+
   .core {
     width: 300px;
     /* margin-top: -10%; */
