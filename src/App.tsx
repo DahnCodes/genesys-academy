@@ -11,6 +11,7 @@ import Contact from "./Pages/Contact";
 import Faq from "./Pages/Faq";
 import Personaldata from "./Components/Personaldata";
 import PaySmall from "./Components/PaySmall";
+import Paysmallsmall from "./Pages/Paysmallsmall";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
     <Route path="/pathways" element={<LandingPage/>}/>
     <Route path="/personaldata" element={<Personaldata />}/>    
     <Route path="/pay-small" element={<PaySmall />}/>    
+    <Route path="/pay-smallsmall" element={<Paysmallsmall />}/>    
     </Routes>
     </BrowserRouter>
     </>

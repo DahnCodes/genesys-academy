@@ -5,6 +5,8 @@ const Datacard = () => {
   const location = useLocation();
   return (
     <>
+    <div className="card-container">
+
       <div className="card">
         <img src={data} alt="product" className="product" />
         <div className="content">
@@ -22,6 +24,7 @@ const Datacard = () => {
           </Link>
         </div>
       </div>
+    </div>
     </>
   );
 };

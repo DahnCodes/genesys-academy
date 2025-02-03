@@ -116,6 +116,20 @@
   border: 2px solid #f5772f;
   border-radius: 10px;
 }
+@media screen and (max-width: 1024px){
+  .contact-section {
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    gap: 40px;
+  }
+  .fname{
+    width: 100%;
+  }
+  .message{
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   .banner {
     width: 100%;
@@ -219,6 +233,59 @@
   }
   .details-section {
     padding: 10px;
+  }
+}
+@media screen and (max-width: 385px) {
+  .banner {
+    width: 100%;
+    margin-top: 15%;
+  }
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .contact-us {
+    display: block;
+    max-width: 330px;
+  }
+  .contact-us h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .contact-us p {
+    font-size: 14px;
+    /* font-weight: 700; */
+  }
+  .fname {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid #b1b1b1;
+    padding: 25px 20px;
+  }
+  .message {
+    width: 100%;
+    height: 166px;
+    border-radius: 10px;
+    border: 1px solid #b1b1b1;
+    padding: 25px 20px;
+  }
+  .btn7 {
+    width: 100%;
+  }
+  .locations {
+    margin-top: 15%;
+  }
+  .detail-text h3 {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .detail-text p {
+    font-weight: 300;
+    line-height: 20px;
+    color: #596275;
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 375px) {
