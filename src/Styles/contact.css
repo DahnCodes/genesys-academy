@@ -166,7 +166,7 @@
     width: 380px;
   }
   .locations {
-    margin-top: 15%;
+    margin-top: 10%;
   }
   .detail-text h3 {
     font-weight: 400;
@@ -220,7 +220,13 @@
     width: 380px;
   }
   .locations {
-    margin-top: 15%;
+    margin-top: -11%;
+  }
+  .location-container {
+    display: flex;
+    /* width: 432px; */
+    gap: 30px;
+    margin-top: 9%;
   }
   .detail-text h3 {
     font-weight: 400;
@@ -328,7 +334,7 @@
     width: 330px;
   }
   .locations {
-    margin-top: 15%;
+    margin-top: -11%;
   }
   .detail-text h3 {
     font-weight: 400;
@@ -381,7 +387,7 @@
     width: 280px;
   }
   .locations {
-    margin-top: 15%;
+    margin-top: -11%;
   }
   .detail-text h3 {
     font-weight: 400;

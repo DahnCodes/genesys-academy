@@ -8,6 +8,11 @@
   height: 54px;
   cursor: pointer;
 }
+.back:hover {
+  color: #fff;
+  background-color: #ff9e66;
+  transform: scale(0.9);
+}
 .left {
   color: #f5772f;
   font-size: 24px;
@@ -28,6 +33,7 @@
   font-size: 16px;
   font-weight: 400;
   color: #596275;
+  line-height: 25px;
 }
 
 .learn {
@@ -41,8 +47,13 @@
   margin-top: 3%;
  
 }
+.list{
+  margin-top: 2%;
+}
 .list li{
   overflow: hidden;
+  line-height: 25px;
+
 }
 .learn-point ul li {
   position: relative;
@@ -186,6 +197,7 @@ ul.lists li::before {
   }
   .learn-point li {
     margin-top: 7%;
+    line-height: 25px;
   }
  
   .require {

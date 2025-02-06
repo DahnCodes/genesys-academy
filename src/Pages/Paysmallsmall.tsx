@@ -6,7 +6,7 @@ import illustration from "../assets/illustration.png";
 import shapes from "../assets/shapes 1.png";
 import steps2 from "../assets/bigsteps.png";
 import stepgirl from "../assets/Stepper-girl.png";
-import stepping from "../assets/stepperr.png";
+import stepping from "../assets/stepper2.png";
 import Footer from "../Components/Footer";
 import Whitenav from "../Components/Whitenav";
 
@@ -46,7 +46,7 @@ const Paysmallsmall = () => {
               <div className="first-pointer">
                 <h4>1.</h4>
                 <h3>Total Program Fee</h3>
-                <p>550,000</p>
+                <p>The total cost for the program is 550,000</p>
               </div>
               <div className="first-pointer">
                 <h4>2.</h4>
@@ -79,11 +79,10 @@ const Paysmallsmall = () => {
               </div>
               <div className="fourth-pointer">
                 <h4>5.</h4>
-                <h3>Cohort Selection</h3>
+                <h3>Flexible Payment</h3>
                 <p>
-                  At the time of registration, you will choose the cohort you
-                  aim to join. We offer two cohorts each year, so you can plan
-                  your payments accordingly.
+                  Start paying in bits towards your selected cohort as soon as
+                  you register.
                 </p>
               </div>
             </div>
@@ -91,25 +90,24 @@ const Paysmallsmall = () => {
         </section>
 
         <section className="benefits">
-          <h1>Benefits of “Pay small small”</h1>
-
           <div className="card-benefit">
             <img src={shapes} alt="" className="shapes" />
             <div className="benefit-text">
+              <h1>Benefits of “Pay small small”</h1>
               <p>
-                <span>Planning:</span> Choose the cohort that fits your schedule
+                <span>Planning:</span> &nbsp;&nbsp;Choose the cohort that fits your schedule
                 and financial planning
               </p>
               <p>
-                <span>Flexibility:</span> Pay at your own pace within 1 year
+                <span>Flexibility:</span> &nbsp;&nbsp;Pay at your own pace within 1 year
                 period
               </p>
               <p>
-                <span>Affordability:</span> Spread the cost over a year to ease
+                <span>Affordability:</span> &nbsp;&nbsp;Spread the cost over a year to ease
                 financial pressure
               </p>
               <p>
-                <span>Accountability:</span> Enhances clarity in the payment
+                <span>Accountability:</span> &nbsp;&nbsp;Enhances clarity in the payment
                 structure from both parties, keeping clean records
               </p>
             </div>
@@ -117,12 +115,11 @@ const Paysmallsmall = () => {
         </section>
 
         <section className="get-started">
-            <div className="steps">
-              <img src={steps2} alt="" className="stepsz" />
-            </div>
+          <div className="steps">
+            <img src={steps2} alt="" className="stepsz" />
+          </div>
           <div className="get-title">
             <h1>Steps To Get Started</h1>
-
           </div>
 
           <div className="stepper-container">

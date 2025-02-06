@@ -117,11 +117,12 @@ body {
   position: relative;
   /* display: flex; */
   /* padding: 30px 100px; */
+
   overflow: visible;
 }
 .gen {
   position: absolute;
-  top: 145px;
+  top: 125px;
   /* left: 0; */
   right: 0px;
   width: 150px;
@@ -131,9 +132,13 @@ body {
 .weare {
   display: flex;
   align-items: center;
-  margin-top: -20%;
+  /* justify-content: center; */
+  margin-top: -23%;
   gap: 50px;
   padding: 30px 100px;
+}
+.weare-text {
+  margin-bottom: -20px;
 }
 .weare-text h1 {
   font-size: 36px;
@@ -245,10 +250,13 @@ body {
 }
 .point-p {
   margin-top: 1%;
+  line-height: 40px;
+
 }
 .point-p h2 {
   font-size: 28px; /* Adjust the font size for the heading */
   font-weight: 400; /* Remove default margin */
+  color: #273043;
 }
 
 .point-p p {
@@ -385,6 +393,7 @@ body {
 .pay-woman {
   width: 600px;
 }
+
 .pay-texts {
   width: 533px;
   /* margin-top: 30px; */
@@ -392,16 +401,17 @@ body {
 .pay-texts h3 {
   color: #f5772f;
   font-weight: 400;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
 }
 .pay-texts h1 {
   color: #273043;
 }
 .pay-texts p {
-  margin-top: 15px;
+  margin-top: 7px;
   font-weight: 400;
   font-size: 16px;
   color: #596275;
+  line-height: 25px;
 }
 .btn13 {
   width: 142px;
@@ -414,6 +424,11 @@ body {
   color: #f5772f;
   margin-top: 15px;
   cursor: pointer;
+}
+.btn13:hover {
+  color: #fff;
+  background-color: #ff9e66;
+  /* transform: scale(0.9); */
 }
 .testimonies {
   margin-top: 2%;
@@ -639,11 +654,16 @@ body {
   .weare-text {
     text-align: center;
   }
+  .pathway-card-container {
+    overflow: visible;
+  }
   .pathway-cards {
     display: grid;
     grid-template-columns: auto;
     align-items: center;
     justify-content: center;
+    margin-bottom: -8%;
+    overflow: visible;
   }
 
   .second-cards {
@@ -908,9 +928,9 @@ body {
     z-index: -1;
     /* overflow: visible; */
   }
-.pay-texts p{
-  font-size: 16px;
-}
+  .pay-texts p {
+    font-size: 16px;
+  }
   .core {
     background-color: #ffffff;
     width: 300px;
@@ -1046,12 +1066,12 @@ body {
   }
   .gen {
     position: relative;
-    top: 346px;
+    top: 298px;
     left: 340px;
     width: 80px;
   }
   .whoweare {
-    margin-top: -25%;
+    margin-top: -30%;
   }
   .weare-text {
     margin-top: -15%;
@@ -1074,13 +1094,24 @@ body {
     height: 237.3px;
     margin-left: -10%;
   }
-  .pathway-cards {
+  .pathway-card-container {
     overflow: visible;
   }
+  .pathway-cards {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -11%;
+    margin-top: -10%;
+    overflow: visible;
+  }
+
   .pathways {
-    margin-top: 20%;
+    margin-top: 15%;
     padding: 30px 0px;
   }
+
   .pathway-header h1 {
     font-size: 24px;
   }
@@ -1096,7 +1127,7 @@ body {
     display: none;
   }
   .stand-out {
-    margin-top: 20%;
+    margin-top: 5%;
   }
   .stand-out h1 {
     font-size: 28px;
@@ -1111,9 +1142,11 @@ body {
     display: flex;
     padding: 30px 10px;
     text-align: left;
+    overflow: visible;
   }
   .point-lists {
     margin-top: 3%;
+    overflow: visible;
   }
   .point1 {
     align-items: center;
@@ -1127,6 +1160,7 @@ body {
   }
   .point-p {
     margin-top: 5%;
+    line-height: 35px;
   }
   .point-p h2 {
     font-size: 20px; /* Adjust the font size for the heading */
@@ -1136,12 +1170,13 @@ body {
 
   .point-p p {
     font-size: 14px;
+    margin-top: 5px;
   }
   .second-point {
     display: flex;
     /* align-items: center; */
     padding: 30px 10px;
-    margin-top: -8%;
+    margin-top: -2%;
   }
   .point2 {
     /* align-items: center; */
@@ -1149,22 +1184,47 @@ body {
     /* margin-left: 3%; */
     margin: 0 2%;
   }
+
   .team1 {
     width: 380px;
   }
   .wifi {
     width: 45.85px;
-    position: relative;
-    left: 210px;
-    top: 180px;
-    /* z-index: 1; */
-    /* overflow: visible; */
+    position: absolute;
+    visibility: visible !important;
+    left: 270px;
+    top: 135px;
+    z-index: 1;
+    overflow: visible;
   }
   .curve {
+    position: absolute;
     width: 52.4px;
     height: 52.22px;
     left: -20px;
-    top: 35px;
+    top: -20px;
+    visibility: visible !important;
+    z-index: 1;
+  }
+  .wifi2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    right: 275px;
+    top: 140px;
+    z-index: 1;
+    width: 45.85px;
+  }
+  .curve2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    left: 270px;
+    top: -12px;
+    z-index: 1;
+    width: 45.85px;
   }
 
   .core {
@@ -1176,6 +1236,8 @@ body {
     padding: 35px;
     /* text-align: center; */
     overflow: visible;
+    position: relative;
+    z-index: 1;
   }
   .core p {
     font-size: 14px;
@@ -1186,7 +1248,9 @@ body {
     margin-top: 8%;
   }
   .icons {
-    margin-top: -7%;
+    margin-top: 10%;
+    position: relative;
+    overflow: visible;
     /* padding: 0 -150px; */
   }
 
@@ -1194,8 +1258,10 @@ body {
     gap: 10px;
     margin-top: 15%;
   }
-
-  .pay-container{
+  .pay-small {
+    margin-top: 10%;
+  }
+  .pay-container {
     flex-direction: column-reverse;
     /* overflow: visible; */
     text-align: center;
@@ -1203,16 +1269,27 @@ body {
     justify-content: center;
     /* width: 100%; */
   }
-.pay-woman{
-  margin-left: 180px;
-  width: 500px;
-}
+  .pay-woman {
+    margin-left: 180px;
+    width: 500px;
+  }
   .pay-texts {
     max-width: 350px;
-    /* text-align: center; */
-    /* margin: auto; */
   }
-
+  .pay-texts h1 {
+    word-wrap: break-word;
+    max-width: 256px;
+    margin: auto;
+  }
+  .pay-texts h3 {
+    margin-bottom: 5px;
+  }
+  .pay-texts p {
+    text-align: justify;
+  };
+  .pay-woman {
+    margin-top: 20px;
+  }
   .meet-interns {
     margin-top: 10%;
     background-color: #f4f5ff;
@@ -1237,7 +1314,7 @@ body {
   }
   .cohort {
     padding: 0 10px;
-    margin-top: 20%;
+    margin-top: 15%;
   }
   .cohort h1 {
     font-size: 24px;
@@ -1400,13 +1477,43 @@ body {
   }
   .wifi {
     width: 45.85px;
-    position: relative;
-    left: 210px;
-    top: 180px;
-    /* z-index: 1; */
-    /* overflow: visible; */
+    position: absolute;
+    visibility: visible !important;
+    left: 270px;
+    top: 135px;
+    z-index: 1;
+    overflow: visible;
   }
-  .first-team {
+  .curve {
+    position: absolute;
+    width: 52.4px;
+    height: 52.22px;
+    left: -20px;
+    top: -20px;
+    visibility: visible !important;
+    z-index: 1;
+  }
+  .wifi2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    right: 275px;
+    top: 140px;
+    z-index: 1;
+    width: 45.85px;
+  }
+  .curve2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    left: 270px;
+    top: -12px;
+    z-index: 1;
+    width: 45.85px;
+  }
+ .first-team {
     display: flex;
     gap: -50px;
     align-items: center;
@@ -1497,13 +1604,16 @@ body {
   }
   .gen {
     position: relative;
-    top: 356px;
+    top: 276px;
     left: 293px;
     width: 80px;
   }
-
+  .weare-text {
+    overflow: visible;
+  }
   .weare-text h1 {
     font-size: 28px;
+    margin-top: -30px;
   }
   .weare-text p {
     font-size: 14px;
@@ -1513,6 +1623,7 @@ body {
   .man1 {
     width: 238px;
     height: 237.3px;
+    margin-top: -10px;
   }
   .pathways {
     margin-top: 20%;
@@ -1529,7 +1640,7 @@ body {
     display: none;
   }
   .stand-out {
-    margin-top: 30%;
+    margin-top: 8%;
   }
   .stand-out h1 {
     font-size: 28px;
@@ -1555,6 +1666,7 @@ body {
 
   .point-p p {
     font-size: 14px;
+    line-height: 20px;
   }
   .second-point {
     padding: 30px 10px;
@@ -1572,11 +1684,41 @@ body {
   }
   .wifi {
     width: 45.85px;
-    position: relative;
-    left: 210px;
-    top: 180px;
-    /* z-index: 1; */
-    /* overflow: visible; */
+    position: absolute;
+    visibility: visible !important;
+    left: 270px;
+    top: 135px;
+    z-index: 1;
+    overflow: visible;
+  }
+  .curve {
+    position: absolute;
+    width: 52.4px;
+    height: 52.22px;
+    left: -20px;
+    top: -20px;
+    visibility: visible !important;
+    z-index: 1;
+  }
+  .wifi2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    right: 275px;
+    top: 140px;
+    z-index: 1;
+    width: 45.85px;
+  }
+  .curve2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    left: 270px;
+    top: -12px;
+    z-index: 1;
+    width: 45.85px;
   }
   .first-team {
     display: flex;
@@ -1603,6 +1745,7 @@ body {
   }
   .cohort-text p {
     font-size: 14px;
+    line-height: 20px;
   }
   .stay-connected {
     margin: auto;
@@ -1669,7 +1812,7 @@ body {
   }
   .gen {
     position: relative;
-    top: 396px;
+    top: 316px;
     left: 263px;
     width: 60px;
   }
@@ -1733,6 +1876,8 @@ body {
   }
   .second-point {
     padding: 30px 10px;
+    overflow: visible;
+    margin-top: 4%;
   }
   .meet-interns h1 {
     font-size: 24px;
@@ -1740,7 +1885,7 @@ body {
   .team1 {
     width: 300px;
   }
-  .pay-container{
+  .pay-container {
     flex-direction: column-reverse;
     /* overflow: visible; */
     text-align: center;
@@ -1748,10 +1893,10 @@ body {
     justify-content: center;
     /* width: 100%; */
   }
-.pay-woman{
-  margin-left: 160px;
-  width: 400px;
-}
+  .pay-woman {
+    margin-left: 160px;
+    width: 400px;
+  }
   .pay-texts {
     max-width: 300px;
     /* text-align: center; */
