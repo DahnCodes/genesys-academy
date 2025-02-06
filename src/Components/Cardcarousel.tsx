@@ -26,6 +26,9 @@ const TestimonialCarousel: React.FC = () => {
         const response = await fetch(
           "https://genesys-web-app-revamp.onrender.com/api/v1/review/"
         ); // Replace with your endpoint
+        // const response = await fetch(
+        //   "https://genesys-web-app-revamp.onrender.com/api/v1/review/"
+        // ); // Replace with your endpoint
         const data = await response.json();
         if (data.success) {
           setTestimonials(data.data); // Set the response data to state
@@ -122,6 +125,10 @@ const TestimonialCarousel: React.FC = () => {
                   <p className="description">{testimonial.comment}</p>
                 </div>
               </div>
+              {/* <img src={testimonial.imageUrl} alt="" className="past-intern"/> */}
+              {/* <h3>{testimonial.name}</h3>
+              <p className="role">{testimonial.designation}</p>
+              <p className="description">{testimonial.comment}</p> */}
             </div>
           </div>
         ))}

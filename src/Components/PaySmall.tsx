@@ -1,28 +1,58 @@
 import "../Styles/paysmall.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Backbtn from "../Components/Backbtn";
-
-interface PaymentPlan {
-  month: string;
-  amount: string;
-  status: string;
-  number: string;
-}
-
-const paymentData: PaymentPlan[] = [
-  { month: "First Month", amount: "₦85,000", status: "Unpaid", number: "1" },
-  { month: "Second Month", amount: "₦85,000", status: "Unpaid", number: "2" },
-  { month: "Third Month", amount: "₦85,000", status: "Unpaid", number: "3" },
-  { month: "Fourth Month", amount: "₦85,000", status: "Unpaid", number: "4" },
-  { month: "Fifth Month", amount: "₦110,000", status: "Unpaid", number: "5" },
-  { month: "Sixth Month", amount: "₦100,000", status: "Unpaid", number: "6" },
-];
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { PaysmallInvoice } from "../types/sharedtypes";
+// Import react-toastify
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import styles
 
 const PaySmall: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const navigate = useNavigate(); // Initialize navigate function
+  const { email } = useParams();
+  const [invoiceDetails, setInvoiceDetails] = useState<PaysmallInvoice[]>([]);
+  const [invoiceId, setInvoiceId] = useState("");
 
   const handleCardClick = (index: number) => {
     setSelectedIndex(index); // Set the selected card index
+    setInvoiceId(invoiceDetails[index]._id); // Set the selected invoice ID
+  };
+
+  const fetchInvoiceByEmail = async (email: string) => {
+    if (!email) return;
+    try {
+      const response = await axios.get(
+        `https://genesys-web-app-revamp.onrender.com/api/v1/invoice/`,
+        {
+          params: { email },
+        }
+      );
+      setInvoiceDetails(response.data.data);
+    } catch (error) {
+      console.error("Error fetching invoice:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (email) {
+      fetchInvoiceByEmail(email);
+    }
+  }, [email]);
+
+  useEffect(() => {
+    console.log("Selected Invoice ID:", invoiceId);
+  }, [invoiceId]);
+
+  const handleGenerateInvoice = () => {
+    if (!invoiceId) {
+      // Show toast notification if no invoice ID is selected
+      toast.error("Please select a payment option before proceeding!");
+    } else {
+      // Proceed to generate invoice if an option is selected
+      navigate(`/create-invoice/pay-small/${invoiceId}`);
+    }
   };
 
   return (
@@ -36,7 +66,7 @@ const PaySmall: React.FC = () => {
         <strong>No Interest, Stay In Control.</strong>
       </p>
       <div className="gridII">
-        {paymentData.map((plan, index) => (
+        {invoiceDetails.map((plan, index) => (
           <div
             key={index}
             className={`card1 card1-${index + 1} ${
@@ -45,19 +75,26 @@ const PaySmall: React.FC = () => {
             onClick={() => handleCardClick(index)}
           >
             <div className="gridinner">
-              <h3 className="card-title">{plan.month}</h3>
+              <h3 className="card-title">{plan.title}</h3>
               <p className="amount">{plan.amount}</p>
-              <button className="status">{plan.status}</button>
+              <span className="status">{plan.status}</span>
             </div>
             <div className="ksks">
-              <p className="ksksII">{plan.number}</p>
+              <p className="ksksII">{index + 1}</p>
             </div>
           </div>
         ))}
       </div>
       <div className="generate">
-        <button className="generate-button">Generate Invoice</button>
+        <button className="generate-button" onClick={handleGenerateInvoice}>
+          Generate Invoice
+        </button>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+      />
     </div>
   );
 };
