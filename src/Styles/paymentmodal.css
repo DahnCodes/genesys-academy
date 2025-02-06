@@ -3,12 +3,9 @@
 }
 .headpayment {
   font-family: "Avenir LT Pro";
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 27px;
-  /* text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none; */
 }
 .payment-background {
   background: #ffffff;
@@ -36,7 +33,7 @@
 }
 .options {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   /* gap: 25px; */
   gap: 20px;
   align-items: center;
@@ -96,16 +93,21 @@
   margin-left: 24px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   gap: 5px;
 }
 
 .top {
   font-size: 16px;
+  color: #273043;
   font-weight: 400;
 }
+
 .down {
   font-size: 14px;
   color: #596275;
+  font-weight: 300;
 }
 
 .dynamic-button {
@@ -117,9 +119,13 @@
   cursor: pointer;
   background-color: #f5772f;
   color: #ffff;
-  margin: 0px 60%;
+  /* margin: 0px 60%; */
   font-size: 16px;
   font-weight: 700;
+}
+
+.revampbn {
+  margin-top: 30px;
 }
 
 .dynamic-button:hover {
@@ -145,6 +151,15 @@
   border-radius: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 10000;
+}
+
+@media only screen and (max-width: 768px) {
+  .options {
+    /* width: 300px; */
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -198,11 +213,15 @@
 
 @media only screen and (max-width: 768px) {
   .options .full-pay {
-    width: 100%;
+    /* width: 100%; */
   }
 
   .dynamic-button {
     width: 100%;
+  }
+  
+  .revampbn{
+    margin-top: 10px;
   }
 }
 
@@ -253,11 +272,3 @@
     line-height: 18px;
   }
 }
-
-/* .full-pay:hover {
-  border: 1px solid #f5772f; 
-} */
-
-
-
-

@@ -176,7 +176,7 @@ option {
   /* opacity: 8; */
   /* transform:scale(1.001); */
   /* overflow: hidden; */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); */
 }
 @media  (max-width: 1024px) {
   .formwrapper{
