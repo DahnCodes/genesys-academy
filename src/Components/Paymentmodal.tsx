@@ -90,6 +90,9 @@ const PaymentModal = ({
         if (activeOption === "Full Payment") {
           // Navigate to full payment page
           navigate(`/create-invoice/full-payment/${invGenData[0]?._id}`);
+          // if( response.data.message === "Redirecting to existing invoice"){
+          //   navigate(`/create-invoice/full-payment/${invGenData[0]?._id}`);
+          // }
         } else if (
           activeOption === "Two Installments" ||
           response.data.message === "Redirecting to existing invoice"

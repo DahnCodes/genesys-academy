@@ -47,7 +47,6 @@
 
 .card1 {
   cursor: pointer;
-  width: 395px;
   height: 169px;
   border-radius: 15px;
   border: 1px;
@@ -82,8 +81,6 @@
   width: 63px;
   height: 30px;
   padding: 6px 12px;
-  /* padding: 5px 8px; */
-  /* gap: 10px; */
   border-radius: 200px;
   border: none;
   font-family: "Avenir LT Pro";
@@ -119,14 +116,12 @@
 }
 
 .card1.selected {
-  border-color:1px solid #f5772f;
+  border-color: 1px solid #f5772f;
 }
 
 .card1.selected .ksksII {
   color: #f5772f;
 }
-
-/* ----gp ---   */
 @media (max-width: 1200px) {
   .containerII {
     padding: 20px 50px;
@@ -148,6 +143,24 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .gridII {
+    grid-template-columns: auto auto auto;
+    gap: 40px;
+    overflow: hidden;
+  }
+
+  .generate-button {
+    overflow: hidden;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .containerII {
+    padding: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .containerII {
     padding: 15px 30px;
@@ -163,7 +176,7 @@
   }
 
   .gridII {
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
     gap: 20px;
     overflow: hidden;
   }
@@ -193,24 +206,24 @@
     overflow: hidden;
     font-size: 18px;
   }
-}
 
+  .generate {
+    display: block;
+  }
+}
 @media (max-width: 480px) {
   .containerII {
     padding: 10px 20px;
   }
-
   .gridinner {
     padding: 15px;
     gap: 20px;
   }
-
   .titleII {
     font-size: 24px;
     font-weight: 700;
     line-height: 28.8px;
   }
-
   .subtitle {
     font-size: 12px;
     margin-bottom: 15px;
@@ -218,60 +231,47 @@
     font-weight: 400;
     line-height: 21px;
   }
-
   .gridII {
     grid-template-columns: 1fr;
     gap: 15px;
     margin-bottom: 50px;
   }
-
   .card1 {
     width: 100%;
-    /* height: 120px; */
     height: 150px;
   }
-
   .generate-button {
     width: 100%;
     padding: 12px 20px;
     font-size: 14px;
   }
-
   .ksksII {
     font-size: 150px;
   }
-
   .status {
     margin-top: 10px;
     overflow: hidden;
   }
-
   .card-title {
     overflow: hidden;
   }
-
   .amount {
     overflow: hidden;
   }
 }
-
-/* Button styling */
 .generate-button {
   display: flex;
   justify-content: center;
-  align-items: center; /* This ensures the spinner will be centered */
+  align-items: center;
 }
-
 .spinner {
-  border: 4px solid #f3f3f3; /* Light gray */
-  border-top: 4px solid #ffffff; /* White for spinner */
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #ffffff;
   border-radius: 50%;
   width: 24px;
   height: 24px;
   animation: spin 1s linear infinite;
 }
-
-/* Keyframes for spinner animation */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -280,40 +280,20 @@
     transform: rotate(360deg);
   }
 }
-
-/* Button state when it's disabled */
 .generate-button:disabled {
-  background-color: #aab7b8; /* Disabled color */
+  background-color: #aab7b8;
   cursor: not-allowed;
 }
-
-/* Optional: A smooth transition for button hover or focus */
 .generate-button:hover {
-  background-color: #e56d2b; /* Change color slightly on hover */
+  background-color: #e56d2b;
 }
-
-/* --- new ---   */
-/* Paid invoices */
 .paid {
-  /* background-color: #d3ffd3; */
-  border: 1px solid #28a745; /* Green border */
-  /* color: #17c734; */
+  border: 1px solid #28a745;
 }
-
-/* .paid .ksksII {
-} */
-
-/* Selectable invoices */
 .enabled {
   border: 1px solid #e56d2b;
   cursor: pointer;
 }
-
-/* .enabled .ksksII {
-
-} */
-
-/* Disabled invoices */
 .disabled {
   border: 1px solid #ccc;
   color: #ccc;
@@ -321,18 +301,11 @@
   opacity: 0.5;
   background-color: #f0f0f0;
 }
-
 .disabled .ksksII {
   border: none;
   background-color: #f0f0f0;
 }
-
 .paid .status {
-  /* background-color: #17c734; */
   background-color: #d3ffd3;
   color: #28a745;
-  /* color: #ffffff; */
 }
-
-
-
