@@ -20,7 +20,8 @@ const Dataanalysis = () => {
     }
   }, [location]); 
   return (
-    <>
+    <div className="body-container">
+    <div>
       <Emptynav />
 
       <Goback />
@@ -132,7 +133,9 @@ const Dataanalysis = () => {
       </section>
 
       <Footer />
-    </>
+    </div>
+
+    </div>
   );
 };
 

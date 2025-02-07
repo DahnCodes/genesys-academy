@@ -1,10 +1,17 @@
 .banner {
   margin-top: 7%;
+  margin-top: 5%;
+  width: 100%;
 }
 .contact-section {
   display: flex;
   align-items: center;
   padding: 80px 100px;
+}
+.hear{
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: 550;
 }
 .contact-us {
   display: block;
@@ -23,12 +30,37 @@
   margin-top: 6%;
   gap: 10px;
 }
+.detail-text a{
+  color: #596275 ;
+  text-decoration: none;  
+}
+
+.detail-text a:hover{
+  color: #f5772f;
+}
+
+.detail-text a :hover{
+  color: #f5772f;
+}
+
+.info_location{
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 8px;
+  /* font-family: a; */
+  color: #596275; 
+}
+
 .fname {
   width: 580px;
   height: 60px;
   border-radius: 10px;
   border: 1px solid #b1b1b1;
   padding: 25px 20px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 20px;
 }
 .message {
   width: 580px;
@@ -36,6 +68,9 @@
   border-radius: 10px;
   border: 1px solid #b1b1b1;
   padding: 25px 20px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 200;
 }
 .btn7 {
   display: flex;
@@ -51,6 +86,7 @@
   margin-top: 5%;
   font-size: 16px;
   gap: 10px;
+  cursor: pointer;
 }
 .send {
   font-size: 24px;
@@ -79,6 +115,20 @@
 .hourline {
   border: 2px solid #f5772f;
   border-radius: 10px;
+}
+@media screen and (max-width: 1024px){
+  .contact-section {
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    gap: 40px;
+  }
+  .fname{
+    width: 100%;
+  }
+  .message{
+    width: 100%;
+  }
 }
 @media screen and (max-width: 768px) {
   .banner {
@@ -116,7 +166,7 @@
     width: 380px;
   }
   .locations {
-    margin-top: 15%;
+    margin-top: 10%;
   }
   .detail-text h3 {
     font-weight: 400;
@@ -170,7 +220,13 @@
     width: 380px;
   }
   .locations {
-    margin-top: 15%;
+    margin-top: -11%;
+  }
+  .location-container {
+    display: flex;
+    /* width: 432px; */
+    gap: 30px;
+    margin-top: 9%;
   }
   .detail-text h3 {
     font-weight: 400;
@@ -185,6 +241,59 @@
     padding: 10px;
   }
 }
+@media screen and (max-width: 385px) {
+  .banner {
+    width: 100%;
+    margin-top: 15%;
+  }
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .contact-us {
+    display: block;
+    max-width: 330px;
+  }
+  .contact-us h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .contact-us p {
+    font-size: 14px;
+    /* font-weight: 700; */
+  }
+  .fname {
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid #b1b1b1;
+    padding: 25px 20px;
+  }
+  .message {
+    width: 100%;
+    height: 166px;
+    border-radius: 10px;
+    border: 1px solid #b1b1b1;
+    padding: 25px 20px;
+  }
+  .btn7 {
+    width: 100%;
+  }
+  .locations {
+    margin-top: 15%;
+  }
+  .detail-text h3 {
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .detail-text p {
+    font-weight: 300;
+    line-height: 20px;
+    color: #596275;
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 375px) {
   .banner {
     width: 446px;
@@ -197,7 +306,7 @@
   }
   .contact-us {
     display: block;
-    max-width: 350px;
+    max-width: 330px;
   }
   .contact-us h1 {
     font-size: 24px;
@@ -208,24 +317,24 @@
     /* font-weight: 700; */
   }
   .fname {
-    width: 350px;
+    width: 330px;
     height: 60px;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     padding: 25px 20px;
   }
   .message {
-    width: 350px;
+    width: 330px;
     height: 166px;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     padding: 25px 20px;
   }
   .btn7 {
-    width: 350px;
+    width: 330px;
   }
   .locations {
-    margin-top: 15%;
+    margin-top: -11%;
   }
   .detail-text h3 {
     font-weight: 400;
@@ -250,7 +359,7 @@
   }
   .contact-us {
     display: block;
-    max-width: 300px;
+    max-width: 280px;
   }
   .contact-us h1 {
     font-size: 24px;
@@ -261,24 +370,24 @@
     /* font-weight: 700; */
   }
   .fname {
-    width: 300px;
+    width: 280px;
     height: 60px;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     padding: 25px 20px;
   }
   .message {
-    width: 300px;
+    width: 280px;
     height: 166px;
     border-radius: 10px;
     border: 1px solid #b1b1b1;
     padding: 25px 20px;
   }
   .btn7 {
-    width: 300px;
+    width: 280px;
   }
   .locations {
-    margin-top: 15%;
+    margin-top: -11%;
   }
   .detail-text h3 {
     font-weight: 400;

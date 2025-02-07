@@ -1,0 +1,416 @@
+/* General Styles */
+/* *{
+  overflow-y: hidden;
+} */
+
+.nfthdc{
+  color: #f5772f;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Avenir LT Pro";
+  margin-bottom: 2px;
+}
+.createInvoice {
+  /* font-family: "Arial", sans-serif; */
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* margin-top: 20px; */
+/* overflow: hidden; */
+
+   /* Center content vertically and horizontally */
+   /* display: flex;
+   flex-direction: column;
+   justify-content: center; */
+   /* height: 100vh; */
+   /* align-items: center; */
+   color: #596275;
+}
+/* Logo */
+.academylogo {
+  display: block;
+  max-width: 200px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Invoice Header */
+.invoice-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  /* width: 100%; */
+}
+
+
+.company-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.cinfo,
+.invoicedue {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.invoicedue {
+  text-align: right;
+}
+
+
+.bill-to {
+  margin-bottom: 30px;
+}
+
+.mghvfgh{
+  /* font-size: 18px; */
+  /* color: #ff6600; */
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.jvhv{
+  font-size: 24px;
+  color: #596275;
+  font-weight: 600;
+  /* background-color: red; */
+}
+.bill-to p {
+  font-size: 14px;
+  margin: 3px 0;
+  color: #555;
+}
+
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.invoice-table th {
+  background-color: #ff6600;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Avenir LT Pro";
+}
+
+.invoice-table td {
+  /* background-color: #f9f9f9; */
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Avenir LT Pro";
+  color: #333;
+}
+
+.sub {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  /* font-weight: bold; */
+  color: #333;
+  margin-top: 10px;
+}
+
+.sub p {
+  margin: 5px 0;
+}
+
+
+.payment-info {
+  font-size: 14px;
+  color: #555;
+  margin-top: 30px;
+}
+
+.payment-info strong {
+  color: #ff6600;
+}
+
+
+.payment-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+  /* width: 200px; */
+  /* padding: 14px; */
+  background-color: #ff6600;
+  color: #ffffff;
+  font-size: 12px;
+  /* font-weight: bold; */
+  font-weight: 400;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  height: 42px;
+}
+.payment-buttonpn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  align-items: flex-end;
+  
+}
+
+.payment-button:hover {
+  background-color: #ff9e66;
+}
+
+.bye {
+  text-align: center;
+  font-size: 14px;
+  /* font-weight: bold; */
+  color: #555;
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .createInvoice {
+    padding: 20px;
+  }
+
+  .company-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .bill-to h3 {
+    font-size: 16px;
+  }
+
+  .bill-to p {
+    font-size: 12px;
+  }
+
+  .sub {
+    font-size: 14px;
+  }
+
+  /* .payment-button {
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+  } */
+}
+
+@media (max-width: 480px) {
+  .createInvoice {
+    padding: 15px;
+  }
+
+  .academylogo {
+    max-width: 120px;
+  }
+
+  .invoice-title h5 {
+    font-size: 16px;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .bill-to h3 {
+    font-size: 14px;
+  }
+
+  .bill-to p {
+    font-size: 10px;
+  }
+
+  .sub {
+    font-size: 12px;
+  }
+}
+
+.invoice-title {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+  /* gap: 10px;  */
+  width: 100%;
+  /* background-color: red; */
+}
+
+.invoice-title h5 {
+  flex: 1; 
+  min-width: 150px; 
+  word-break: break-word; 
+  font-size: 16px;
+}
+
+
+.cinfo {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
+  .cinfo {
+    font-size: 12px; 
+  }
+
+  .cinfo p {
+    margin-bottom: 8px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .cinfo {
+    font-size: 10px; 
+  }
+
+  .cinfo p {
+    margin-bottom: 6px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .cinfo {
+    font-size: 9px; 
+    padding: 0 10px;
+  }
+
+  .cinfo p {
+    margin-bottom: 5px; 
+  }
+}
+
+
+.invoicedue {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  text-align: right; 
+}
+
+
+@media (max-width: 768px) {
+  .invoicedue {
+    font-size: 12px;
+  }
+
+  .invoicedue p {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .invoicedue {
+    font-size: 10px;
+    /* text-align: left;  */
+  }
+
+  .invoicedue p {
+    margin-bottom: 6px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .invoicedue {
+    font-size: 9px; 
+    padding: 0 10px;
+  }
+
+  .invoicedue p {
+    margin-bottom: 5px; 
+  }
+}
+
+.jvhv {
+  font-size: 18px;
+  /* font-weight: bold; */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .jvhv {
+    font-size: 16px; 
+    margin-bottom: 8px; 
+  }
+}
+
+@media (max-width: 600px) {
+  .jvhv {
+    font-size: 14px; 
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jvhv {
+    font-size: 12px;
+    margin-bottom: 5px; 
+    padding: 0 10px; 
+  }
+}
+
+.payment-button:hover {
+  /* background-color: #e55b00; */
+}
+
+
+@media (max-width: 768px) {
+  .payment-button {
+    width: 180px; 
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .payment-buttonpn {
+    margin-top: 15px;
+  }
+
+  .payment-button {
+    width: 160px; 
+    padding: 8px;
+    font-size: 12px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-button {
+    width: 140px; 
+    padding: 8px;
+    font-size: 10px; 
+  }
+}
+
+.yqean2, .jvhv{
+  font-size: 14px;
+}
+

@@ -21,7 +21,8 @@ const Backend = () => {
     }
   }, [location]); 
   return (
-    <>
+    <div className="body-container">
+    <div>
       <Emptynav />
 
       <Goback />
@@ -131,7 +132,9 @@ const Backend = () => {
       </section>
 
       <Footer />
-    </>
+    </div>
+
+    </div>
   );
 };
 

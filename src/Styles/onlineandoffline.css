@@ -1,0 +1,263 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Box */
+.payment-modal1 {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 550px; /* Default width for larger screens */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  transition: width 0.3s ease; /* Smooth transition for resizing */
+  /* background-color: red; */
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Modal Title & Subtitle */
+.modal-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 7px;
+  font-family: "Avenir LT Pro";
+  color: #273043;
+}
+
+.paymodalax {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-subtitle {
+  display: flex;
+  margin-bottom: 15px;
+  color: #596275;
+  font-family: "Avenir LT Pro";
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 24px;
+}
+.onpayspan {
+  font-size: 18px;
+  font-weight: 400;
+  color: #273043;
+}
+/* Payment Options */
+.payment-options22 {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  /* background-color: red; */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Each Payment Option */
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  /* width: 45%;  */
+  width: 245px;
+  font-size: 14px;
+  position: relative;
+  /* background-color: red; */
+}
+
+.payment-option input {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Custom Radio Button */
+.custom-radio {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+/* Radio Button Checked */
+.payment-option input:checked + .custom-radio {
+  border-color: #f5772f;
+  /* background-color: #ff7f2a; */
+  /* background-color: #fff; */
+}
+
+/* Inner Dot when Selected */
+.payment-option input:checked + .custom-radio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #ff7f2a;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Highlight Selected Option */
+.payment-option.selected {
+  border-color: #f5772f;
+  /* background-color: #fff4ec; */
+}
+
+/* Proceed Button */
+.proceed-button {
+  margin-top: 4px;
+  background-color: #f5772f;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 35%;
+  height: 56px;
+  font-family: "Avenir LT Pro";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.proceed-button:hover {
+  background-color: #ff9e66;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens 768px or larger (tablets and desktops) */
+
+/* For screens 1024px or larger (desktops and laptops) */
+/* @media (min-width: 1024px) {
+  .payment-modal1 {
+    width: 40%; 
+  }
+
+  .modal-title {
+    font-size: 22px;
+  }
+
+  .modal-subtitle {
+    font-size: 16px;
+  }
+
+  .proceed-button {
+    font-size: 18px;
+  }
+} */
+
+/* For small screens (mobiles) */
+@media (max-width: 600px) {
+  .payment-modal1 {
+    width: 70%; /* Adjust modal width for small screens */
+    padding: 20px;
+  }
+
+  .modal-title {
+    font-size: 20px;
+    font-weight: 400;
+    color: #273043;
+  }
+
+  .modal-subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: #596275;
+  }
+
+  .payment-option {
+    width: 100%;
+    padding: 25px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .payment-options22 {
+    display: flex;
+    gap: 10px;
+  }
+
+  .proceed-button {
+    font-size: 14px;
+    font-weight: 400;
+    height: 50px;
+    width: 100%;
+  }
+
+  .onpayspan {
+    /* color: red; */
+    color: #273043;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 320px) {
+  .payment-option {
+    padding: 15px;
+  }
+}
+
+
+
+.spinner {
+  border: 4px solid #f3f3f3; /* Light gray */
+  border-top: 4px solid #ffffff; /* White for spinner */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+/* Keyframes for spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Button state when it's disabled */
+.proceed-button:disabled {
+  background-color: #aab7b8; /* Disabled color */
+  cursor: not-allowed;
+}
+.proceed-button{
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This ensures the spinner will be centered */
+}
+
+.nbaz{
+  display: flex;
+  justify-content: center;
+}
