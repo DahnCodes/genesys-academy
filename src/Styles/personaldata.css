@@ -114,7 +114,8 @@
   font-family: "Avenir LT Pro";
   font-size: 16px;
   font-weight: 350;
-  width: 580px;
+  /* width: 580px; */
+  width: 100%;
   gap: 10px;
   border-radius: 10px;
   border: 1px solid #b1b1b1;
@@ -146,7 +147,7 @@ option {
   display: flex;
   height: 100px;
   justify-content: flex-end;
-  width: 580px;
+  /* width: 580px; */
   align-items: last baseline;
   overflow: hidden;
 }
@@ -347,20 +348,8 @@ option {
 @media only screen and (max-width: 380px) {
   .selectinfo {
     width: 350px;
-    /* border: 1px solid red; */
-  }
-  .btninformationsentence {
-    width: 350px;
   }
 }
-
-/* @media only screen and (max-width: 368px) {
-  .selectinfo {
-    width: 340px;
-    border: 1px solid red;
-  }
-
-} */
 
 @media only screen and (max-width: 320px) {
   .selectinfo {
@@ -376,6 +365,20 @@ option {
   }
 }
 
+@media (max-width: 1024px) {
+.formwrapper{
+  gap: 80px;
+}
+
+.pagnition{
+  padding: 5px 50px;
+  /* background-color: red; */
+}
+
+.pdpad{
+  padding: 20px 50px;
+}
+}
 /* For larger screens (default behavior) */
 
 /* Media Query for Tablet Screens (max-width: 768px) */
@@ -425,6 +428,15 @@ option {
   .pinfo {
     font-size: 24px;
   }
+
+  .pagnition{
+    padding: 10px;
+
+  }
+  
+.pdpad{
+  padding: 10px;
+}
 }
 
 /* For Extra Small Mobile Screens (max-width: 380px) */
@@ -483,6 +495,4 @@ option {
   cursor: not-allowed;
   border: 1px solid #aab7b8;
 }
-
-/* Optional: A smooth transition for button hover or focus */
 
