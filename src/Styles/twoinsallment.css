@@ -19,7 +19,7 @@
   margin-bottom: 15px;
 }
 
-.hfgcgcv{
+.hfgcgcv {
   display: flex;
   justify-content: space-between;
 }
@@ -39,18 +39,18 @@
   width: 48%; /* This ensures two items fit side by side */
 }
 
-.mgvngcv{
-  font-size: 18px;
+.mgvngcv {
+  /* font-size: 18px; */
   font-weight: 400;
   font-family: "Avenir LT Pro";
   color: #273043;
 }
 
-.payment-invoice-modal__option-item_hjk321:hover{
+.payment-invoice-modal__option-item_hjk321:hover {
   cursor: pointer;
 }
 
-.xfacvg{
+.xfacvg {
   font-size: 14px;
   font-weight: 200;
   /* font-family: "Avenir LT Pro"; */
@@ -81,7 +81,7 @@
 }
 
 .payment-invoice-modal__option-item_hjk321.highlighted {
-  border: 1px solid  #f5772f;
+  border: 1px solid #f5772f;
 }
 
 .firstInstallment {
@@ -170,7 +170,91 @@
   }
 }
 
-.activeOption{
+.activeOption {
   display: none;
 }
 
+.spinner {
+  border: 4px solid #f3f3f3; /* Light gray */
+  border-top: 4px solid #ffffff; /* White for spinner */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+/* Keyframes for spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button state when it's disabled */
+.payment-invoice-modal__generate-btn_zxc654:disabled {
+  background-color: #aab7b8; /* Disabled color */
+  cursor: not-allowed;
+}
+.payment-invoice-modal__generate-btn_zxc654 {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This ensures the spinner will be centered */
+}
+.lmkj {
+  display: flex;
+  justify-content: center;
+}
+/* --new--  */
+/* Style for disabled radio button */
+.payment-invoice-modal__radio-btn_lmn987:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Style for disabled label */
+.payment-invoice-modal__option-item_hjk321.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f0f0f0; /* Add a background color to indicate it's disabled */
+}
+
+/* Optional: Style for disabled text */
+.payment-invoice-modal__option-item_hjk321.disabled p {
+  color: #b0b0b0; /* Light grey text for disabled items */
+}
+
+/* Style for paid state radio button */
+.payment-invoice-modal__radio-btn_lmn987.paid {
+  background: #17c7340d;
+  border: 1px solid #17c73480;
+  cursor: not-allowed; /* Ensure it doesn't look clickable */
+  color: #17c734;
+}
+
+/* Style for paid state label */
+.payment-invoice-modal__option-item_hjk321.paid {
+  background-color: #d3ffd3;
+  border: 1px solid #28a745; /* Green border */
+}
+
+/* Optional: Style for paid text */
+.payment-invoice-modal__option-item_hjk321.paid p {
+  color: #17c734;
+}
+/* Style for paid radio button */
+.payment-invoice-modal__radio-btn_lmn987.paid-radio {
+  border: 1px solid #17c734; /* Green border */
+  color: #17c734; /* Green text color */
+}
+
+.payment-invoice-modal__radio-btn_lmn987.paid-radio:checked {
+  background-color: #17c734; /* Green background when checked */
+  border-color: #17c734; /* Green border when checked */
+}
+
+/* Optional: Styling for the label when the option is paid */
+.payment-invoice-modal__option-item_hjk321.paid {
+  color: #17c734; /* Change text color to green */
+}

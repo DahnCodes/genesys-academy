@@ -40,7 +40,7 @@ export type InvoiceGenerateResponse = {
   method: string;
   internId: string;
   email: string;
-  status: string;
+  status: InvoiceStatus;
   paymentDataId: string | null;
   createdAt: string;
   updatedAt: string;
@@ -76,7 +76,7 @@ export type InvoiceData = {
 
 // ---
 
-type InvoiceStatus = "Not paid" | "Paid" | "Pending";
+// type InvoiceStatus = "Not paid" | "Paid" | "Pending";
 
 export type PaysmallInvoice = {
   _id: string;
@@ -91,6 +91,15 @@ export type PaysmallInvoice = {
   createdAt: string;
   updatedAt: string;
 };
+
+export enum InvoiceStatus {
+  Paid = 'Paid',
+  Unpaid = 'Unpaid',
+  Pending = 'Pending'
+}
+
+
+
 
 // type ApiResponse = {
 //   success: boolean;

@@ -520,6 +520,9 @@ body {
   border: 0.5px solid #596275;
   padding: 10px 20px;
 }
+.subs:focus{
+  outline: none;
+}
 .btn5 {
   width: 146px;
   height: 52px;
