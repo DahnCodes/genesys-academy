@@ -5,6 +5,8 @@ import PaymentOptionsOffline from "./PaymentOptionsOffline";
 import { InternDataResFromPersonalData } from "../types/sharedtypes";
 import axios from "axios"; // Import axios
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import { toast, ToastContainer } from "react-toastify"; // Import ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Import toast CSS
 
 interface PaymentModalProps {
   open: boolean;
@@ -26,7 +28,7 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
 
   const handleProceed = async () => {
     if (!paymentMode) {
-      alert("Please select a payment option first!");
+      toast.error("Please select a payment option first!"); // Show toast if no payment is selected
       return;
     }
 
@@ -39,7 +41,6 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
 
       // Directly send the paymentMode value as the request body
       const requestData = { paymentType: paymentMode }; // 'Online' or 'Offline'
-      console.log(requestData);
 
       // Send the PATCH request using axios
       const response = await axios.patch(apiUrl, requestData, {
@@ -50,7 +51,7 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
 
       // If the request is successful (status 200), set canProceed to true
       if (response.status === 200) {
-        console.log("API Response:", response.data);
+        toast.success("Payment mode updated successfully!"); // Success toast
         setCanProceed(true);
       } else {
         throw new Error("Failed to update payment method.");
@@ -59,6 +60,9 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
       setError(
         error.message || "An error occurred while processing the request."
       );
+      toast.error(
+        error.message || "An error occurred while processing the request."
+      ); // Error toast
     } finally {
       setLoading(false);
     }
@@ -67,9 +71,6 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="payment-modal1" onClick={(e) => e.stopPropagation()}>
-        {/* <button className="close-button" onClick={onClose}>
-          ×
-        </button> */}
         <div className="paymodalax">
           <h2 className="modal-title">Payment Mode</h2>
           <IoIosCloseCircleOutline className="close" onClick={onClose} />
@@ -113,13 +114,21 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
         </div>
 
         {/* Proceed Button */}
+        <div className="nbaz">
+
         <button
           className="proceed-button"
           onClick={handleProceed}
           disabled={loading || !paymentMode} // Disable if no payment option is selected or loading
         >
-          {loading ? "Processing..." : "Proceed To Payment"}
+          {/* {loading ? "Processing..." : "Proceed To Payment"} */}
+          {loading ? (
+            <div className="spinner"></div> // Loading spinner
+          ) : (
+            "Proceed To Payment"
+          )}
         </button>
+        </div>
 
         {/* Show error message if any */}
         {error && <p className="error-message">{error}</p>}
@@ -138,6 +147,15 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
           />
         )}
       </div>
+
+      {/* ToastContainer to display toast notifications */}
+      <ToastContainer
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop
+        closeButton
+        className="custom-toast-container"
+      />
     </div>
   );
 };

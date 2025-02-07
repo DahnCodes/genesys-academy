@@ -74,6 +74,7 @@
   font-family: "Avenir LT Pro";
   font-size: 24px;
   font-weight: 700;
+  overflow: hidden;
 }
 .status {
   cursor: pointer;
@@ -90,7 +91,7 @@
   font-weight: 300;
   line-height: 18px;
   color: #596275;
-  background-color:  #E7E7E7;
+  background-color: #e7e7e7;
 }
 
 .ksks {
@@ -118,7 +119,7 @@
 }
 
 .card1.selected {
-  border-color: #f5772f;
+  border-color:1px solid #f5772f;
 }
 
 .card1.selected .ksksII {
@@ -181,16 +182,17 @@
   }
 
   .status {
-      overflow: hidden;
-  }
-
-  .card-title{
     overflow: hidden;
   }
 
-  .amount{
+  .card-title {
     overflow: hidden;
-}
+  }
+
+  .amount {
+    overflow: hidden;
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -241,34 +243,99 @@
 
   .status {
     margin-top: 10px;
-      overflow: hidden;
-  }
-
-  .card-title{
     overflow: hidden;
   }
 
-  .amount{
-      overflow: hidden;
+  .card-title {
+    overflow: hidden;
+  }
+
+  .amount {
+    overflow: hidden;
   }
 }
 
+/* Button styling */
+.generate-button {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This ensures the spinner will be centered */
+}
 
+.spinner {
+  border: 4px solid #f3f3f3; /* Light gray */
+  border-top: 4px solid #ffffff; /* White for spinner */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
 
-.blurred {
-  filter: blur(1px); /* Apply blur */
-  opacity: 0.5; /* Add slight opacity for a dimmed effect */
-  pointer-events: none; /* Prevent interaction with blurred boxes */
+/* Keyframes for spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button state when it's disabled */
+.generate-button:disabled {
+  background-color: #aab7b8; /* Disabled color */
+  cursor: not-allowed;
+}
+
+/* Optional: A smooth transition for button hover or focus */
+.generate-button:hover {
+  background-color: #e56d2b; /* Change color slightly on hover */
+}
+
+/* --- new ---   */
+/* Paid invoices */
+.paid {
+  /* background-color: #d3ffd3; */
+  border: 1px solid #28a745; /* Green border */
+  /* color: #17c734; */
+}
+
+.paid .ksksII {
+  /* background-color: #d3ffd3; */
+  /* border: none; */
+  /* color: #17c734; */
+}
+
+/* Selectable invoices */
+.enabled {
+  border: 1px solid #e56d2b;
+  cursor: pointer;
+}
+
+.enabled .ksksII {
+  /* border: none; */
+}
+
+/* Disabled invoices */
+.disabled {
+  border: 1px solid #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: #f0f0f0;
+}
+
+.disabled .ksksII {
+  border: none;
+  background-color: #f0f0f0;
+}
+
+.paid .status {
+  /* background-color: #17c734; */
+  background-color: #d3ffd3;
+  color: #28a745;
+  /* color: #ffffff; */
 }
 
 
-/* Apply smooth transition to blur effect */
-.card1 {
-  transition: filter 0.5s ease, opacity 0.5s ease; /* Smooth transitions for blur and opacity */
-}
 
-.blurred {
-  /* filter: blur(5px);  */
-  opacity: 0.5; /* Dimmed effect */
-  pointer-events: none; /* Prevent interaction with blurred boxes */
-}

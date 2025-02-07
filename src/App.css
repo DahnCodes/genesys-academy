@@ -415,6 +415,10 @@ body {
   margin-top: 15px;
   cursor: pointer;
 }
+.btn13:hover{
+  background-color: #ff9e66;
+  color: #ffffff;
+}
 .testimonies {
   margin-top: 2%;
 }
@@ -504,6 +508,9 @@ body {
   border-radius: 10px 0px 0px 10px;
   border: 0.5px solid #596275;
   padding: 10px 20px;
+}
+.subs:focus{
+  outline: none;
 }
 .btn5 {
   width: 146px;

@@ -25,10 +25,7 @@ const TestimonialCarousel: React.FC = () => {
       try {
         const response = await fetch(
           "https://genesys-web-app-revamp.onrender.com/api/v1/review/"
-        ); // Replace with your endpoint
-        // const response = await fetch(
-        //   "https://genesys-web-app-revamp.onrender.com/api/v1/review/"
-        // ); // Replace with your endpoint
+        ); // API endpoint to fetch data
         const data = await response.json();
         if (data.success) {
           setTestimonials(data.data); // Set the response data to state
@@ -60,8 +57,8 @@ const TestimonialCarousel: React.FC = () => {
     speed: 500, // Transition speed
     slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1, // Scroll one slide at a time
-    prevArrow: <PrevArrow />, 
-    nextArrow: <NextArrow />, 
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     centerMode: true,
     centerPadding: "250px",
     autoplay: true,
@@ -103,7 +100,7 @@ const TestimonialCarousel: React.FC = () => {
           centerPadding: "0", // Remove center padding
         },
       },
-    ]
+    ],
   };
 
   return (
@@ -116,8 +113,9 @@ const TestimonialCarousel: React.FC = () => {
               <div className="testimonials">
                 <img
                   src={testimonial.imageUrl}
-                  alt=""
+                  alt={testimonial.name}
                   className="past-interns"
+                  loading="lazy" // Lazy loading the image
                 />
                 <div className="testimonial-text">
                   <h3>{testimonial.name}</h3>
@@ -125,10 +123,6 @@ const TestimonialCarousel: React.FC = () => {
                   <p className="description">{testimonial.comment}</p>
                 </div>
               </div>
-              {/* <img src={testimonial.imageUrl} alt="" className="past-intern"/> */}
-              {/* <h3>{testimonial.name}</h3>
-              <p className="role">{testimonial.designation}</p>
-              <p className="description">{testimonial.comment}</p> */}
             </div>
           </div>
         ))}

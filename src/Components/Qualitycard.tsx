@@ -19,7 +19,7 @@ const Qualitycard = () => {
               className="links"
               state={{ from: location.pathname }}
             >
-              <p className="true1">View Curriculum →</p>
+              <p className="true">View Curriculum →</p>
             </Link>
           </div>
         </div>
