@@ -425,16 +425,10 @@ body {
   margin-top: 15px;
   cursor: pointer;
 }
-<<<<<<< HEAD
-.btn13:hover{
-  background-color: #ff9e66;
-  color: #ffffff;
-=======
 .btn13:hover {
   color: #fff;
   background-color: #ff9e66;
   /* transform: scale(0.9); */
->>>>>>> 0e5d84a8ed184d3bf77643396211dd58c3d74dd5
 }
 .testimonies {
   margin-top: 2%;

@@ -300,11 +300,8 @@
   /* color: #17c734; */
 }
 
-.paid .ksksII {
-  /* background-color: #d3ffd3; */
-  /* border: none; */
-  /* color: #17c734; */
-}
+/* .paid .ksksII {
+} */
 
 /* Selectable invoices */
 .enabled {
@@ -312,9 +309,9 @@
   cursor: pointer;
 }
 
-.enabled .ksksII {
-  /* border: none; */
-}
+/* .enabled .ksksII {
+
+} */
 
 /* Disabled invoices */
 .disabled {
