@@ -133,7 +133,7 @@ const LandingPage = () => {
           <div className="weare">
             <img src={man1} alt="" className="man1" />
             <div className="weare-text">
-              <h1>What We're About</h1>
+              <h1>About Us</h1>
               <p>
                 Genesys Academy is a Software Development Institute with
                 certified experts as trainers, a well-structured curriculum and
@@ -169,7 +169,7 @@ const LandingPage = () => {
                 <Backcard />
               </Link>
             </div>
-
+            
             <div className="pathway-cards">
               <Link to="/dataanalysis" className="link">
                 <Datacard />
@@ -178,6 +178,8 @@ const LandingPage = () => {
                 <Qualitycard />
               </Link>
             </div>
+
+
           </div>
         </section>
 
