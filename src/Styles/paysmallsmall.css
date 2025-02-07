@@ -18,7 +18,7 @@ p{
   transform: scaleX(-1);
   width: 140px;
 }
-.btn12  {
+.btn12 {
   width: 194px;
   height: 54px;
   padding: 15px 30px 15px 30px;
@@ -242,9 +242,26 @@ margin-top: 30px;
 .stepgirl{
   width: 600px;
 }
-.application {
- padding: 30px 100px;
-  margin-top: 40px;
+.btn12 {
+  overflow: visible;
+ 
+}
+.btn14{
+  width: 194px;
+  height: 54px;
+  padding: 15px 30px 15px 30px;
+  gap: 8px;
+  border-radius: 10px;
+  opacity: 0px;
+  background-color: #f5772f;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+.btn14:hover {
+  background-color: #ff9e66;
 }
 
 @media screen and (max-width: 768px) {
@@ -386,10 +403,12 @@ margin-top: 30px;
     margin-top: 100px;
   }
 
-  .application {
-    padding: 30px 100px;
-     margin-top: 40px;
-   }
+  .btn14 {
+    overflow: visible;
+    width: 100%;
+    margin-left: auto;
+    margin-top: 30px;
+  }
 
 }
 @media screen and (max-width: 475px) {
@@ -465,11 +484,11 @@ margin-top: -100px;
     margin-top: 100px;
   }
 
-  .application {
-    width: 100%;
-    margin: auto;
+  .btn14 {
     overflow: visible;
-    margin-top: 40px;
+    width: 100%;
+    margin-left: auto;
+    margin-top: 30px;
   }
 }
 @media screen and (max-width: 393px) {
@@ -575,7 +594,7 @@ margin-top: -100px;
   .step-list-container {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
   }
   .stepper-list{
     font-size: 14px;
@@ -595,17 +614,13 @@ margin-top: -100px;
     width: 380px;
   }
 
-  .application {
+  .btn14 {
     overflow: visible;
-    width: 300px;
-    margin: auto;
+    width: 100%;
+    margin-left: auto;
     margin-top: 30px;
   }
-  .btn12{
-    width: 300px;
-    /* margin: auto; */
-    /* width: 200px; */
-  }
+
 }
 @media screen and (max-width: 375px) {
   .pays-container {
@@ -857,17 +872,7 @@ margin-top: -100px;
     width: 380px;
   }
 
-  .application {
-    overflow: visible;
-    width: 300px;
-    margin: auto;
-    margin-top: 30px;
-  }
-  .btn12{
-    width: 270px;
-    /* margin: auto; */
-    /* width: 200px; */
-  }
+
 }
 @media screen and (max-width: 320px) {
   .pays-container {

@@ -162,11 +162,9 @@ const Paysmallsmall = () => {
               <img src={stepgirl} alt="" className="stepgirl" />
             </div>
           </div>
-          <div className="application">
             <Link to="/personaldata">
-              <button className="btn12">Begin Application</button>
+              <button className="btn14">Begin Application</button>
             </Link>
-          </div>
         </section>
       </div>
       <Footer />
