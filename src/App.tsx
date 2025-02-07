@@ -11,18 +11,18 @@ import Contact from "./Pages/Contact";
 import Faq from "./Pages/Faq";
 import Personaldata from "./Components/Personaldata";
 import PaySmall from "./Components/PaySmall";
-
+<<<<<<< HEAD
 import CreateInvoice from "./Components/CreateInvoice";
 import Installment from"./Components/Installment";
 import Paysmallinvoice from "./Components/Paysmallinvoice";
 import Paysmallsmall from "./Pages/Paysmallsmall";
 
-
+>>>>>>> 1a0c82ecc3aef3fee4d8ad0325acee95add2c1ec
 
 function App() {
   return (
     <>
-
+<<<<<<< HEAD
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -48,11 +48,12 @@ function App() {
             path="/create-invoice/pay-small/:invoiceId"
             element={<Paysmallinvoice />}
           />
-              <Route path="/pay-small" element={<PaySmall />}/>    
-              <Route path="/pay-smallsmall" element={<Paysmallsmall />}/> 
         </Routes>
       </BrowserRouter>
-  
+=======
+
+
+>>>>>>> 1a0c82ecc3aef3fee4d8ad0325acee95add2c1ec
     </>
   );
 }

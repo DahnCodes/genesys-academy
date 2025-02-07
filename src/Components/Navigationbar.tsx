@@ -5,8 +5,21 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Navigationbar = () => {
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  const handleSectionClick = (sectionId: string) => {
+    navigate("/");
+
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
 
   const toggleHome = () => {
     navigate("/");
@@ -37,10 +50,10 @@ const Navigationbar = () => {
           <img src={logo} alt="" className="logo" />
         </Link>
         <ul className="navlinks">
-          <a href="#pathways" className="link">
+          <a href="#pathways" className="link"     onClick={() => handleSectionClick("pathways")}>
             <li className="navs">Pathways</li>
           </a>
-          <a href="#testimonies" className="link">
+          <a href="#testimonies" className="link"   onClick={() => handleSectionClick("testimony")}>
             <li className="navs">Testimonies</li>
           </a>
           <Link to="/contactus" className="links">
@@ -74,10 +87,10 @@ const Navigationbar = () => {
           <>
             <ul className={`navlink-active ${isMenuOpen ? "show" : ""}`}>
               <a href="#pathways" className="link" onClick={toggleHome}>
-                <li className="navs">Pathways</li>
+                <li className="navs" onClick={() => handleSectionClick("pathways")}>Pathways</li>
               </a>
               <a href="#testimonies" className="link">
-                <li className="navs">Testimonies</li>
+                <li className="navs" onClick={() => handleSectionClick("testimony")}>Testimonies</li>
               </a>
               <Link to="/contactus" className="links">
                 <li className="navs">Contact Us</li>

@@ -1,132 +1,165 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/twoinsallment.css";
 import {
   InternDataResFromPersonalData,
   InvoiceGenerateResponse,
 } from "../types/sharedtypes";
 import axios from "axios";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import Invoicemodal from "../Components/Invoicemodal";
 
 const OfflineTwoInstallment: React.FC<{
   onClose: () => void;
   personalDataResponse: InternDataResFromPersonalData;
 }> = ({ onClose, personalDataResponse }) => {
-  const [selectedOption, setSelectedOption] = useState<string>("");
-  const [showInvoiceModal, setShowInvoiceModal] = useState(false);
-  const [activeOption, setActiveOption] = useState("");
-  const [newinvoiceid, setNewInvoiceId] = useState("");
-  const [newInvoiceamount, setNewInvoiceamount] = useState<number | string>("");
-  const [newInvoicemethod, setNewInvoicemethod] = useState("");
+  const [selectedOption, setSelectedOption] = useState<string>(""); // Track selected option
+  const [loading, setLoading] = useState<boolean>(false); // Track loading state
+  const [invoiceDetails, setInvoiceDetails] = useState<InvoiceGenerateResponse[]>([]); // Track invoice details
+  const [showInvoiceModal, setShowInvoiceModal] = useState(false); // Track whether modal is shown
+  const [newInvoiceId, setNewInvoiceId] = useState(""); // New invoice ID
+  const [newInvoiceAmount, setNewInvoiceAmount] = useState<number | string>(""); // New invoice amount
+  const [newInvoiceMethod, setNewInvoiceMethod] = useState(""); // New invoice method
+  const [firstInstallmentPaid, setFirstInstallmentPaid] = useState(false); // Track if first installment is paid
 
   const handleOptionChange = (value: string) => {
-    setSelectedOption(value);
-    setActiveOption(value); // Set active option when the radio button is selected
+    setSelectedOption(value); // Set selected option when clicked
   };
 
-  const handleButtonClick = () => {
-    // Check if an option is selected before creating the invoice
-    if (
-      selectedOption === "First Installment" ||
-      selectedOption === "Second Installment"
-    ) {
-      handleCreateInvoice();
+  useEffect(() => {
+    // Fetch the invoice data when component mounts
+    if (invoiceDetails.length === 0) {
+      fetchInvoiceByEmail(personalDataResponse.email);
     }
-  };
+  }, [invoiceDetails, personalDataResponse.email]);
 
-  const handleCreateInvoice = async () => {
+  const fetchInvoiceByEmail = async (email: string) => {
+    if (!email) return;
     try {
-      // Step 1: Create Invoice
-      const response = await axios.post(
-        `https://genesys-web-app-revamp.onrender.com/api/v1/invoice/${personalDataResponse.email}`,
+      const response = await axios.get(
+        `https://genesys-web-app-revamp.onrender.com/api/v1/invoice/`,
         {
-          paymentOption: "Two Installment",
+          params: { email },
         }
       );
-
-      console.log("API Response: ", response); // Log the full response for debugging
-
-      const invGenData: InvoiceGenerateResponse[] = response.data.data;
-      //   setNewInvoiceId(invGenData[0]?.invoiceNo); // Set the new invoice ID
-      setNewInvoiceId(invGenData[0]?.invoiceNo);
-      setNewInvoiceamount(invGenData[0]?.amount);
-      setNewInvoicemethod(invGenData[0]?.title);
-
-      if (response.data.success) {
-        console.log("Invoice created successfully"); // Log success message
-        setShowInvoiceModal(true); // Show the modal after successful invoice creation
-      } else {
-        console.log("Error Occurred", response.data.message); // Log any error message
+      setInvoiceDetails(response.data.data); // Set the fetched invoice data
+      // Check if first installment is paid
+      const firstInstallment = response.data.data.find(
+        (invoice: InvoiceGenerateResponse) => invoice.title === "First Installment"
+      );
+      if (firstInstallment?.status === "Paid") {
+        setFirstInstallmentPaid(true); // Set first installment status as paid
       }
-    } catch (err: any) {
-      console.log("Error creating invoice:", err); // Log the error if the request fails
+    } catch (error) {
+      console.error("Error fetching invoice:", error);
     }
   };
+
+  // Handle button click to display the invoice modal
+  const handleButtonClick = () => {
+    if (selectedOption) {
+      setLoading(true); // Start loading spinner when the button is clicked
+
+      // Get the selected invoice option
+      const selectedInvoice = invoiceDetails.find(
+        (invoice) => invoice.title === selectedOption
+      );
+      if (selectedInvoice) {
+        setNewInvoiceId(selectedInvoice.invoiceNo); // Set new invoice ID
+        setNewInvoiceAmount(selectedInvoice.amount); // Set new invoice amount
+        setNewInvoiceMethod(selectedInvoice.title); // Set new invoice method
+        setShowInvoiceModal(true); // Show the invoice modal
+      }
+
+      setLoading(false); // Stop loading after the modal has been shown
+    }
+  };
+
+  // Dynamically map the installment options from invoiceDetails
+  const installmentOptions = [...invoiceDetails]
+    .sort((a, b) => {
+      // Compare invoice titles to swap first and second position
+      if (b.title === "Second Installment") return -1; // "Second Installment" comes first
+      if (a.title === "Second Installment") return 1;
+      return 0; // Keep the order as is for other invoices
+    })
+    .map((invoice) => ({
+      title: invoice.title,
+      amount: invoice.amount,
+      status: invoice.status,
+    }));
 
   return (
     <>
       {!showInvoiceModal ? (
         <div className="payment-invoice-modal__overlay">
           <div className="payment-invoice-modal__container_xyz123">
-            <h2 className="payment-invoice-modal__header_abc456">
-              Payment Invoice
-            </h2>
-            <button className="close-button" onClick={onClose}>
-              X
-            </button>
-
-            <div className="payment-invoice-modal__options-list_qwe789">
-              {/* First Installment Option */}
-              <label className="payment-invoice-modal__option-item_hjk321">
-                <input
-                  type="radio"
-                  name="paymentOption"
-                  value="First Installment"
-                  checked={selectedOption === "First Installment"}
-                  onChange={() => handleOptionChange("First Installment")}
-                  className="payment-invoice-modal__radio-btn_lmn987"
-                />
-                <div className="revampsecond">
-                  <p>First Installment (60%)</p>
-                  <p>₦330,000</p>
-                </div>
-              </label>
-
-              {/* Second Installment Option */}
-              <label className="payment-invoice-modal__option-item_hjk321">
-                <input
-                  type="radio"
-                  name="paymentOption"
-                  value="Second Installment"
-                  checked={selectedOption === "Second Installment"}
-                  onChange={() => handleOptionChange("Second Installment")}
-                  className="payment-invoice-modal__radio-btn_lmn987"
-                />
-                <div className="revampsecond">
-                  <p>Second Installment (40%)</p>
-                  <p>₦220,000</p>
-                </div>
-              </label>
+            <div className="hfgcgcv">
+              <div className="payment-invoice-modal__header_abc456">
+                Payment Invoice
+              </div>
+              <IoIosCloseCircleOutline className="close" onClick={onClose} />
             </div>
 
-            <button
-              className="payment-invoice-modal__generate-btn_zxc654"
-              onClick={handleButtonClick}
-              disabled={!selectedOption} // Disable the button if no option is selected
-            >
-              Generate Invoice
-            </button>
+            <div className="payment-invoice-modal__options-list_qwe789">
+              {/* Dynamically mapping through installment options */}
+              {installmentOptions?.map((option, index) => {
+                // Apply logic to disable second installment if first is not paid
+                const isDisabled =
+                  (option.title === "Second Installment" && !firstInstallmentPaid) ||
+                  option.status === "Paid";
+
+                return (
+                  <label
+                    key={index}
+                    className={`payment-invoice-modal__option-item_hjk321 ${
+                      selectedOption === option.title ? "highlighted" : ""
+                    } ${option.status === "Paid" ? "paid" : ""} ${
+                      option.status === "Paid" ? "disabled" : ""
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="paymentOption"
+                      value={option.title}
+                      checked={selectedOption === option.title}
+                      onChange={() => handleOptionChange(option.title)}
+                      className={`payment-invoice-modal__radio-btn_lmn987 ${
+                        option.status === "Paid" ? "paid-radio" : ""
+                      }`}
+                      disabled={option.status === "Paid" || isDisabled}
+                    />
+                    <div className="revampsecond">
+                      <p>{option.title}</p>
+                      <p>₦{option.amount.toLocaleString()}</p>
+                    </div>
+                  </label>
+                );
+              })}
+            </div>
+
+            <div className="lmkj">
+              <button
+                className="payment-invoice-modal__generate-btn_zxc654"
+                onClick={handleButtonClick}
+                disabled={!selectedOption || loading} // Disable the button when no option is selected or loading
+              >
+                {loading ? (
+                  <div className="spinner"></div> // Loading spinner
+                ) : (
+                  "Generate Invoice"
+                )}
+              </button>
+            </div>
           </div>
-          <div className="activeOption">{activeOption}</div>
         </div>
       ) : null}
 
       {showInvoiceModal && (
-        // <Invoicemodal onClose={onClose} invId={newInvoiceId} />
         <Invoicemodal
           onClose={onClose}
-          invId={newinvoiceid}
-          no={newInvoiceamount}
-          method={newInvoicemethod}
+          invId={newInvoiceId}
+          no={newInvoiceAmount}
+          method={newInvoiceMethod}
         />
       )}
     </>

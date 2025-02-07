@@ -5,6 +5,7 @@ import Backbtn from "../Components/Backbtn";
 import genesyslogo from "../assets/Logo.png";
 import "../Styles/createinvoice.css";
 import { InvoiceData } from "../types/sharedtypes";
+import WaveLoader from "../Components/WaveLoader"; 
 
 const CreateInvoice = () => {
   const { invoiceId } = useParams();
@@ -15,9 +16,8 @@ const CreateInvoice = () => {
   );
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [payOp, setPayOp] = useState("Full Payment"); // Default to full payment
+  const [payOp, setPayOp] = useState("Full Payment"); 
   const [invoiceDate, setInvoiceDate] = useState<string>("");
-  // const [dueDate, setDueDate] = useState<string>("");
 
   useEffect(() => {
     if (pathname.includes("full-payment")) {
@@ -36,7 +36,7 @@ const CreateInvoice = () => {
       } catch (err: any) {
         setError(err.message);
       } finally {
-        setLoading(false);
+        setLoading(false); // Hide the loader when data fetching is done
       }
     };
 
@@ -44,7 +44,7 @@ const CreateInvoice = () => {
       fetchInvoice();
     } else {
       setError("Invoice ID is missing");
-      setLoading(false);
+      setLoading(false); // Hide the loader if no invoiceId is found
     }
   }, [invoiceId]);
 
@@ -56,54 +56,40 @@ const CreateInvoice = () => {
       day: "numeric",
     });
     setInvoiceDate(invoiceFormatted);
-
-    // today.setDate(today.getDate() + 7); // Add 7 days for due date
-    // const dueFormatted = today.toLocaleDateString("en-US", {
-    //   year: "numeric",
-    //   month: "long",
-    //   day: "numeric",
-    // });
-    // setDueDate(dueFormatted);
   }, []);
 
   const handleProceedToPayment = async () => {
     try {
-      // Send request to initialize Paystack payment
       const response = await axios.post(
         `https://genesys-web-app-revamp.onrender.com/api/v1/payment/paystack/initialize/${invoicedetails.email}`,
         { invoiceId },
         { headers: { "Content-Type": "application/json" } }
       );
 
-      console.log("Paystack Response:", response.data); // Log the response for debugging
-
-      // Check if authorizationUrl exists in the response
       if (response.data?.authorizationUrl) {
-        // Redirect the user to the authorizationUrl
         window.location.href = response.data.authorizationUrl;
       } else {
         console.error("Error initializing Paystack:", response.data);
         setError("Error initializing payment.");
       }
     } catch (err: any) {
-      console.error("Error during payment initialization:", err);
       setError("An error occurred during payment initialization.");
     }
   };
 
-  if (loading) return <p>Loading...</p>;
+
+  if (loading) return <WaveLoader />;
+
+
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="createInvoice">
-      {/* <div>
-      </div> */}
-        <Backbtn />
+      <Backbtn />
       <img src={genesyslogo} alt="logo" className="academylogo" />
       <div className="invoice-title">
         <p className="jvhv">Invoice: {invoicedetails?.invoiceNo}</p>
         <p className="yqean2">Date: {invoiceDate}</p>
-        {/* <h5>Invoice ID: {invoicedetails?.internId._id}</h5> */}
       </div>
       <div className="company-info">
         <div className="cinfo">
@@ -112,10 +98,6 @@ const CreateInvoice = () => {
           <p>Email: academy@genesystechhub.com</p>
           <p>Phone: +234 814 012 0539</p>
         </div>
-        {/* <div className="invoicedue">
-          <p>Invoice Date: {invoiceDate}</p>
-          <p>Due Date: {dueDate}</p>
-        </div> */}
       </div>
       <section className="bill-to">
         <h6 className="mghvfgh">Bill To</h6>

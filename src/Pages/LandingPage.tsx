@@ -20,8 +20,8 @@ import team1 from "../assets/team1.png";
 import team2 from "../assets/team2.png";
 import curve from "../assets/Red.png";
 import wifi from "../assets/Green.png";
-import wifi2 from "../assets/Yellow.png"
-import curve2 from "../assets/Green.png"
+import wifi2 from "../assets/Yellow.png";
+import curve2 from "../assets/Green.png";
 import sider from "../assets/sider.png";
 import rightside from "../assets/rightside.png";
 import leftside from "../assets/leftside.png";

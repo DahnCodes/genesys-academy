@@ -8,8 +8,8 @@ import {
 } from "../types/sharedtypes";
 import { paymentOptions } from "../configs/paymentOptions";
 import axios from "axios";
-import TwoInstallment from "../Components/TwoInstallment"; // Import the TwoInstallment modal
-import { toast } from "react-toastify"; // Import toast for notifications
+import TwoInstallment from "../Components/TwoInstallment";
+import { toast } from "react-toastify";
 
 const PaymentModal = ({
   onClose,
@@ -20,8 +20,12 @@ const PaymentModal = ({
 }) => {
   const [activeOption, setActiveOption] = useState<string>(""); // Track selected payment option
   const [buttonContent, setButtonContent] = useState<string>("Make Payment");
+  const [generatedInvoiceData, setGeneratedInvoiceData] = useState<
+    InvoiceGenerateResponse[]
+  >([]);
   const [showTwoInstallmentModal, setShowTwoInstallmentModal] =
     useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false); // Loading state for button
   const navigate = useNavigate();
 
   const handleOptionChange = (option: string, content: string) => {
@@ -50,15 +54,20 @@ const PaymentModal = ({
       return;
     }
 
+    setLoading(true); // Disable the button and show loading state
+
     // Handle logic for different payment options
     if (activeOption === "Two Installment") {
       setShowTwoInstallmentModal(true); // Show Two Installment modal when button is clicked
+      await handleCreateInvoice();
     } else if (activeOption === "Pay Small Small") {
       await handleCreateInvoice(); // Create invoice before navigation
       navigate(`/pay-small/${personalDataResponse.email}`); // Redirect to pay-small
     } else if (activeOption) {
       await handleCreateInvoice(); // Create invoice before navigation
     }
+
+    setLoading(false); // Re-enable the button after the request
   };
 
   const handleCreateInvoice = async () => {
@@ -73,15 +82,27 @@ const PaymentModal = ({
       console.log(response);
 
       const invGenData: InvoiceGenerateResponse[] = response.data.data;
+      if (response.data.data) {
+        setGeneratedInvoiceData(invGenData);
+      }
+
       if (response.data.success) {
         if (activeOption === "Full Payment") {
+          // Navigate to full payment page
           navigate(`/create-invoice/full-payment/${invGenData[0]?._id}`);
-        }
-
-        if (
-          response.data.success &&
+        } else if (
+          activeOption === "Two Installments" ||
           response.data.message === "Redirecting to existing invoice"
         ) {
+          // Show two installment modal for Two Installments or if redirecting to an existing invoice
+          setShowTwoInstallmentModal(true);
+          console.log("got here");
+          
+        } else if (
+          activeOption === "Pay Small Small" &&
+          response.data.message === "Redirecting to existing invoice"
+        ) {
+          // Navigate to Pay Small Small page
           navigate(`/pay-small/${personalDataResponse.email}`);
         }
       } else {
@@ -198,8 +219,15 @@ const PaymentModal = ({
                 type="button"
                 className="dynamic-button"
                 onClick={handleButtonClick} // Only proceed when clicked
+                disabled={loading} // Disable the button when loading
               >
-                {buttonContent}
+                {/* {loading ? "Processing..." : buttonContent} Change button text when loading */}
+                {loading ? (
+                  <div className="spinner"></div> // Loading spinner
+                ) : (
+                  // "Submit"
+                  buttonContent
+                )}
               </button>
             </div>
           </section>
@@ -208,6 +236,7 @@ const PaymentModal = ({
         <TwoInstallment
           onClose={() => setShowTwoInstallmentModal(false)}
           personalDataResponse={personalDataResponse}
+          generatedInvoiceData={generatedInvoiceData}
         />
       )}
     </>

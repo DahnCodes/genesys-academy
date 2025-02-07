@@ -2,11 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/personaldata.css";
 import { useState } from "react";
-import one from "../assets/1.png";
 import infoeclipse from "../assets/Ellipse 3.png";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import OnlineAndOfflineOption from "../Components/OnlineAndOfflineOption"; // Import the modal component
+import OnlineAndOfflineOption from "../Components/OnlineAndOfflineOption";
 import { InternDataResFromPersonalData } from "../types/sharedtypes";
 import axios from "axios";
 
@@ -18,7 +17,7 @@ interface FormData {
   address: string;
   learningPath: string;
   howDidYouHear: string;
-  staffName?: string; // Optional staff name field
+  referrerName?: string;
 }
 
 const Personaldata = () => {
@@ -30,14 +29,15 @@ const Personaldata = () => {
     address: "",
     learningPath: "",
     howDidYouHear: "",
-    staffName: "", // Initial state for staff name
+    referrerName: "",
   });
 
-  const [showModal, setShowModal] = useState(false); // For controlling modal visibility
+  const [showModal, setShowModal] = useState(false);
   const [personalDataResponse, setPersonalDataResponse] =
     useState<InternDataResFromPersonalData>(
       {} as InternDataResFromPersonalData
     );
+  const [submitting, setSubmitting] = useState(false); // Track submission state
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -59,10 +59,9 @@ const Personaldata = () => {
       address,
       learningPath,
       howDidYouHear,
-      staffName,
+      referrerName,
     } = formData;
 
-    // Validate form data
     if (
       !firstName ||
       !lastName ||
@@ -76,14 +75,14 @@ const Personaldata = () => {
       return;
     }
 
-    // If 'Genesys Staff' is selected, validate that the staff name is filled out
-    if (howDidYouHear === "Genesys Staff" && !staffName) {
+    if (howDidYouHear === "Genesys Staff" && !referrerName) {
       toast.error("Please provide the name of the Genesys staff member.");
       return;
     }
 
+    setSubmitting(true); // Set submitting to true to disable button
+
     try {
-      // Make the POST request to create an intern
       const response = await axios.post(
         "https://genesys-web-app-revamp.onrender.com/api/v1/intern/",
         {
@@ -94,17 +93,15 @@ const Personaldata = () => {
           address,
           learningPath,
           medium: howDidYouHear,
-          staffName: staffName || undefined, // Send staff name only if provided
+          referrerName: referrerName || undefined,
         }
       );
 
       if (response.data.success) {
-        // If the request is successful, show the modal
         setPersonalDataResponse(response.data.data); // Store the response data
         setShowModal(true); // Show the modal
         toast.success("Form submitted successfully!");
       } else {
-        // If there's a failure in the API response, show the error message from the API
         const apiErrorMessage =
           response.data.message || "Something went wrong, please try again.";
         toast.error(apiErrorMessage);
@@ -119,11 +116,13 @@ const Personaldata = () => {
           : "An unknown error occurred.";
 
       toast.error(errorMessage);
+    } finally {
+      setSubmitting(false); // Reset submitting flag after the request
     }
   };
 
   const handleBackButtonClick = () => {
-    window.location.href = "/"; // Return to the homepage
+    window.location.href = "/";
   };
 
   const handleModalClose = () => {
@@ -137,15 +136,7 @@ const Personaldata = () => {
         <button className="startpersonal" onClick={handleBackButtonClick}>
           <FontAwesomeIcon icon={faArrowLeft} className="farrowleft" />
         </button>
-        {/* <div className="no_1">
-          <h1 className="personaldatapd">Personal Data</h1>
-          <hr className="horizontal" />
-          <figure className="pagnition1 active">
-            <img src={one} alt="" className="pagnationjr1" />
-          </figure>
-        </div> */}
       </div>
-
       <div>
         <div className="pdpad">
           <div className="pdspaceinfo">
@@ -154,7 +145,6 @@ const Personaldata = () => {
           </div>
           <div className="formwrapper">
             <form onSubmit={handlePageSubmit} className="personal-data-form">
-              {/* First Name */}
               <div>
                 <label className="pinfofn">First Name</label>
                 <input
@@ -167,7 +157,6 @@ const Personaldata = () => {
                 />
               </div>
 
-              {/* Last Name */}
               <div>
                 <label className="pinfofn">Last Name</label>
                 <input
@@ -180,7 +169,6 @@ const Personaldata = () => {
                 />
               </div>
 
-              {/* Mobile Number */}
               <div>
                 <label className="pinfofn">Mobile Number</label>
                 <input
@@ -193,7 +181,6 @@ const Personaldata = () => {
                 />
               </div>
 
-              {/* Learning Path */}
               <div>
                 <label className="pinfofn">
                   What is your desired Learning Path?
@@ -209,13 +196,12 @@ const Personaldata = () => {
                   <option value="Frontend">Frontend</option>
                   <option value="Backend">Backend</option>
                   <option value="Data Analysis">Data Analysis</option>
-                  <option value="Quality Assurance">Qualiy Assurance</option>
+                  <option value="Quality Assurance">Quality Assurance</option>
                 </select>
               </div>
-              </form>
-              
-              <form onSubmit={handlePageSubmit} className="personal-data-form">
-              {/* Email */}
+            </form>
+
+            <form onSubmit={handlePageSubmit} className="personal-data-form">
               <div>
                 <label className="pinfofn">Email Address</label>
                 <input
@@ -228,7 +214,6 @@ const Personaldata = () => {
                 />
               </div>
 
-              {/* Address */}
               <div>
                 <label className="pinfofn">Address</label>
                 <input
@@ -241,7 +226,6 @@ const Personaldata = () => {
                 />
               </div>
 
-              {/* How did you hear about Genesys Academy */}
               <div>
                 <label className="pinfofn">
                   How did you hear about Genesys Academy?
@@ -262,14 +246,13 @@ const Personaldata = () => {
                 </select>
               </div>
 
-              {/* Conditionally render input for staff name if "Genesys Staff" is selected */}
               {formData.howDidYouHear === "Genesys Staff" && (
                 <div>
                   <label className="pinfofn">Staff Name</label>
                   <input
                     type="text"
-                    name="staffName"
-                    value={formData.staffName || ""}
+                    name="referrerName"
+                    value={formData.referrerName || ""}
                     onChange={handleChange}
                     placeholder="Enter Staff Name"
                     className="selectinfo"
@@ -277,9 +260,18 @@ const Personaldata = () => {
                 </div>
               )}
 
-              {/* Submit Button */}
               <div className="btninformationsentence">
-                <button className="btnsubmitinfo">Submit</button>
+                <button
+                  className="btnsubmitinfo"
+                  type="submit"
+                  disabled={submitting} // Disable the button when submitting
+                >
+                  {submitting ? (
+                    <div className="spinner"></div> // Loading spinner
+                  ) : (
+                    "Submit"
+                  )}
+                </button>
               </div>
             </form>
           </div>
@@ -290,7 +282,6 @@ const Personaldata = () => {
         </div>
       </div>
 
-      {/* Render the modal if showModal is true (after successful submission) */}
       {showModal && (
         <OnlineAndOfflineOption
           open={showModal}
@@ -299,7 +290,6 @@ const Personaldata = () => {
         />
       )}
 
-      {/* Toast Container for displaying notifications */}
       <ToastContainer
         autoClose={5000}
         hideProgressBar
