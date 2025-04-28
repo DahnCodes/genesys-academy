@@ -32,9 +32,9 @@ import Footer from "../Components/Footer";
 // import Testimonalcard from "../Components/Testimonalcard";
 // import Carousel from "../Components/Carousel";
 import CardCarousel from "../Components/Cardcarousel";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import OfflineModal from "../Components/OfflineModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const LandingPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -92,7 +92,16 @@ const LandingPage = () => {
       setLoading(false);
     }
   };
+  const location = useLocation();
 
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const element = document.getElementById(location.state.scrollTo);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
   return (
     <div className="body-container">
       <div>

@@ -10,12 +10,13 @@ const Emptynav = () => {
         <Link to="/">
           <img src={logo} alt="" className="logo" />
         </Link>
-      
 
-        <button className="btn1">
-          Get Started
-          <FaArrowRightLong className="arrow1" />
-        </button>
+        <Link to="/personaldata">
+          <button className="btn1">
+            Get Started
+            <FaArrowRightLong className="arrow1" />
+          </button>
+        </Link>
       </nav>
     </>
   );
