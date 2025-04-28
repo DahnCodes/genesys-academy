@@ -62,7 +62,8 @@ const Installment = () => {
   const handleProceedToPayment = async () => {
     try {
       const response = await axios.post(
-        `https://genesys-web-app-revamp.onrender.com/api/v1/payment/paystack/initialize/${invoicedetails.email}`,
+        // `https://genesys-web-app-revamp.onrender.com/api/v1/payment/paystack/initialize/${invoicedetails.email}`,
+        `https://genesys-web-app-revamp.onrender.com/api/v1/payment/initialize/${invoicedetails.email}`,
         { invoiceId },
         { headers: { "Content-Type": "application/json" } }
       );

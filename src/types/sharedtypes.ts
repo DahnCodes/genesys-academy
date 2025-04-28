@@ -8,6 +8,7 @@ export type InternDataResFromPersonalData = {
   learningPath: string;
   medium: string;
   paymentOption: string | null;
+  paymentType : null;
   invoiceId: string[];
   // invoiceId: Invoice[];
   createdAt: string; // ISO 8601 date string

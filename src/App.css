@@ -508,6 +508,7 @@ body {
 }
 .subscribe {
   display: flex;
+  flex-direction: column;
   margin-top: 5%;
 }
 .btnsubscribe {
@@ -1966,6 +1967,10 @@ body {
   .stay-connected p {
     font-size: 14px;
   }
+
+  .btn5{
+    font-size: 10px;
+  }
 }
 
 /* 
@@ -1974,3 +1979,6 @@ body {
 
 .error-message {
 } */
+
+
+/* Ensure the input box and button are on the same line */

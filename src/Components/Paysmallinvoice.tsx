@@ -61,7 +61,8 @@ const Paysmallinvoice = () => {
   const handleProceedToPayment = async () => {
     try {
       const response = await axios.post(
-        `https://genesys-web-app-revamp.onrender.com/api/v1/payment/paystack/initialize/${invoicedetails.email}`,
+        // `https://genesys-web-app-revamp.onrender.com/api/v1/payment/paystack/initialize/${invoicedetails.email}`,
+        `https://genesys-web-app-revamp.onrender.com/api/v1/payment/initialize/${invoicedetails.email}`,
         { invoiceId },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -119,13 +120,13 @@ const Paysmallinvoice = () => {
           <tr>
             <td>1</td>
             <td>{invoicedetails?.title}</td>
-            <td>{invoicedetails?.amount}</td>
-            <td>{invoicedetails?.amount}</td>
+            <td>{invoicedetails?.amount?.toLocaleString()}</td>
+            <td>{invoicedetails?.amount?.toLocaleString()}</td>
           </tr>
         </tbody>
       </table>
       <div className="sub">
-        <p>Total: {invoicedetails?.amount}</p>
+        <p>Total: {invoicedetails?.amount?.toLocaleString()}</p>
       </div>
       <footer className="payment-info">
         <div className="payment-buttonpn">
