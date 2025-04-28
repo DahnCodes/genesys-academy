@@ -37,20 +37,16 @@ const Personaldata = () => {
     useState<InternDataResFromPersonalData>(
       {} as InternDataResFromPersonalData
     );
-  const [submitting, setSubmitting] = useState(false); // Track submission state
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handlePageSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     const {
       firstName,
       lastName,
@@ -80,7 +76,7 @@ const Personaldata = () => {
       return;
     }
 
-    setSubmitting(true); // Set submitting to true to disable button
+    setSubmitting(true);
 
     try {
       const response = await axios.post(
@@ -98,26 +94,21 @@ const Personaldata = () => {
       );
 
       if (response.data.success) {
-        setPersonalDataResponse(response.data.data); // Store the response data
-        setShowModal(true); // Show the modal
+        setPersonalDataResponse(response.data.data);
+        setShowModal(true);
         toast.success("Form submitted successfully!");
       } else {
-        const apiErrorMessage =
-          response.data.message || "Something went wrong, please try again.";
-        toast.error(apiErrorMessage);
+        toast.error(
+          response.data.message || "Something went wrong, please try again."
+        );
       }
     } catch (error: any) {
       console.error("Error submitting form:", error);
-
-      const errorMessage =
-        error.response && error.response.data
-          ? error.response.data.message ||
-            "An error occurred, please try again."
-          : "An unknown error occurred.";
-
-      toast.error(errorMessage);
+      toast.error(
+        error.response?.data?.message || "An unknown error occurred."
+      );
     } finally {
-      setSubmitting(false); // Reset submitting flag after the request
+      setSubmitting(false);
     }
   };
 
@@ -126,7 +117,6 @@ const Personaldata = () => {
   };
 
   const handleModalClose = () => {
-    // Close the modal
     setShowModal(false);
   };
 
@@ -137,6 +127,7 @@ const Personaldata = () => {
           <FontAwesomeIcon icon={faArrowLeft} className="farrowleft" />
         </button>
       </div>
+
       <div>
         <div className="pdpad">
           <div className="pdspaceinfo">
@@ -144,6 +135,7 @@ const Personaldata = () => {
             <p className="aboutselfinfo">Tell us a little about yourself.</p>
           </div>
           <div className="formwrapper">
+            {/* First Form Column */}
             <form onSubmit={handlePageSubmit} className="personal-data-form">
               <div>
                 <label className="pinfofn">First Name</label>
@@ -170,13 +162,13 @@ const Personaldata = () => {
               </div>
 
               <div>
-                <label className="pinfofn">Mobile Number</label>
+                <label className="pinfofn">Email Address</label>
                 <input
-                  type="text"
-                  name="mobileNumber"
-                  value={formData.mobileNumber}
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
-                  placeholder="Enter Mobile Number"
+                  placeholder="Enter Email Address"
                   className="selectinfo"
                 />
               </div>
@@ -201,15 +193,16 @@ const Personaldata = () => {
               </div>
             </form>
 
+            {/* Second Form Column */}
             <form onSubmit={handlePageSubmit} className="personal-data-form">
               <div>
-                <label className="pinfofn">Email Address</label>
+                <label className="pinfofn">Mobile Number</label>
                 <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
+                  type="text"
+                  name="mobileNumber"
+                  value={formData.mobileNumber}
                   onChange={handleChange}
-                  placeholder="Enter Email Address"
+                  placeholder="Enter Mobile Number"
                   className="selectinfo"
                 />
               </div>
@@ -264,13 +257,9 @@ const Personaldata = () => {
                 <button
                   className="btnsubmitinfo"
                   type="submit"
-                  disabled={submitting} // Disable the button when submitting
+                  disabled={submitting}
                 >
-                  {submitting ? (
-                    <div className="spinner"></div> // Loading spinner
-                  ) : (
-                    "Submit"
-                  )}
+                  {submitting ? <div className="spinner"></div> : "Submit"}
                 </button>
               </div>
             </form>

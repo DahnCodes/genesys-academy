@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Styles/onlineandoffline.css";
 import PaymentModal from "./Paymentmodal";
 import PaymentOptionsOffline from "./PaymentOptionsOffline";
 import { InternDataResFromPersonalData } from "../types/sharedtypes";
-import axios from "axios"; // Import axios
+import axios from "axios";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import { toast, ToastContainer } from "react-toastify"; // Import ToastContainer
-import "react-toastify/dist/ReactToastify.css"; // Import toast CSS
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface PaymentModalProps {
   open: boolean;
@@ -14,59 +14,67 @@ interface PaymentModalProps {
   personalDataResponse: InternDataResFromPersonalData;
 }
 
-const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
-  open,
-  onClose,
-  personalDataResponse,
-}) => {
+const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({ open, onClose, personalDataResponse }) => {
   const [paymentMode, setPaymentMode] = useState<"Online" | "Offline" | "">("");
-  const [canProceed, setCanProceed] = useState(false);
-  const [loading, setLoading] = useState(false); // To track API request status
-  const [error, setError] = useState<string | null>(null); // To track error messages
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [proceedToPayment, setProceedToPayment] = useState(false);
+  const [autoProceed, setAutoProceed] = useState(false);
+
+  useEffect(() => {
+    if (personalDataResponse?.paymentType) {
+      // If paymentType already exists
+      setPaymentMode(personalDataResponse.paymentType);
+      setAutoProceed(true);
+    }
+  }, [personalDataResponse]);
+
+  useEffect(() => {
+    if (autoProceed && paymentMode) {
+      setProceedToPayment(true);
+    }
+  }, [autoProceed, paymentMode]);
 
   if (!open) return null;
 
   const handleProceed = async () => {
     if (!paymentMode) {
-      toast.error("Please select a payment option first!"); // Show toast if no payment is selected
+      toast.error("Please select a payment option first!");
       return;
     }
 
     setLoading(true);
-    setError(null); // Reset error message before making the request
+    setError(null);
 
     try {
-      // URL for the PATCH request (assuming the email is part of the URL)
       const apiUrl = `https://genesys-web-app-revamp.onrender.com/api/v1/intern/update/${personalDataResponse.email}`;
+      const requestData = { paymentType: paymentMode };
 
-      // Directly send the paymentMode value as the request body
-      const requestData = { paymentType: paymentMode }; // 'Online' or 'Offline'
-
-      // Send the PATCH request using axios
       const response = await axios.patch(apiUrl, requestData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
       });
 
-      // If the request is successful (status 200), set canProceed to true
       if (response.status === 200) {
-        toast.success("Payment mode updated successfully!"); // Success toast
-        setCanProceed(true);
+        toast.success("Payment mode updated successfully!");
+        setProceedToPayment(true);
       } else {
         throw new Error("Failed to update payment method.");
       }
     } catch (error: any) {
-      setError(
-        error.message || "An error occurred while processing the request."
-      );
-      toast.error(
-        error.message || "An error occurred while processing the request."
-      ); // Error toast
+      setError(error.message || "An error occurred while processing the request.");
+      toast.error(error.message || "An error occurred while processing the request.");
     } finally {
       setLoading(false);
     }
   };
+
+  if (proceedToPayment) {
+    if (paymentMode === "Online") {
+      return <PaymentModal onClose={onClose} personalDataResponse={personalDataResponse} />;
+    } else if (paymentMode === "Offline") {
+      return <PaymentOptionsOffline onClose={onClose} personalDataResponse={personalDataResponse} />;
+    }
+  }
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -78,12 +86,7 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
         <p className="modal-subtitle">Choose mode of payment.</p>
 
         <div className="payment-options22">
-          {/* Online Payment Option */}
-          <label
-            className={`payment-option ${
-              paymentMode === "Online" ? "selected" : ""
-            }`}
-          >
+          <label className={`payment-option ${paymentMode === "Online" ? "selected" : ""}`}>
             <input
               type="radio"
               name="payment"
@@ -95,12 +98,7 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
             <span className="onpayspan">Online Payment</span>
           </label>
 
-          {/* Offline Payment Option */}
-          <label
-            className={`payment-option ${
-              paymentMode === "Offline" ? "selected" : ""
-            }`}
-          >
+          <label className={`payment-option ${paymentMode === "Offline" ? "selected" : ""}`}>
             <input
               type="radio"
               name="payment"
@@ -113,42 +111,19 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
           </label>
         </div>
 
-        {/* Proceed Button */}
         <div className="nbaz">
-
-        <button
-          className="proceed-button"
-          onClick={handleProceed}
-          disabled={loading || !paymentMode} // Disable if no payment option is selected or loading
-        >
-          {/* {loading ? "Processing..." : "Proceed To Payment"} */}
-          {loading ? (
-            <div className="spinner"></div> // Loading spinner
-          ) : (
-            "Proceed To Payment"
-          )}
-        </button>
+          <button
+            className="proceed-button"
+            onClick={handleProceed}
+            disabled={loading || !paymentMode}
+          >
+            {loading ? <div className="spinner"></div> : "Proceed To Payment"}
+          </button>
         </div>
 
-        {/* Show error message if any */}
         {error && <p className="error-message">{error}</p>}
-
-        {canProceed && paymentMode === "Online" && (
-          <PaymentModal
-            onClose={onClose}
-            personalDataResponse={personalDataResponse}
-          />
-        )}
-
-        {canProceed && paymentMode === "Offline" && (
-          <PaymentOptionsOffline
-            onClose={onClose}
-            personalDataResponse={personalDataResponse}
-          />
-        )}
       </div>
 
-      {/* ToastContainer to display toast notifications */}
       <ToastContainer
         autoClose={5000}
         hideProgressBar

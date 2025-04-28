@@ -248,7 +248,7 @@
 
 /* Button state when it's disabled */
 .proceed-button:disabled {
-  background-color: #aab7b8; /* Disabled color */
+  background-color: #e56d2b; /* Disabled color */
   cursor: not-allowed;
 }
 .proceed-button{

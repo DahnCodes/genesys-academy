@@ -15,6 +15,7 @@ import CreateInvoice from "./Components/CreateInvoice";
 import Installment from "./Components/Installment";
 import Paysmallinvoice from "./Components/Paysmallinvoice";
 import Paysmallsmall from "./Pages/Paysmallsmall";
+import RedirectFullPayment from "./Components/RedirectFullPayment";
 
 function App() {
   return (
@@ -44,6 +45,10 @@ function App() {
         />
         {/* <Route path="/pay-small" element={<PaySmall />} /> */}
         <Route path="/pay-smallsmall" element={<Paysmallsmall />} />
+        <Route
+          path="/redirect/full-payment/:email"
+          element={<RedirectFullPayment />}
+        />
       </Routes>
     </BrowserRouter>
   );

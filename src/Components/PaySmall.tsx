@@ -19,7 +19,7 @@ const PaySmall: React.FC = () => {
     const status = invoiceDetails[index]?.status;
     if (status === "Paid") {
       toast.info("This invoice has already been paid and cannot be selected.");
-      return; 
+      return;
     }
 
     if (isInvoiceSelectable(index)) {
@@ -71,7 +71,7 @@ const PaySmall: React.FC = () => {
     if (invoiceDetails[index - 1]?.status === "Paid") {
       return true;
     }
-    return false; 
+    return false;
   };
 
   // Check if the invoice is paid and return respective classes for styling
@@ -120,7 +120,7 @@ const PaySmall: React.FC = () => {
               >
                 <div className="gridinner">
                   <h3 className="card-title">{plan.title}</h3>
-                  <p className="amount">{plan.amount}</p>
+                  <p className="amount">{plan.amount?.toLocaleString()}</p>
                   <span className="status">{plan.status}</span>
                 </div>
                 <div className="ksks">

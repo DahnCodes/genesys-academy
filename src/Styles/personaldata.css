@@ -491,8 +491,8 @@ option {
 
 /* Button state when it's disabled */
 .btnsubmitinfo:disabled {
-  background-color: #aab7b8; /* Disabled color */
+  background-color: #e56d2b; /* Disabled color */
   cursor: not-allowed;
-  border: 1px solid #aab7b8;
+  /* border: 1px solid #aab7b8; */
 }
 
