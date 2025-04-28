@@ -310,7 +310,7 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <section className="pay-small">
+        <section className="pay-small" id="pay-smallsmall">
           <div className="pay-container">
             <img src={paywoman} alt="" className="pay-woman" />
 
