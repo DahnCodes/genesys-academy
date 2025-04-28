@@ -1,78 +1,133 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../Styles/testimony.css";
 import quote from "../assets/quote.png";
 
-interface CardProps {
-  title: string;
-  role: string;
-  description: string;
+// Interface for data structure
+interface TestimonialData {
+  _id: string;
+  name: string;
+  comment: string;
+  designation: string;
+  createdAt: string;
+  updatedAt: string;
+  imageUrl: string;
 }
 
-const testimonials: CardProps[] = [
-  {
-    title: "John Doe",
-    role: "Software Engineer",
-    description:
-      "Genesys Academy gave me the skills and confidence to excel in my career.",
-  },
-  {
-    title: "Jane Smith",
-    role: "UI/UX Designer",
-    description:
-      "The mentorship program was exceptional and invaluable to my journey.",
-  },
-  {
-    title: "Samuel Lee",
-    role: "Data Scientist",
-    description:
-      "The learning environment and curriculum were truly world-class.",
-  },
-];
-
-// Custom Previous Button
-const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
-  <button className="slick-prev" onClick={onClick}>
-    &#x2190; {/* Left Arrow */}
-  </button>
-);
-
-// Custom Next Button
-const NextArrow = ({ onClick }: { onClick?: () => void }) => (
-  <button className="slick-next" onClick={onClick}>
-    &#8594; {/* Right Arrow */}
-  </button>
-);
-
 const TestimonialCarousel: React.FC = () => {
+  const [testimonials, setTestimonials] = useState<TestimonialData[]>([]);
+
+  // Fetch the testimonials from the API
+  useEffect(() => {
+    const fetchTestimonials = async () => {
+      try {
+        const response = await fetch(
+          "https://genesys-web-app-revamp.onrender.com/api/v1/review/"
+        ); // API endpoint to fetch data
+        const data = await response.json();
+        if (data.success) {
+          setTestimonials(data.data); // Set the response data to state
+        }
+      } catch (error) {
+        console.error("Error fetching testimonials:", error);
+      }
+    };
+
+    fetchTestimonials();
+  }, []);
+
+  // Custom Previous Button
+  const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
+    <button className="slick-prev" onClick={onClick}>
+      &#x2190; {/* Left Arrow */}
+    </button>
+  );
+
+  // Custom Next Button
+  const NextArrow = ({ onClick }: { onClick?: () => void }) => (
+    <button className="slick-next" onClick={onClick}>
+      &#8594; {/* Right Arrow */}
+    </button>
+  );
+
   const settings = {
     infinite: true, // Infinite loop
     speed: 500, // Transition speed
     slidesToShow: 1, // Show one slide at a time
     slidesToScroll: 1, // Scroll one slide at a time
-    prevArrow: <PrevArrow />, // Custom previous button
-    nextArrow: <NextArrow />, // Custom next button
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     centerMode: true,
-    centerPadding: "5",
+    centerPadding: "250px",
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 768, // For screens smaller than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for smaller screens
+          centerPadding: "100px", // Remove center padding
+        },
+      },
+      {
+        breakpoint: 425, // For screens smaller than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for smaller screens
+          centerPadding: "100px", // Remove center padding
+        },
+      },
+      {
+        breakpoint: 375, // For screens smaller than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for smaller screens
+          centerPadding: "0", // Remove center padding
+        },
+      },
+      {
+        breakpoint: 320, // For screens smaller than 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: false, // Disable center mode for smaller screens
+          centerPadding: "0", // Remove center padding
+        },
+      },
+    ],
   };
 
   return (
-    <Slider {...settings}>
-      {testimonials.map((testimonial, index) => (
-        <div key={index}>
-          <div className="testimony-container">
-            <img src={quote} alt="Quote" className="quote" />
-            <div className="testimonials">
-              <h2>{testimonial.title}</h2>
-              <p>{testimonial.role}</p>
-              <p className="description">{testimonial.description}</p>
+    <div className="slider-container">
+      <Slider {...settings}>
+        {testimonials.map((testimonial) => (
+          <div key={testimonial._id}>
+            <div className="testimony-container">
+              <img src={quote} alt="Quote" className="quote" />
+              <div className="testimonials">
+                <img
+                  src={testimonial.imageUrl}
+                  alt={testimonial.name}
+                  className="past-interns"
+                  loading="lazy" // Lazy loading the image
+                />
+                <div className="testimonial-text">
+                  <h3>{testimonial.name}</h3>
+                  <p className="role">{testimonial.designation}</p>
+                  <p className="description">{testimonial.comment}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </Slider>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

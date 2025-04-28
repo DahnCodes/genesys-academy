@@ -8,6 +8,10 @@
 body {
   background-color: #fafafa;
 }
+.body-container {
+  max-width: 1440px;
+  margin: auto;
+}
 .hero-container {
   display: flex;
   padding: 30px 100px;
@@ -26,6 +30,7 @@ body {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
   overflow: visible;
+  color: #273043;
 }
 .hero-writeup p {
   font-family: Avenir LT Pro;
@@ -45,6 +50,25 @@ body {
 
 .heroimg {
   width: 556px;
+}
+.hero-illustrations {
+  overflow: visible;
+}
+.sider {
+  position: relative;
+  bottom: 610px;
+  right: 4px;
+}
+.sides {
+  position: relative;
+  bottom: 595px;
+  left: 344px;
+  z-index: -1;
+}
+.siding {
+  position: relative;
+  bottom: 120px;
+  right: 974px;
 }
 .btns {
   margin-top: 8%;
@@ -84,31 +108,42 @@ body {
 }
 .hero-image {
   margin-top: 10%;
+  overflow: visible;
 }
 
 .whoweare {
   background-color: #f4f5ff;
-  margin-top: 15%;
+  margin-top: 170px;
+  position: relative;
+  /* display: flex; */
   /* padding: 30px 100px; */
+
+  overflow: visible;
 }
 .gen {
-  position: relative;
-  top: 236px;
-  left: 1210px;
+  position: absolute;
+  top: 125px;
+  /* left: 0; */
+  right: 0px;
   width: 150px;
   /* gap: 0px; */
-  opacity: 60%;
+  opacity: 90%;
 }
 .weare {
   display: flex;
   align-items: center;
-  margin-top: -20%;
+  /* justify-content: center; */
+  margin-top: -23%;
   gap: 50px;
   padding: 30px 100px;
+}
+.weare-text {
+  margin-bottom: -20px;
 }
 .weare-text h1 {
   font-size: 36px;
   font-weight: 700;
+  color: #273043;
 }
 .weare-text p {
   font-size: 16px;
@@ -116,18 +151,21 @@ body {
   margin-top: 5%;
   word-wrap: break-word;
   max-width: 449px;
+  line-height: 24px;
 }
 
 .pathways {
-  margin-top: 15%;
-  padding: 30px 100px;
+  margin-top: 80px;
+  padding: 30px 0px;
 }
 .pathway-header {
   text-align: center;
+  margin-bottom: -2%;
 }
-.pathway-cards h1 {
+.pathway-header h1 {
   font-weight: 700;
   font-size: 36px;
+  color: #273043;
 }
 .pathway-header p {
   margin: 2% auto;
@@ -135,32 +173,59 @@ body {
   font-weight: 400;
   color: #596275;
   word-wrap: break-word;
-  max-width: 750px;
+  max-width: 660px;
   text-align: center;
+  line-height: 24px;
 }
-.pathway-cards {
+/* .pathway-cards {
   display: grid;
   grid-template-columns: auto auto auto;
-  gap: 20px;
+  gap: 15px;
   overflow: visible;
   align-items: center;
   justify-content: center;
   margin-top: 5%;
 }
 
+
 .second-cards {
   display: grid;
   align-items: center;
   justify-content: center;
   grid-template-columns: auto auto;
-  gap: 20px;
-  margin-top: 5%;
+  gap: 15px;
+  margin-top: 3%;
+} */
+.pathway-card-container {
+  margin-top: 30px;
+}
+.pathway-cards {
+  display: flex; /* Use flexbox for alignment consistency */
+  flex-wrap: wrap; /* Allow wrapping if needed */
+  justify-content: center; /* Center the items horizontally */
+  gap: 15px; /* Space between cards */
+  margin-top: 2%; /* Maintain spacing from other sections */
 }
 
+.pathway-cards .link {
+  text-align: left; /* Center-align content inside cards */
+}
+.illustration {
+  position: relative;
+  bottom: 50px;
+}
+.illustrations {
+  width: 120px;
+}
+.stand-out {
+  margin-top: -50px;
+}
 .stand-out h1 {
   text-align: center;
   font-size: 36px;
   font-weight: 700;
+  color: #273043;
+  margin-bottom: 2%;
 }
 .point-container {
   display: flex;
@@ -171,28 +236,37 @@ body {
 .point1 {
   display: flex; /* Arrange the image and text side by side */
   align-items: center; /* Vertically align the content */
-  gap: 15px; /* Add spacing between the image and text */
+  gap: 20px; /* Add spacing between the image and text */
   margin-bottom: 20px;
   margin-left: 35px; /* Add space below each .point1 element */
 }
-
-.point1 img.one {
-  width: 50px; 
-  height: auto; 
+.group1 {
+  width: 556px;
 }
+.point1 img.one {
+  width: 46px;
+  height: auto;
+  margin-bottom: 7%;
+}
+.point-p {
+  margin-top: 1%;
+  line-height: 40px;
 
+}
 .point-p h2 {
   font-size: 28px; /* Adjust the font size for the heading */
   font-weight: 400; /* Remove default margin */
+  color: #273043;
 }
 
 .point-p p {
-  margin-top: 8px;
+  /* margin-top: 8px; */
   color: #596275;
   font-size: 14px;
   font-weight: 400; /* Add some space between the heading and paragraph */
   word-wrap: break-word;
-  max-width: 451px;
+  max-width: 441px;
+  line-height: 24px;
 }
 
 .second-point {
@@ -201,21 +275,41 @@ body {
   padding: 30px 100px;
   align-items: center;
 }
+.group2 {
+  width: 556px;
+}
 .point2 {
   display: flex; /* Arrange the image and text side by side */
   align-items: center; /* Vertically align the content */
-  gap: 15px; /* Add spacing between the image and text */
-  margin-bottom: 20px;
-  margin-right: 35px;
+  gap: 20px; /* Add spacing between the image and text */
+  margin-bottom: 10px;
+  margin-right: 90px;
+  /* overflow: hidden; */
 }
-
+.point2 img.one {
+  width: 40px;
+  height: auto;
+  margin-bottom: 9%;
+}
+.point2 .point-p p {
+  color: #596275;
+  font-size: 14px;
+  font-weight: 400; /* Add some space between the heading and paragraph */
+  word-wrap: break-word;
+  max-width: 431px;
+  line-height: 20px;
+}
 .meet-interns {
   background-color: rgba(245, 119, 47, 0.02);
   padding: 30px 100px;
-  margin-top: 10%;
+  margin-top: 6%;
 }
 .meet-interns h1 {
   text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #273043;
+  margin-bottom: 2%;
 }
 .first-team {
   display: flex;
@@ -231,23 +325,43 @@ body {
   gap: 120px;
   align-items: center;
   margin-top: 8%;
+  justify-content: center;
   overflow: visible;
 }
 .icons {
   overflow: visible;
+  margin-bottom: 8%;
 }
 .curve {
   width: 82.16px;
   position: relative;
-  right: 30px;
-  bottom: -50px;
+  right: 35px;
+  /* top: 50px; */
+  bottom: -53px;
+  z-index: -1;
 }
 .wifi {
   width: 75.85px;
   position: relative;
-  left: 360px;
-  top: 190px;
-  z-index: 1;
+  left: 367px;
+  top: 200px;
+  z-index: -1;
+  /* overflow: visible; */
+}
+.curve2 {
+  width: 82.16px;
+  position: relative;
+  left: 445px;
+  /* top: 50px; */
+  bottom: -55px;
+  z-index: -1;
+}
+.wifi2 {
+  width: 75.85px;
+  position: relative;
+  right: 120px;
+  top: 212px;
+  z-index: -1;
   /* overflow: visible; */
 }
 .core {
@@ -258,14 +372,72 @@ body {
   border-radius: 20px;
   padding: 35px;
   overflow: visible;
+  /* margin-top: -5%; */
 }
 .core p {
   color: #596275;
   font-size: 16px;
   font-weight: 400;
+  line-height: 24px;
+}
+.pay-small {
+  padding: 30px 100px;
+  margin-top: 100px;
+}
+.pay-container {
+  display: flex;
+  /* gap: 20px; */
+  align-items: center;
+  justify-content: center;
+}
+.pay-woman {
+  width: 600px;
+}
+
+.pay-texts {
+  width: 533px;
+  /* margin-top: 30px; */
+}
+.pay-texts h3 {
+  color: #f5772f;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+.pay-texts h1 {
+  color: #273043;
+}
+.pay-texts p {
+  margin-top: 7px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #596275;
+  line-height: 25px;
+}
+.btn13 {
+  width: 142px;
+  height: 52px;
+  padding: 15px 30px 15px 30px;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1.5px solid #f5772f;
+  background-color: white;
+  color: #f5772f;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.btn13:hover {
+  color: #fff;
+  background-color: #ff9e66;
+  /* transform: scale(0.9); */
+}
+.testimonies {
+  margin-top: 2%;
 }
 .testimonies h1 {
   text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #273043;
   margin-top: 8%;
 }
 .testimony-card {
@@ -276,10 +448,13 @@ body {
 }
 .cohort {
   padding: 30px 100px;
-  margin-top: 10%;
+  margin-top: 4%;
 }
 .cohort h1 {
   text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #273043;
 }
 .cohort-wrap {
   display: flex;
@@ -287,12 +462,17 @@ body {
   gap: 70px;
   margin-top: 5%;
 }
-
+.cohort-text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #273043;
+}
 .cohort-text p {
   margin-top: 5%;
   color: #596275;
   word-wrap: break-word;
   max-width: 454px;
+  line-height: 24px;
 }
 
 .btn4 {
@@ -310,13 +490,18 @@ body {
 }
 .stay-connected {
   margin: auto;
-  margin-top: 8%;
+  margin-top: 4%;
   width: 50%;
   padding: 10px;
   text-align: center;
 }
+.stay-connected h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #273043;
+}
 .stay-connected p {
-  margin-top: 5%;
+  margin-top: 2%;
   font-size: 16px;
   color: #596275;
   font-weight: 400;
@@ -325,12 +510,18 @@ body {
   display: flex;
   margin-top: 5%;
 }
+.btnsubscribe {
+  display: flex;
+}
 .subs {
   width: 636px;
   height: 52px;
   border-radius: 10px 0px 0px 10px;
   border: 0.5px solid #596275;
   padding: 10px 20px;
+}
+.subs:focus{
+  outline: none;
 }
 .btn5 {
   width: 146px;
@@ -344,7 +535,102 @@ body {
 .btn5:hover {
   background-color: #ff9e66;
 }
+@media only screen and (max-width: 1024px) {
+  .hero-container {
+    padding: 30px 50px;
+  }
+  .heroimg {
+    width: 415px;
+    /* overflow: hidden; */
+  }
+  .weare {
+    padding: 30px 50px;
+  }
+  .gen {
+    position: relative;
+    top: 186px;
+    left: 940px;
+    width: 80px;
+  }
+  .pathways {
+    padding: 30px 50px;
+  }
+  .pathway-cards {
+    overflow: visible;
+    padding: 30px 20px;
+    grid-template-columns: auto auto;
 
+    /* padding: 0  -120px; */
+  }
+
+  .second-cards {
+    display: grid;
+    grid-template-columns: auto auto;
+    overflow: visible;
+  }
+  .stand-out {
+    padding: 30px 50px;
+  }
+
+  .point-lists {
+    height: 380px;
+    overflow: hidden;
+  }
+  .point-container {
+    display: flex;
+    padding: 30px;
+    align-items: center;
+  }
+  .second-point {
+    display: flex;
+    padding: 30px;
+    align-items: center;
+  }
+
+  .meet-interns {
+    padding: 30px 50px;
+  }
+  .first-team {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 8%;
+    /* justify-content: center;    */
+    overflow: visible;
+  }
+  .second-team {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    align-items: center;
+    margin-top: 8%;
+    overflow: visible;
+  }
+  .core {
+    background-color: #ffffff;
+    width: 399px;
+    height: 166px;
+    border: 0.5px solid rgba(245, 119, 47, 0.5);
+    border-radius: 20px;
+    padding: 35px;
+    overflow: visible;
+  }
+  .curve {
+    width: 82.16px;
+    position: relative;
+    right: 30px;
+    /* top: 50px; */
+    bottom: -53px;
+  }
+  .wifi {
+    width: 75.85px;
+    position: relative;
+    left: 265px;
+    top: 192px;
+    z-index: 1;
+    /* overflow: visible; */
+  }
+}
 @media only screen and (max-width: 768px) {
   .hero-container {
     flex-direction: column;
@@ -371,11 +657,16 @@ body {
   .weare-text {
     text-align: center;
   }
+  .pathway-card-container {
+    overflow: visible;
+  }
   .pathway-cards {
     display: grid;
     grid-template-columns: auto;
     align-items: center;
     justify-content: center;
+    margin-bottom: -8%;
+    overflow: visible;
   }
 
   .second-cards {
@@ -397,6 +688,22 @@ body {
     flex-direction: column;
     gap: 10px;
   }
+
+  .pay-container {
+    flex-direction: column-reverse;
+    overflow: visible;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+  }
+
+  .pay-texts {
+    max-width: 350px;
+    /* text-align: center; */
+    /* margin: auto; */
+  }
+
   .cohort-wrap {
     flex-direction: column;
     align-items: center;
@@ -420,13 +727,30 @@ body {
     border-radius: 0px 10px 10px 0px;
     cursor: pointer;
   }
+  .curve2 {
+    width: 82.16px;
+    position: relative;
+    left: 845px;
+    /* top: 50px; */
+    bottom: -15px;
+    z-index: -1;
+  }
+  .wifi2 {
+    width: 75.85px;
+    position: relative;
+    right: 120px;
+    top: 212px;
+    z-index: -1;
+    /* overflow: visible; */
+  }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 475px) {
   .hero-container {
     margin-top: 10%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* padding: 30px 50px; */
   }
 
   .hero-writeup h1 {
@@ -437,6 +761,24 @@ body {
     text-align: center;
     line-height: 20px;
     font-size: 14px;
+  }
+  .sider {
+    position: relative;
+    bottom: 470px;
+    left: 2px;
+    width: 66px;
+  }
+  .sides {
+    position: relative;
+    bottom: 500px;
+    left: 270px;
+    width: 66px;
+    z-index: -1;
+  }
+  .siding {
+    position: relative;
+    bottom: 95px;
+    right: 974px;
   }
   .btns {
     flex-direction: column;
@@ -452,17 +794,23 @@ body {
   }
   .gen {
     position: relative;
-    top: 266px;
-    left: 320px;
+    top: 346px;
+    left: 400px;
     width: 80px;
   }
-
+  .whoweare {
+    margin-top: -25%;
+  }
   .weare-text {
     margin-top: -15%;
+  }
+  .weare-text h1 {
+    font-size: 24px;
   }
   .weare-text p {
     line-height: 20px;
     font-size: 14px;
+    text-align: left;
   }
   .weare {
     overflow: visible;
@@ -478,7 +826,7 @@ body {
     overflow: visible;
   }
   .pathways {
-    margin-top  : 20%;
+    margin-top: 20%;
     padding: 10px;
   }
   .pathway-header h1 {
@@ -487,7 +835,7 @@ body {
   .pathway-header p {
     font-size: 14px;
   }
-  
+
   .second-cards {
     overflow: visible;
   }
@@ -496,6 +844,7 @@ body {
   }
   .stand-out {
     margin-top: 20%;
+    padding: 30px 10px;
   }
   .stand-out h1 {
     font-size: 28px;
@@ -517,13 +866,12 @@ body {
   .point1 {
     align-items: center;
     gap: 15px;
-    margin: 0 2%
+    margin: 0 2%;
   }
 
   .one {
-    margin-top: -7%;
+    margin-top: 1%;
     width: 56px;
-    /* height: 36px; */
   }
   .point-p {
     margin-top: 5%;
@@ -542,13 +890,12 @@ body {
     /* align-items: center; */
     padding: 30px 10px;
     margin-top: -8%;
-
   }
   .point2 {
     /* align-items: center; */
     gap: 20px;
     /* margin-left: 3%; */
-    margin: 0 2%
+    margin: 0 4%;
   }
   .team1 {
     width: 380px;
@@ -558,16 +905,35 @@ body {
     position: relative;
     left: 210px;
     top: 180px;
-    /* z-index: 1; */
+    z-index: 1;
     /* overflow: visible; */
   }
+
   .curve {
     width: 52.4px;
     height: 52.22px;
-    left: -20px;
-    top: 35px;
+    left: -120px;
+    bottom: 135px;
   }
-
+  .curve2 {
+    width: 82.16px;
+    position: relative;
+    left: 845px;
+    /* top: 50px; */
+    bottom: -15px;
+    z-index: -1;
+  }
+  .wifi2 {
+    width: 75.85px;
+    position: relative;
+    right: 120px;
+    top: 212px;
+    z-index: -1;
+    /* overflow: visible; */
+  }
+  .pay-texts p {
+    font-size: 16px;
+  }
   .core {
     background-color: #ffffff;
     width: 300px;
@@ -577,16 +943,17 @@ body {
     padding: 35px;
     /* text-align: center; */
     overflow: visible;
-    /* margin-top: -5%; */
   }
   .core p {
     font-size: 14px;
+    line-height: 20px;
+    margin-top: -5%;
   }
   .first-team {
     margin-top: 8%;
   }
   .icons {
-    margin-top: -20%;
+    margin-top: -7%;
     /* padding: 0 -150px; */
   }
 
@@ -596,23 +963,34 @@ body {
   }
 
   .meet-interns {
-    margin-top: 20%;
+    margin-top: 10%;
     background-color: #f4f5ff;
   }
+  .meet-interns h1 {
+    font-size: 24px;
+  }
   .testimonies {
-    margin-top: 20%;
+    margin-top: 10%;
+  }
+  .testimonies h1 {
+    font-size: 24px;
   }
   .paul {
     width: 380px;
   }
   .cohort {
     padding: 0 10px;
-    margin-top: 30%;
+    margin-top: 20%;
+  }
+  .cohort h1 {
+    font-size: 24px;
   }
   .cohort-wrap {
     gap: 30px;
   }
-
+  .cohort-text h2 {
+    font-size: 24px;
+  }
   .cohort-text p {
     white-space: pre-wrap;
     font-size: 14px;
@@ -627,12 +1005,357 @@ body {
     padding: 10px;
     text-align: center;
   }
+  .stay-connected h1 {
+    font-size: 24px;
+  }
   .stay-connected p {
     font-size: 14px;
+    word-wrap: break-word;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 3%;
+    line-height: 20px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .hero-container {
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    /* padding: 30px 100px; */
+  }
+
+  .hero-writeup h1 {
+    text-align: center;
+    /* font-size: 28px; */
+  }
+  .hero-writeup p {
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  .sider {
+    position: relative;
+    bottom: 470px;
+    left: 2px;
+    width: 66px;
+  }
+  .sides {
+    position: relative;
+    bottom: 500px;
+    left: 270px;
+    width: 66px;
+    z-index: -1;
+  }
+  .siding {
+    position: relative;
+    bottom: 95px;
+    right: 974px;
+  }
+  .btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn2 {
+    width: 380px;
+    height: 50px;
+  }
+  .btn3 {
+    width: 380px;
+    height: 50px;
+  }
+  .gen {
+    position: relative;
+    top: 298px;
+    left: 340px;
+    width: 80px;
+  }
+  .whoweare {
+    margin-top: -30%;
+  }
+  .weare-text {
+    margin-top: -15%;
+  }
+  .weare-text h1 {
+    font-size: 24px;
+  }
+  .weare-text p {
+    line-height: 20px;
+    font-size: 14px;
+    text-align: left;
+  }
+  .weare {
+    overflow: visible;
+    text-align: center;
+    padding: 30px 10px;
+  }
+  .man1 {
+    width: 238px;
+    height: 237.3px;
+    margin-left: -10%;
+  }
+  .pathway-card-container {
+    overflow: visible;
+  }
+  .pathway-cards {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -11%;
+    margin-top: -10%;
+    overflow: visible;
+  }
+
+  .pathways {
+    margin-top: 15%;
+    padding: 30px 0px;
+  }
+
+  .pathway-header h1 {
+    font-size: 24px;
+  }
+  .pathway-header p {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .second-cards {
+    overflow: visible;
+  }
+  .illustration {
+    display: none;
+  }
+  .stand-out {
+    margin-top: 5%;
+  }
+  .stand-out h1 {
+    font-size: 28px;
+  }
+  .group1 {
+    width: 380px;
+  }
+  .group2 {
+    width: 380px;
+  }
+  .point-container {
+    display: flex;
+    padding: 30px 10px;
+    text-align: left;
+    overflow: visible;
+  }
+  .point-lists {
+    margin-top: 3%;
+    overflow: visible;
+  }
+  .point1 {
+    align-items: center;
+    gap: 15px;
+    margin: 0 2%;
+  }
+
+  .one {
+    margin-top: -1%;
+    width: 56px;
+  }
+  .point-p {
+    margin-top: 5%;
+    line-height: 35px;
+  }
+  .point-p h2 {
+    font-size: 20px; /* Adjust the font size for the heading */
+    font-weight: 400;
+    /* Remove default margin */
+  }
+
+  .point-p p {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .second-point {
+    display: flex;
+    /* align-items: center; */
+    padding: 30px 10px;
+    margin-top: -2%;
+  }
+  .point2 {
+    /* align-items: center; */
+    gap: 20px;
+    /* margin-left: 3%; */
+    margin: 0 2%;
+  }
+
+  .team1 {
+    width: 380px;
+  }
+  .wifi {
+    width: 45.85px;
+    position: absolute;
+    visibility: visible !important;
+    left: 270px;
+    top: 135px;
+    z-index: 1;
+    overflow: visible;
+  }
+  .curve {
+    position: absolute;
+    width: 52.4px;
+    height: 52.22px;
+    left: -20px;
+    top: -20px;
+    visibility: visible !important;
+    z-index: 1;
+  }
+  .wifi2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    right: 275px;
+    top: 140px;
+    z-index: 1;
+    width: 45.85px;
+  }
+  .curve2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    left: 270px;
+    top: -12px;
+    z-index: 1;
+    width: 45.85px;
+  }
+
+  .core {
+    background-color: #ffffff;
+    width: 300px;
+    /* height: 166px; */
+    border: 0.5px solid rgba(245, 119, 47, 0.5);
+    border-radius: 20px;
+    padding: 35px;
+    /* text-align: center; */
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+  }
+  .core p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: -5%;
+  }
+  .first-team {
+    margin-top: 8%;
+  }
+  .icons {
+    margin-top: 10%;
+    position: relative;
+    overflow: visible;
+    /* padding: 0 -150px; */
+  }
+
+  .second-team {
+    gap: 10px;
+    margin-top: 15%;
+  }
+  .pay-small {
+    margin-top: 10%;
+  }
+  .pay-container {
+    flex-direction: column-reverse;
+    /* overflow: visible; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+  }
+  .pay-woman {
+    margin-left: 180px;
+    width: 500px;
+  }
+  .pay-texts {
+    max-width: 350px;
+  }
+  .pay-texts h1 {
+    word-wrap: break-word;
+    max-width: 256px;
+    margin: auto;
+  }
+  .pay-texts h3 {
+    margin-bottom: 5px;
+  }
+  .pay-texts p {
+    text-align: justify;
+  };
+  .pay-woman {
+    margin-top: 20px;
+  }
+  .meet-interns {
+    margin-top: 10%;
+    background-color: #f4f5ff;
+  }
+  .meet-interns h1 {
+    font-size: 24px;
+  }
+  .testimonies {
+    margin-top: 10%;
+  }
+  .testimony-card {
+    display: flex;
+    overflow: visible;
+    align-items: center;
+    justify-content: center;
+  }
+  .testimonies h1 {
+    font-size: 24px;
+  }
+  .paul {
+    width: 380px;
+  }
+  .cohort {
+    padding: 0 10px;
+    margin-top: 15%;
+  }
+  .cohort h1 {
+    font-size: 24px;
+  }
+  .cohort-wrap {
+    gap: 30px;
+  }
+  .cohort-text h2 {
+    font-size: 24px;
+  }
+  .cohort-text p {
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+  .btn4 {
+    margin-top: 10%;
+  }
+  .stay-connected {
+    margin: auto;
+    margin-top: 20%;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+  .stay-connected h1 {
+    font-size: 24px;
+  }
+  .stay-connected p {
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 3%;
+    line-height: 20px;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 385px) {
   .hero-container {
     margin-top: 10%;
     flex-direction: column;
@@ -647,6 +1370,24 @@ body {
   .hero-writeup p {
     text-align: center;
     font-size: 14px;
+  }
+  .sider {
+    position: relative;
+    bottom: 440px;
+    left: 2px;
+    width: 66px;
+  }
+  .sides {
+    position: relative;
+    bottom: 470px;
+    left: 240px;
+    width: 66px;
+    z-index: -1;
+  }
+  .siding {
+    position: relative;
+    bottom: 95px;
+    right: 974px;
   }
   .btns {
     flex-direction: column;
@@ -664,8 +1405,8 @@ body {
   }
   .gen {
     position: relative;
-    top: 306px;
-    left: 283px;
+    top: 356px;
+    left: 293px;
     width: 80px;
   }
 
@@ -682,9 +1423,8 @@ body {
     height: 237.3px;
   }
   .pathways {
-    padding: 30px 20px;
     margin-top: 20%;
-    overflow: visible;
+    /* overflow-x: visible; */
   }
   .pathway-header h1 {
     font-size: 24px;
@@ -727,7 +1467,6 @@ body {
   .second-point {
     padding: 30px 10px;
     margin-top: -8%;
-
   }
   .team1 {
     width: 350px;
@@ -741,13 +1480,43 @@ body {
   }
   .wifi {
     width: 45.85px;
-    position: relative;
-    left: 210px;
-    top: 180px;
-    /* z-index: 1; */
-    /* overflow: visible; */
+    position: absolute;
+    visibility: visible !important;
+    left: 270px;
+    top: 135px;
+    z-index: 1;
+    overflow: visible;
   }
-  .first-team {
+  .curve {
+    position: absolute;
+    width: 52.4px;
+    height: 52.22px;
+    left: -20px;
+    top: -20px;
+    visibility: visible !important;
+    z-index: 1;
+  }
+  .wifi2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    right: 275px;
+    top: 140px;
+    z-index: 1;
+    width: 45.85px;
+  }
+  .curve2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    left: 270px;
+    top: -12px;
+    z-index: 1;
+    width: 45.85px;
+  }
+ .first-team {
     display: flex;
     gap: -50px;
     align-items: center;
@@ -788,7 +1557,7 @@ body {
     font-size: 14px;
   }
 }
-@media screen and (max-width: 320px){
+@media screen and (max-width: 375px) {
   .hero-container {
     margin-top: 10%;
     flex-direction: column;
@@ -803,6 +1572,232 @@ body {
   .hero-writeup p {
     text-align: center;
     font-size: 14px;
+  }
+  .sider {
+    position: relative;
+    bottom: 440px;
+    left: 2px;
+    width: 66px;
+  }
+  .sides {
+    position: relative;
+    bottom: 470px;
+    left: 240px;
+    width: 66px;
+    z-index: -1;
+  }
+  .siding {
+    position: relative;
+    bottom: 95px;
+    right: 974px;
+  }
+  .btns {
+    flex-direction: column;
+  }
+  .btn2 {
+    width: 350px;
+    height: 50px;
+  }
+  .btn3 {
+    width: 350px;
+    height: 50px;
+  }
+  .heroimg {
+    width: 350px;
+  }
+  .gen {
+    position: relative;
+    top: 276px;
+    left: 293px;
+    width: 80px;
+  }
+  .weare-text {
+    overflow: visible;
+  }
+  .weare-text h1 {
+    font-size: 28px;
+    margin-top: -30px;
+  }
+  .weare-text p {
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 350px;
+  }
+  .man1 {
+    width: 238px;
+    height: 237.3px;
+    margin-top: -10px;
+  }
+  .pathways {
+    margin-top: 20%;
+    /* overflow-x: visible; */
+  }
+  .pathway-header h1 {
+    font-size: 24px;
+  }
+  .pathway-header p {
+    font-size: 14px;
+  }
+
+  .illustration {
+    display: none;
+  }
+  .stand-out {
+    margin-top: 8%;
+  }
+  .stand-out h1 {
+    font-size: 28px;
+  }
+  .group1 {
+    width: 350px;
+  }
+  .group2 {
+    width: 350px;
+  }
+  .point-container {
+    padding: 30px 9px;
+  }
+
+  .point-p {
+    margin-top: 5%;
+  }
+  .point-p h2 {
+    font-size: 20px; /* Adjust the font size for the heading */
+    font-weight: 400;
+    /* Remove default margin */
+  }
+
+  .point-p p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .second-point {
+    padding: 30px 10px;
+    margin-top: -1%;
+  }
+  .team1 {
+    width: 350px;
+  }
+  .core {
+    width: 300px;
+    /* margin-top: -10%; */
+  }
+  .core p {
+    font-size: 14px;
+  }
+  .wifi {
+    width: 45.85px;
+    position: absolute;
+    visibility: visible !important;
+    left: 270px;
+    top: 135px;
+    z-index: 1;
+    overflow: visible;
+  }
+  .curve {
+    position: absolute;
+    width: 52.4px;
+    height: 52.22px;
+    left: -20px;
+    top: -20px;
+    visibility: visible !important;
+    z-index: 1;
+  }
+  .wifi2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    right: 275px;
+    top: 140px;
+    z-index: 1;
+    width: 45.85px;
+  }
+  .curve2 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute;
+    left: 270px;
+    top: -12px;
+    z-index: 1;
+    width: 45.85px;
+  }
+  .first-team {
+    display: flex;
+    gap: -50px;
+    align-items: center;
+    margin-top: 8%;
+    overflow: visible;
+  }
+  .second-team {
+    gap: 0px;
+    margin-top: 25%;
+  }
+
+  .paul {
+    width: 350px;
+  }
+  .cohort {
+    padding: 0px 10px;
+    margin-top: 20%;
+  }
+
+  .cohort-text h2 {
+    font-size: 24px;
+  }
+  .cohort-text p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .stay-connected {
+    margin: auto;
+    margin-top: 8%;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20%;
+  }
+  .stay-connected h1 {
+    font-size: 24px;
+  }
+  .stay-connected p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .hero-container {
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-writeup h1 {
+    text-align: center;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .hero-writeup p {
+    text-align: center;
+    font-size: 14px;
+  }
+  .sider {
+    position: relative;
+    bottom: 410px;
+    left: 9px;
+    width: 46px;
+  }
+  .sides {
+    position: relative;
+    bottom: 430px;
+    left: 220px;
+    width: 56px;
+    z-index: -1;
+  }
+  .siding {
+    position: relative;
+    bottom: 95px;
+    right: 974px;
   }
   .btns {
     flex-direction: column;
@@ -820,9 +1815,9 @@ body {
   }
   .gen {
     position: relative;
-    top: 306px;
-    left: 253px;
-    width: 80px;
+    top: 316px;
+    left: 263px;
+    width: 60px;
   }
   .weare-text h1 {
     font-size: 28px;
@@ -884,13 +1879,33 @@ body {
   }
   .second-point {
     padding: 30px 10px;
+    overflow: visible;
+    margin-top: 4%;
   }
-  .meet-interns h1{
+  .meet-interns h1 {
     font-size: 24px;
   }
   .team1 {
     width: 300px;
   }
+  .pay-container {
+    flex-direction: column-reverse;
+    /* overflow: visible; */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+  }
+  .pay-woman {
+    margin-left: 160px;
+    width: 400px;
+  }
+  .pay-texts {
+    max-width: 300px;
+    /* text-align: center; */
+    /* margin: auto; */
+  }
+
   .core {
     width: 300px;
     /* margin-top: -10%; */
@@ -950,5 +1965,12 @@ body {
   }
   .stay-connected p {
     font-size: 14px;
-  } 
+  }
 }
+
+/* 
+.success-message {
+}
+
+.error-message {
+} */

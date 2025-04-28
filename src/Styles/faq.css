@@ -14,7 +14,20 @@
 .accord {
   margin-top: 5%;
 }
-
+@media screen and (max-width: 475px) {
+  .faq-section {
+    padding: 15px;
+  }
+  .faq-section h1 {
+    line-height: 30px;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .faq-section p {
+    font-size: 14px;
+    margin-top: 2%;
+  }
+}
 @media screen and (max-width: 425px) {
   .faq-section {
     padding: 15px;
@@ -29,11 +42,12 @@
     margin-top: 2%;
   }
 }
+
 @media screen and (max-width: 375px) {
-    .banner{
-        width: 100%;
-        margin-top: 18%;
-    }
+  .banner {
+    width: 100%;
+    margin-top: 18%;
+  }
   .faq-section {
     padding: 10px;
   }
@@ -47,10 +61,10 @@
   }
 }
 @media screen and (max-width: 320px) {
-    .banner{
-        width: 100%;
-        margin-top: 18%;
-    }
+  .banner {
+    width: 100%;
+    margin-top: 18%;
+  }
   .faq-section {
     padding: 10px;
   }

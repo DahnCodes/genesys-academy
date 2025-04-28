@@ -1,34 +1,3 @@
-.account-background {
-  background-color: grey;
-  width: 391px;
-  height: 377px;
-  padding: 25px 30px;
-  border-radius: 25px;
-  margin: 50px auto;
-}
-
-.account-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.account-head h3 {
-  font-size: 24px;
-  font-weight: 400;
-}
-.account-text {
-  line-height: 20px;
-}
-.account-text h4 {
-  font-weight: 500;
-  font-size: 17px;
-}
-.account-text p {
-  margin-top: -10px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #596275;
-}
 .dyn-button {
   width: 160px;
   height: 48px;
@@ -38,12 +7,82 @@
   cursor: pointer;
   background-color: #f5772f;
   color: #ffff;
-  margin-top: 20px;
-  margin-left: 28%;
   font-size: 16px;
   font-weight: 700;
+  overflow: visible;
 }
-
+.homepagebtnacct {
+  width: 100%;
+  text-align: center;
+  margin-top: 28px;
+}
 .dyn-button:hover {
   background-color: #ff9e66;
 }
+
+.acctnumber {
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(49, 49, 49, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+.account-background {
+  width: 391px;
+  /* height: 377px; */
+  top: 6105px;
+  left: 8461px;
+  /* padding: 30px; */
+  gap: 28px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.account-head {
+  display: flex;
+  justify-content: space-between;
+}
+.acces {
+  font-family: "Avenir LT Pro";
+  font-size: 18px;
+  color: #273043;
+  font-weight: 400;
+  /* line-height: 28.8px; */
+}
+.account-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 10px;
+}
+.acnumberj {
+  font-family: "Avenir LT Pro";
+  color: #273043;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 27px;
+  display: flex;
+  /* gap: 5px; */
+  color: #273043;
+  align-items: center;
+}
+
+.acnumber2 {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 18px;
+  color: #596275;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+

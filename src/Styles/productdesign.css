@@ -8,6 +8,11 @@
   height: 54px;
   cursor: pointer;
 }
+.back:hover {
+  color: #fff;
+  background-color: #ff9e66;
+  transform: scale(0.9);
+}
 .left {
   color: #f5772f;
   font-size: 24px;
@@ -28,6 +33,7 @@
   font-size: 16px;
   font-weight: 400;
   color: #596275;
+  line-height: 25px;
 }
 
 .learn {
@@ -41,8 +47,13 @@
   margin-top: 3%;
  
 }
+.list{
+  margin-top: 2%;
+}
 .list li{
   overflow: hidden;
+  line-height: 25px;
+
 }
 .learn-point ul li {
   position: relative;
@@ -171,7 +182,41 @@ ul.lists li::before {
     flex-direction: column;
   }
 }
-
+@media screen and (max-width: 475px) {
+  .pd {
+    width: 200px;
+  }
+  .back {
+    margin-top: 23%;
+  }
+  .about-pd {
+    padding: 0 30px;
+  }
+  .learn {
+    padding: 30px 30px;
+  }
+  .learn-point li {
+    margin-top: 7%;
+    line-height: 25px;
+  }
+ 
+  .require {
+    margin-top: 5%;
+  }
+  .curri {
+    padding: 30px;
+  }
+  .others {
+    padding: 30px;
+  }
+  .pd2 {
+    width: 120px;
+  }
+  .other-paths {
+    overflow: visible;
+    align-items: center;
+  }
+}
 @media screen and (max-width: 425px) {
   .pd {
     width: 200px;

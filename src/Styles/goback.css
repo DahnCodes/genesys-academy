@@ -1,0 +1,20 @@
+.backs {
+    margin-top: 4%;
+    /* margin-left: 10%; */
+    border: 1px solid #f5772f;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+  }
+  .backs:hover {
+    color: #fff;
+    background-color: #ff9e66;
+    transform: scale(0.9);
+  }
+  .lefter {
+    color: #f5772f;
+    font-size: 24px;
+    margin-top: 2%;
+  }

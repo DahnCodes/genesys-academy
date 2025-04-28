@@ -1,0 +1,1010 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+.pays-container {
+  margin-top: 100px;
+  padding: 30px 100px;
+  display: block;
+}
+p{
+  line-height: 20px;
+}
+.illustration {
+  position: relative;
+}
+.illustrationer {
+  position: absolute;
+  right: 0px;
+  overflow: hidden;
+  transform: scaleX(-1);
+  width: 140px;
+}
+.btn12 {
+  width: 194px;
+  height: 54px;
+  padding: 15px 30px 15px 30px;
+  gap: 8px;
+  border-radius: 10px;
+  opacity: 0px;
+  background-color: #f5772f;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.btn12:hover {
+  background-color: #ff9e66;
+}
+.plan-text {
+  width: 722px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  gap: 20px; /* Equal spacing between all children */
+}
+.plan-text h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #273043;
+}
+.plan-text p {
+  color: #596275;
+  font-size: 16px;
+  line-height: 25px;
+}
+.hands {
+  position: relative;
+  /* right: 310px; */
+  overflow: hidden;
+}
+.hand {
+  position: absolute;
+  left: 0;
+  top: 350px;
+  opacity: 80%;
+}
+
+.how-it-works {
+  margin-top: 350px;
+}
+.how-it-works h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #273043;
+}
+
+.line-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 80px;
+  background-image: url("../assets//vectorr.png");
+  /* width: 514px; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+}
+.line-container h4 {
+  color: #f5772f;
+  font-family: "Plus Jakarta Sans", serif;
+  font-weight: 700;
+  font-size: 40px;
+  /* line-height: 50px; */
+}
+.line-container h3 {
+  color: #273043;
+  /* font-family: "Plus Jakarta Sans", serif; */
+  font-weight: 700;
+  font-size: 20px;
+}
+.line-container p {
+  color: #596275;
+  /* font-family: "Plus Jakarta Sans", serif; */
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  margin-top: 7px;
+}
+
+.first-line {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.first-pointer {
+  width: 370px;
+}
+.second-line {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.fourth-pointer {
+  width: 370px;
+}
+
+.benefits {
+  margin-top: 150px;
+  overflow: visible;
+}
+.benefits h1 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #273043;
+}
+
+.card-benefit {
+  width: 997px;
+  margin: auto;
+  height: 400px;
+  margin-top: 30px;
+  padding: 40px;
+  /* gap: 0px; */
+  border-radius: 10px;
+  /* opacity: 0px; */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+}
+.benefit-text {
+  overflow: visible;
+margin-top: 30px;
+}
+.benefit-text p{
+  position: relative;
+  padding-left: 20px;
+  margin-top: 30px;
+  color: #273043;
+  overflow: hidden;
+}
+
+.benefit-text p span::before {
+  content: "•"; /* Add the dot character */
+  position: absolute; /* Position the dot absolutely within the paragraph */
+  left: 0; /* Align the dot to the left */
+  color: #F5772F; /* Set the color of the dot (you can change this to any color you like) */
+  font-size: 16px; /* Adjust the size of the dot */
+  
+
+}
+.card-benefit span {
+  color: #f5772f;
+}
+.card-benefit p {
+  color: #273043;
+}
+.shapes {
+  position: absolute;
+  right: 0px;
+  top: 0;
+}
+.get-started {
+  margin-top: 50px;
+}
+.get-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: visible;
+}
+.steps{
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  margin-top: -80px;
+}
+.get-title h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #273043;
+}
+
+.stepper-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  gap: 0px;
+}
+.step-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.stepper-list {
+  max-width: 355px;
+}
+.stepper-list h4{
+  font-size: 20px;
+  line-height: 30px;
+}
+.stepper-list p {
+  color: #273043;
+}
+.steppers {
+  overflow: visible;
+  display: flex;
+  gap: 30px;
+}
+.image-step {
+  overflow: visible;
+}
+.stepgirl{
+  width: 600px;
+}
+.btn12 {
+  overflow: visible;
+ 
+}
+.btn14{
+  width: 194px;
+  height: 54px;
+  padding: 15px 30px 15px 30px;
+  gap: 8px;
+  border-radius: 10px;
+  opacity: 0px;
+  background-color: #f5772f;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+.btn14:hover {
+  background-color: #ff9e66;
+}
+
+@media screen and (max-width: 768px) {
+  .illustrationer {
+    /* display: none; */
+    width: 80px;
+  }
+  .plan-text {
+    width: 580px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .hand {
+    display: none;
+  }
+
+  .how-it-works {
+    margin-top: 100px;
+  }
+  .line-container{
+    margin-top: 30px;
+  }
+  .first-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .second-line {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .card-benefit {
+    width: 580px;
+  }
+  .stepper-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+    overflow: visible;
+  }
+  .steps {
+    display: none;
+  }
+  .image-step {
+    overflow: visible;
+  }
+  .stepgirl {
+    position: relative;
+    bottom: 130px;
+    overflow: visible;
+  }
+}
+@media screen and (max-width: 425px) {
+  .pays-container {
+    margin-top: 50px;
+    padding: 30px 20px;
+    display: block;
+  }
+
+  .plan-text {
+    width: 380px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .plan-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #273043;
+  }
+  .hand {
+    display: none;
+  }
+  .how-it-works h1{
+    font-size: 24px;
+  }
+  .first-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .second-line {
+    flex-direction: column;
+    align-items: center;
+  }
+  .benefits h1{
+    font-size: 24px;
+  }
+  .card-benefit {
+    width: 380px;
+    overflow: visible;
+    height: 475px;
+  }
+  .benefit-text {
+    margin-top: 50px;
+  }
+  .card-benefit p {
+    margin-top: 30px;
+    word-wrap: break-word;
+    max-width: 299px;
+    /* overflow: hidden; */
+  }
+  .get-title h1{
+    font-size: 24px;
+  }
+  .stepper-container {
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .stepper-list h4{
+    font-size: 18px;
+  }
+  .stepper-list p{
+    font-size: 16px;
+  }
+  .steppers {
+    overflow: visible;
+    margin-top: -100px;
+  }
+  .stepgirl {
+    width: 380px;
+    margin-top: 100px;
+  }
+
+  .btn14 {
+    overflow: visible;
+    width: 100%;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+
+}
+@media screen and (max-width: 475px) {
+  .pays-container {
+    margin-top: 50px;
+    padding: 30px 20px;
+    display: block;
+  }
+
+  .plan-text {
+    width: 380px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .plan-text h1{
+    font-size: 24px;
+  }
+  .get-title h1{
+    font-size: 24px;
+  }
+  .benefits h1{
+    font-size: 24px;
+  }
+   .how-it-works h1{
+    font-size: 24px;
+  }
+  .hand {
+    display: none;
+  }
+  .first-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .second-line {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-benefit {
+    width: 380px;
+    overflow: visible;
+    height: 475px;
+  }
+  .benefit-text {
+    margin-top: 50px;
+  }
+  .card-benefit p {
+    margin-top: 20px;
+    word-wrap: break-word;
+    max-width: 299px;
+    /* overflow: hidden; */
+  }
+  .stepper-container {
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  .steppers {
+    overflow: visible;
+margin-top: -100px;
+  }
+  .stepgirl {
+    width: 380px;
+    margin-top: 100px;
+  }
+
+  .btn14 {
+    overflow: visible;
+    width: 100%;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 393px) {
+  .pays-container {
+    margin-top: 50px;
+    padding: 30px 20px;
+    display: block;
+
+  }
+
+  .plan-text {
+    width: 340px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .plan-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #273043;
+  }
+  .plan-text p{
+    font-size: 14px;
+  }
+  .hand {
+    display: none;
+  }
+  .how-it-works h1{
+    font-size: 24px;
+  }
+  .first-pointer h3{
+    font-size: 16px;
+  }
+  .first-pointer p{
+    font-size: 14px;
+  }
+  .fourth-pointer h3{
+    font-size: 16px;
+
+  }
+  .fourth-pointer p{
+    font-size: 14px;
+
+  }
+  .first-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .second-line {
+    flex-direction: column;
+    align-items: center;
+  }
+  .first-pointer {
+    width: 340px;
+  }
+  .fourth-pointer{
+    width: 340px;
+  }
+  .benefits h1{
+    font-size: 24px;
+  }
+
+  .benefit-text p{
+    font-size: 14px;
+  }
+  .benefit-text span{
+    font-size: 18px;
+  }
+  .card-benefit {
+    width: 330px;
+    overflow: visible;
+    height: 475px;
+  }
+  .shapes {
+    position: absolute;
+    right: 0px;
+    top: 0;
+  width: 80px;
+  }
+  .benefit-text {
+    margin-top: 10px;
+   
+  }
+  .card-benefit p {
+    margin-top: 20px;
+    word-wrap: break-word;
+    max-width: 299px;
+    /* overflow: hidden; */
+  }
+  .get-title h1{
+    font-size: 24px;
+  }
+  .stepping{
+    width: 53px;
+    height: 474px;
+  }
+  .step-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .stepper-list{
+    font-size: 14px;
+  }
+  .stepper-container {
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  .steppers {
+    overflow: visible;
+  }
+  .stepgirl {
+    width: 380px;
+  }
+
+  .btn14 {
+    overflow: visible;
+    width: 100%;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+
+}
+@media screen and (max-width: 375px) {
+  .pays-container {
+    margin-top: 50px;
+    padding: 30px 20px;
+    display: block;
+
+  }
+
+  .plan-text {
+    width: 340px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .plan-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #273043;
+  }
+  .plan-text p{
+    font-size: 14px;
+  }
+  .hand {
+    display: none;
+  }
+  .how-it-works h1{
+    font-size: 24px;
+  }
+  .first-pointer h3{
+    font-size: 16px;
+  }
+  .first-pointer p{
+    font-size: 14px;
+  }
+  .fourth-pointer h3{
+    font-size: 16px;
+
+  }
+  .fourth-pointer p{
+    font-size: 14px;
+
+  }
+  .first-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .second-line {
+    flex-direction: column;
+    align-items: center;
+  }
+  .first-pointer {
+    width: 340px;
+  }
+  .fourth-pointer{
+    width: 340px;
+  }
+  .benefits h1{
+    font-size: 24px;
+  }
+  .benefit-text p{
+    font-size: 14px;
+  }
+  .benefit-text span{
+    font-size: 18px;
+  }
+  .card-benefit {
+    width: 330px;
+    overflow: visible;
+    height: 485px;
+  }
+  .shapes {
+    position: absolute;
+    right: 0px;
+    top: 0;
+  }
+  .benefit-text {
+    margin-top: 30px;
+  }
+  .card-benefit p {
+    margin-top: 20px;
+    word-wrap: break-word;
+    max-width: 299px;
+    /* overflow: hidden; */
+  }
+  .get-title h1{
+    font-size: 24px;
+  }
+  .stepping{
+    width: 53px;
+    height: 474px;
+  }
+  .step-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .stepper-list{
+    font-size: 14px;
+  }
+  .stepper-list h4{
+    font-size: 18px;
+  }
+  .stepper-list p{
+    font-size: 16px;
+  }
+  .stepper-container {
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  .steppers {
+    overflow: visible;
+  }
+  .stepgirl {
+    width: 380px;
+  }
+
+  .application {
+    padding: 30px 0px;
+     margin-top: 40px;
+   }
+}
+
+@media screen and (max-width: 344px) {
+  .pays-container {
+    margin-top: 50px;
+    padding: 30px 20px;
+    display: block;
+
+  }
+
+  .plan-text {
+    word-wrap: break-word;
+    max-width: 282px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    overflow: visible;
+  }
+  .plan-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #273043;
+  }
+  .plan-text p{
+    font-size: 14px;
+  }
+  .hand {
+    display: none;
+  }
+  .how-it-works h1{
+    font-size: 24px;
+  }
+  .first-pointer h3{
+    font-size: 16px;
+  }
+  .first-pointer p{
+    font-size: 14px;
+  }
+  .fourth-pointer h3{
+    font-size: 16px;
+
+  }
+  .fourth-pointer p{
+    font-size: 14px;
+
+  }
+  .first-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .second-line {
+    flex-direction: column;
+    align-items: center;
+  }
+  .first-pointer {
+    width: 280px;
+  }
+  .fourth-pointer{
+    width: 280px;
+  }
+  .benefits h1{
+    font-size: 24px;
+  }
+  .benefit-text p{
+    font-size: 14px;
+  }
+  .benefit-text span{
+    font-size: 18px;
+  }
+  .card-benefit {
+    width: 280px;
+    overflow: visible;
+    height: 415px;
+  }
+  .benefit-text {
+    margin-top: 10px;
+    overflow: visible;
+  }
+  .card-benefit p {
+    margin-top: 10px;
+    word-wrap: break-word;
+    max-width: 199px;
+    overflow: visible;
+  }
+  .get-title h1{
+    font-size: 24px;
+  }
+  .stepping{
+    width: 63px;
+    height: 474px;
+  }
+  .step-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .stepper-list{
+    font-size: 14px;
+  }
+  .stepper-container {
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  .steppers {
+    overflow: visible;
+  }
+  .stepgirl {
+    width: 380px;
+  }
+
+
+}
+@media screen and (max-width: 320px) {
+  .pays-container {
+    margin-top: 50px;
+    padding: 30px 20px;
+    display: block;
+
+  }
+
+  .plan-text {
+    word-wrap: break-word;
+    max-width: 282px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    overflow: visible;
+  }
+  .plan-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #273043;
+  }
+  .plan-text p{
+    font-size: 14px;
+  }
+  .hand {
+    display: none;
+  }
+  .how-it-works h1{
+    font-size: 24px;
+  }
+  .first-pointer h3{
+    font-size: 16px;
+  }
+  .first-pointer p{
+    font-size: 14px;
+  }
+  .fourth-pointer h3{
+    font-size: 16px;
+
+  }
+  .fourth-pointer p{
+    font-size: 14px;
+
+  }
+  .first-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .second-line {
+    flex-direction: column;
+    align-items: center;
+  }
+  .first-pointer {
+    width: 280px;
+  }
+  .fourth-pointer{
+    width: 280px;
+  }
+  .benefits h1{
+    font-size: 24px;
+  }
+  .benefit-text p{
+    font-size: 14px;
+  }
+  .benefit-text span{
+    font-size: 18px;
+  }
+  .card-benefit {
+    width: 280px;
+    overflow: visible;
+    height: 485px;
+  }
+  .benefit-text {
+    margin-top: 10px;
+    overflow: visible;
+  }
+  .card-benefit p {
+    margin-top: 10px;
+    word-wrap: break-word;
+    max-width: 199px;
+    overflow: visible;
+  }
+  .get-title h1{
+    font-size: 24px;
+  }
+  .stepping{
+    width: 63px;
+    height: 474px;
+  }
+  .step-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stepper-list h4{
+    font-size: 16px;
+  }
+  .stepper-list p{
+    font-size: 14px;
+  }
+  .stepper-container {
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  .steppers {
+    overflow: visible;
+  }
+  .stepgirl {
+    width: 380px;
+  }
+
+  .application {
+    overflow: visible;
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .btn12{
+    width: 270px;
+    /* margin: auto; */
+    /* width: 200px; */
+  }
+}

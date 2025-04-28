@@ -16,12 +16,13 @@ const Backend = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.state?.from) {
+   
       window.scrollTo({ top: 0, behavior: 'smooth' }); 
-    }
+   
   }, [location]); 
   return (
-    <>
+    <div className="body-container">
+    <div>
       <Emptynav />
 
       <Goback />
@@ -131,7 +132,9 @@ const Backend = () => {
       </section>
 
       <Footer />
-    </>
+    </div>
+
+    </div>
   );
 };
 
