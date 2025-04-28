@@ -110,7 +110,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://ng.linkedin.com/company/genesystechhub?trk=similar-pages"
                 className="navlinktags1"
                 target="_blank"
                 rel="noopener noreferrer"
