@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../Styles/paysmallsmall.css";
 import Payback from "../Components/Payback";
 import hands from "../assets/handmoney.png";
@@ -9,8 +9,16 @@ import stepgirl from "../assets/Stepper-girl.png";
 import stepping from "../assets/stepper2.png";
 import Footer from "../Components/Footer";
 import Whitenav from "../Components/Whitenav";
+import { useEffect } from "react";
 
 const Paysmallsmall = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+   
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+   
+  }, [location]); 
   return (
     <>
       <Whitenav />

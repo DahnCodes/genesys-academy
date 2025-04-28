@@ -8,7 +8,7 @@ const Payback = () => {
     const navigate = useNavigate()
 
 const handleGoBack = () => {
-    navigate("/")
+  navigate("/", { state: { scrollTo: "pay-smallsmall" } });
 }
   return (
     <>

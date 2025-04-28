@@ -15,9 +15,9 @@ const Productdesign = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.state?.from) {
+   
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    
   }, [location]);
   return (
     <div className="body-container">

@@ -37,7 +37,7 @@ const Footer = () => {
               href="https://www.google.com/maps/dir/?api=1&destination=Kilometer+7,+Enugu/Port+Harcourt+Expressway,+Centenary+City,+Enugu,+Nigeria"
               target="_blank"
             >
-            <p className="get">Get Direction</p>
+              <p className="get">Get Direction</p>
             </a>
             <a className="direction" href="tel:+2348001234567">
               <LuPhone className="phone" />
@@ -53,9 +53,13 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <p onClick={() => handleSectionClick("/")}>Home</p>
             <p onClick={() => handleSectionClick("pathways")}>Pathways</p>
-            <p onClick={() => handleSectionClick("testimony")}>Testimonies</p>
-            <p>Contact Us</p>
-            <p>FAQs</p>
+            <p onClick={() => handleSectionClick("testimonies")}>Testimonies</p>
+            <Link to="/contactus" className="links">
+              <p>Contact Us</p>
+            </Link>
+            <Link to="/faq" className="links">
+              <p>FAQs</p>
+            </Link>
           </div>
           <div className="footer-three">
             <h4>Pathways</h4>
@@ -106,7 +110,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://ng.linkedin.com/company/genesystechhub?trk=similar-pages"
                 className="navlinktags1"
                 target="_blank"
                 rel="noopener noreferrer"

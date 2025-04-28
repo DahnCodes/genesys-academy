@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-// import Navigationbar from './Components/Navigationbar'
 import LandingPage from "./Pages/LandingPage";
 import Productdesign from "./Pages/Productdesign";
 import Frontend from "./Pages/Frontend";
@@ -16,6 +15,8 @@ import Installment from "./Components/Installment";
 import Paysmallinvoice from "./Components/Paysmallinvoice";
 import Paysmallsmall from "./Pages/Paysmallsmall";
 import RedirectFullPayment from "./Components/RedirectFullPayment";
+
+
 
 function App() {
   return (

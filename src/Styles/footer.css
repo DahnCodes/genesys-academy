@@ -6,6 +6,7 @@
   background-color: white;
   padding: 80px 100px;
   margin-top: 8%;
+  /* overflow: visible; */
 }
 .footer-king {
   display: grid;
@@ -86,6 +87,7 @@
   gap: 30px;
 }
 .icon {
+  overflow: visible;
   background-color: rgba(200, 200, 200, 0.1);
   border-radius: 50%;
   width: 46px;
@@ -93,6 +95,7 @@
   color: #adadad;
   padding: 10px;
   cursor: pointer;
+  z-index: 1;
 }
 .icon:hover {
   color: #f5772f;

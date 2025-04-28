@@ -6,7 +6,8 @@ const Goback = () => {
 const navigate = useNavigate()
 
 const handleGoBack = () => {
-    navigate("/")
+  navigate("/", { state: { scrollTo: "pathways" } });
+
 }
 
   return (
