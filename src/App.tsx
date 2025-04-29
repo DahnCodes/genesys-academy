@@ -15,8 +15,7 @@ import Installment from "./Components/Installment";
 import Paysmallinvoice from "./Components/Paysmallinvoice";
 import Paysmallsmall from "./Pages/Paysmallsmall";
 import RedirectFullPayment from "./Components/RedirectFullPayment";
-
-
+import OfflinePaySmallSmall from "./Components/OfflinePaySmallSmall";
 
 function App() {
   return (
@@ -43,6 +42,10 @@ function App() {
         <Route
           path="/create-invoice/pay-small/:invoiceId"
           element={<Paysmallinvoice />}
+        />
+        <Route
+          path="/offlinePaySmallSmall/:email"
+          element={<OfflinePaySmallSmall />}
         />
         {/* <Route path="/pay-small" element={<PaySmall />} /> */}
         <Route path="/pay-smallsmall" element={<Paysmallsmall />} />

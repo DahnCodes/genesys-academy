@@ -11,6 +11,7 @@ import { paymentOptions, formatPrice } from "../configs/paymentOptions";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom"; // <-- import navigate
 
 const PaymentOptionsOffline = ({
   onClose,
@@ -28,6 +29,8 @@ const PaymentOptionsOffline = ({
   const [newInvoicemethod, setNewInvoicemethod] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
 
+  const navigate = useNavigate(); // <-- initialize navigate
+
   useEffect(() => {
     if (personalDataResponse.paymentOption) {
       setActiveOption(personalDataResponse.paymentOption);
@@ -42,10 +45,7 @@ const PaymentOptionsOffline = ({
   };
 
   const handleButtonClick = async () => {
-    if (activeOption === "Two Installment") {
-      setLoading(true);
-      await handleCreateInvoice();
-    } else if (activeOption) {
+    if (activeOption) {
       setLoading(true);
       await handleCreateInvoice();
     } else {
@@ -69,21 +69,11 @@ const PaymentOptionsOffline = ({
 
       if (response.data.success) {
         if (activeOption === "Two Installment") {
-          console.log("got here 1 ");
-
           setShowTwoInstallmentModal(true);
-          if (response.data.message === "Redirecting to existing invoice") {
-            setShowTwoInstallmentModal(true);
-            console.log("got here 2");
-          }
+        } else if (activeOption === "Pay Small Small") {
+          navigate(`/offlinePaySmallSmall/${personalDataResponse.email}`);
         } else {
-          console.log("got nowhere 3");
-
           setShowInvoiceModal(true);
-          if (response.data.message === "Redirecting to existing invoice") {
-            setShowInvoiceModal(true);
-            console.log("got here 4 ");
-          }
         }
       } else {
         console.log("Error occurred while generating the invoice.");
@@ -107,12 +97,8 @@ const PaymentOptionsOffline = ({
             </header>
             <div className="options">
               <div
-                className={`full-pay ${
-                  activeOption === "Full Payment" ? "active" : ""
-                }`}
-                onClick={() =>
-                  handleOptionChange("Full Payment", "Generate Invoice")
-                }
+                className={`full-pay ${activeOption === "Full Payment" ? "active" : ""}`}
+                onClick={() => handleOptionChange("Full Payment", "Generate Invoice")}
               >
                 <label htmlFor="Full Payment" className="full-pay">
                   <input
@@ -122,28 +108,19 @@ const PaymentOptionsOffline = ({
                     value="Full Payment"
                     className="radio"
                     checked={activeOption === "Full Payment"}
-                    onChange={() =>
-                      handleOptionChange("Full Payment", "Pay 550,000 Now")
-                    }
+                    onChange={() => handleOptionChange("Full Payment", "Pay 550,000 Now")}
                     disabled={!!personalDataResponse.paymentOption}
                   />
                   <div className="fullpay-text">
                     <p className="top">{paymentOptions.fullPayment.label}</p>
-                    <p className="down">
-                      {" "}
-                      {formatPrice(paymentOptions.fullPayment.price)}
-                    </p>
+                    <p className="down">{formatPrice(paymentOptions.fullPayment.price)}</p>
                   </div>
                 </label>
               </div>
 
               <div
-                className={`full-pay ${
-                  activeOption === "Two Installment" ? "active" : ""
-                }`}
-                onClick={() =>
-                  handleOptionChange("Two Installment", "Start Payment")
-                }
+                className={`full-pay ${activeOption === "Two Installment" ? "active" : ""}`}
+                onClick={() => handleOptionChange("Two Installment", "Start Payment")}
               >
                 <label htmlFor="Two Installment" className="full-pay">
                   <input
@@ -153,12 +130,7 @@ const PaymentOptionsOffline = ({
                     value="Two Installment"
                     className="radio"
                     checked={activeOption === "Two Installment"}
-                    onChange={() =>
-                      handleOptionChange(
-                        "Two Installment",
-                        "Pay First Installment (330,000)"
-                      )
-                    }
+                    onChange={() => handleOptionChange("Two Installment", "Pay First Installment (330,000)")}
                     disabled={!!personalDataResponse.paymentOption}
                   />
                   <div className="fullpay-text">
@@ -169,12 +141,8 @@ const PaymentOptionsOffline = ({
               </div>
 
               <div
-                className={`full-pay ${
-                  activeOption === "Pay Small Small" ? "active" : ""
-                }`}
-                onClick={() =>
-                  handleOptionChange("Pay Small Small", "Start Payment")
-                }
+                className={`full-pay ${activeOption === "Pay Small Small" ? "active" : ""}`}
+                onClick={() => handleOptionChange("Pay Small Small", "Start Payment")}
               >
                 <label htmlFor="Pay Small Small" className="full-pay">
                   <input
@@ -184,12 +152,7 @@ const PaymentOptionsOffline = ({
                     value="Pay Small Small"
                     className="radio"
                     checked={activeOption === "Pay Small Small"}
-                    onChange={() =>
-                      handleOptionChange(
-                        "Pay Small Small",
-                        "Spread Payment Plan"
-                      )
-                    }
+                    onChange={() => handleOptionChange("Pay Small Small", "Spread Payment Plan")}
                     disabled={!!personalDataResponse.paymentOption}
                   />
                   <div className="fullpay-text">
@@ -212,6 +175,7 @@ const PaymentOptionsOffline = ({
           </section>
         </div>
       ) : null}
+
       {showInvoiceModal && (
         <Invoicemodal
           onClose={onClose}
@@ -220,12 +184,14 @@ const PaymentOptionsOffline = ({
           method={newInvoicemethod}
         />
       )}
+
       {showTwoInstallmentModal && (
         <TwoInstallment
           onClose={onClose}
           personalDataResponse={personalDataResponse}
         />
       )}
+
       <ToastContainer
         position="top-right"
         autoClose={5000}
