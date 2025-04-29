@@ -7,19 +7,25 @@ import { FiFacebook } from "react-icons/fi";
 import { SlSocialLinkedin } from "react-icons/sl";
 import "../Styles/footer.css";
 import { PiYoutubeLogoLight } from "react-icons/pi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Footer = () => {
   const navigate = useNavigate();
   const handleSectionClick = (sectionId: string) => {
-    navigate("/");
+    navigate("/", { state: { scrollTo: sectionId } });
+    
 
-    setTimeout(() => {
-      const section = document.getElementById(sectionId);
+  };
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
-    }, 100);
-  };
+    }
+  }, [location]);
 
   const currentYear = new Date().getFullYear();
   return (
@@ -51,7 +57,7 @@ const Footer = () => {
           </div>
           <div className="footer-two">
             <h4>Quick Links</h4>
-            <p onClick={() => handleSectionClick("/")}>Home</p>
+            <p onClick={() => handleSectionClick("home")}>Home</p>
             <p onClick={() => handleSectionClick("pathways")}>Pathways</p>
             <p onClick={() => handleSectionClick("testimonies")}>Testimonies</p>
             <Link to="/contactus" className="links">
