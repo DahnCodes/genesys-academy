@@ -366,18 +366,18 @@ option {
 }
 
 @media (max-width: 1024px) {
-.formwrapper{
-  gap: 80px;
-}
+  .formwrapper {
+    gap: 80px;
+  }
 
-.pagnition{
-  padding: 5px 50px;
-  /* background-color: red; */
-}
+  .pagnition {
+    padding: 5px 50px;
+    /* background-color: red; */
+  }
 
-.pdpad{
-  padding: 20px 50px;
-}
+  .pdpad {
+    padding: 20px 50px;
+  }
 }
 /* For larger screens (default behavior) */
 
@@ -429,14 +429,13 @@ option {
     font-size: 24px;
   }
 
-  .pagnition{
+  .pagnition {
     padding: 10px;
-
   }
-  
-.pdpad{
-  padding: 10px;
-}
+
+  .pdpad {
+    padding: 10px;
+  }
 }
 
 /* For Extra Small Mobile Screens (max-width: 380px) */
@@ -485,8 +484,12 @@ option {
 
 /* Keyframes for spinner animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Button state when it's disabled */
@@ -496,3 +499,34 @@ option {
   /* border: 1px solid #aab7b8; */
 }
 
+/* Mobile Layout */
+.mobile-layout {
+  display: none;
+}
+
+/* Desktop Layout */
+.desktop-layout {
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .desktop-layout {
+    display: none;
+  }
+
+  .mobile-layout {
+    display: block;
+  }
+
+  .personal-data-form {
+    gap: 15px;
+  }
+
+  .btninformationsentence {
+    justify-content: center;
+  }
+
+  .btnsubmitinfo {
+    width: 100%;
+  }
+}

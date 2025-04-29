@@ -1,16 +1,21 @@
 .backII {
-    /* margin-top: 10%;
+  /* margin-top: 10%;
     margin-left: 10%; */
-    border: 1px solid #f5772f;
-    background-color: transparent;
-    border-radius: 50%;
-    width: 54px;
-    height: 54px;
-    cursor: pointer;
-  }
-  .leftII {
-    color: #f5772f;
-    font-size: 24px;
-    margin-top: 2%;
-  }
-  
+  border: 1px solid #f5772f;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  cursor: pointer;
+}
+.leftII {
+  color: #f5772f;
+  font-size: 24px;
+  margin-top: 2%;
+}
+.backII:hover {
+  background-color: #ff9e66;
+}
+.leftII:hover {
+  color: #ffff;
+}

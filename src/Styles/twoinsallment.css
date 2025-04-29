@@ -11,7 +11,6 @@
   z-index: 1000;
   width: 700px;
 }
-
 .payment-invoice-modal__header_abc456 {
   font-family: "Avenir LT Pro";
   font-size: 24px;
@@ -257,4 +256,14 @@
 /* Optional: Styling for the label when the option is paid */
 .payment-invoice-modal__option-item_hjk321.paid {
   color: #17c734; /* Change text color to green */
+}
+
+.payment-invoice-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+  z-index: 999; /* Make sure it sits under the modal but over the page */
 }

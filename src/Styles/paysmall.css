@@ -6,7 +6,7 @@
   margin-bottom: 10px;
   font-family: "Avenir LT Pro";
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 43.2px;
 }
 .subtitle {
@@ -43,6 +43,7 @@
   border: none;
   color: #fafafa;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .card1 {

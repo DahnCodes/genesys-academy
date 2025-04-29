@@ -72,7 +72,7 @@ const Invoicemodal = ({
 
           <div className="display-invoice">
             <div className="hg">
-              Amount: <span className="mb">{no}</span>
+              Amount: <span className="mb">{no?.toLocaleString()}</span>
             </div>
 
             <section className="account-background1">
