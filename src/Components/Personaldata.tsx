@@ -134,8 +134,141 @@ const Personaldata = () => {
             <h2 className="pinfo">Personal Data</h2>
             <p className="aboutselfinfo">Tell us a little about yourself.</p>
           </div>
-          <div className="formwrapper">
-            {/* First Form Column */}
+
+          {/* Desktop Layout - Two Columns */}
+          <div className="formwrapper desktop-layout">
+            {/* Left Column */}
+            <form onSubmit={handlePageSubmit} className="personal-data-form">
+              <div>
+                <label className="pinfofn">First Name</label>
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="Enter First Name"
+                  className="selectinfo"
+                />
+              </div>
+
+              <div>
+                <label className="pinfofn">Mobile Number</label>
+                <input
+                  type="text"
+                  name="mobileNumber"
+                  value={formData.mobileNumber}
+                  onChange={handleChange}
+                  placeholder="Enter Mobile Number"
+                  className="selectinfo"
+                />
+              </div>
+
+              <div>
+                <label className="pinfofn">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter Email Address"
+                  className="selectinfo"
+                />
+              </div>
+
+              <div>
+                <label className="pinfofn">
+                  How did you hear about Genesys Academy?
+                </label>
+                <select
+                  name="howDidYouHear"
+                  value={formData.howDidYouHear}
+                  onChange={handleChange}
+                  className="selectinfo"
+                >
+                  <option value="">Select Option</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="X">X</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Youtube">Youtube</option>
+                  <option value="Genesys Staff">Genesys Staff</option>
+                  <option value="Family/Friend">Family/Friend</option>
+                </select>
+              </div>
+            </form>
+
+            {/* Right Column */}
+            <form onSubmit={handlePageSubmit} className="personal-data-form">
+              <div>
+                <label className="pinfofn">Last Name</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Enter Last Name"
+                  className="selectinfo"
+                />
+              </div>
+
+              <div>
+                <label className="pinfofn">Address</label>
+                <input
+                  type="text"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  placeholder="Enter Address"
+                  className="selectinfo"
+                />
+              </div>
+
+              <div>
+                <label className="pinfofn">
+                  What is your desired Learning Path?
+                </label>
+                <select
+                  name="learningPath"
+                  value={formData.learningPath}
+                  onChange={handleChange}
+                  className="selectinfo"
+                >
+                  <option value="">Select Option</option>
+                  <option value="Product Design">Product Design</option>
+                  <option value="Frontend">Frontend</option>
+                  <option value="Backend">Backend</option>
+                  <option value="Data Analysis">Data Analysis</option>
+                  <option value="Quality Assurance">Quality Assurance</option>
+                </select>
+              </div>
+
+              {formData.howDidYouHear === "Genesys Staff" && (
+                <div>
+                  <label className="pinfofn">Staff Name</label>
+                  <input
+                    type="text"
+                    name="referrerName"
+                    value={formData.referrerName || ""}
+                    onChange={handleChange}
+                    placeholder="Enter Staff Name"
+                    className="selectinfo"
+                  />
+                </div>
+              )}
+
+              <div className="btninformationsentence">
+                <button
+                  className="btnsubmitinfo"
+                  type="submit"
+                  disabled={submitting}
+                >
+                  {submitting ? <div className="spinner"></div> : "Submit"}
+                </button>
+              </div>
+            </form>
+          </div>
+
+          {/* Mobile Layout - Single Column */}
+          <div className="mobile-layout">
             <form onSubmit={handlePageSubmit} className="personal-data-form">
               <div>
                 <label className="pinfofn">First Name</label>
@@ -162,6 +295,18 @@ const Personaldata = () => {
               </div>
 
               <div>
+                <label className="pinfofn">Mobile Number</label>
+                <input
+                  type="text"
+                  name="mobileNumber"
+                  value={formData.mobileNumber}
+                  onChange={handleChange}
+                  placeholder="Enter Mobile Number"
+                  className="selectinfo"
+                />
+              </div>
+
+              <div>
                 <label className="pinfofn">Email Address</label>
                 <input
                   type="email"
@@ -169,6 +314,18 @@ const Personaldata = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter Email Address"
+                  className="selectinfo"
+                />
+              </div>
+
+              <div>
+                <label className="pinfofn">Address</label>
+                <input
+                  type="text"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  placeholder="Enter Address"
                   className="selectinfo"
                 />
               </div>
@@ -190,33 +347,6 @@ const Personaldata = () => {
                   <option value="Data Analysis">Data Analysis</option>
                   <option value="Quality Assurance">Quality Assurance</option>
                 </select>
-              </div>
-            </form>
-
-            {/* Second Form Column */}
-            <form onSubmit={handlePageSubmit} className="personal-data-form">
-              <div>
-                <label className="pinfofn">Mobile Number</label>
-                <input
-                  type="text"
-                  name="mobileNumber"
-                  value={formData.mobileNumber}
-                  onChange={handleChange}
-                  placeholder="Enter Mobile Number"
-                  className="selectinfo"
-                />
-              </div>
-
-              <div>
-                <label className="pinfofn">Address</label>
-                <input
-                  type="text"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleChange}
-                  placeholder="Enter Address"
-                  className="selectinfo"
-                />
               </div>
 
               <div>

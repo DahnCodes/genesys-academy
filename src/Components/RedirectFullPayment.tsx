@@ -150,9 +150,7 @@
 // import React from 'react'
 
 const RedirectFullPayment = () => {
-  return (
-    <div>RedirectFullPayment</div>
-  )
-}
+  return <div>RedirectFullPayment</div>;
+};
 
-export default RedirectFullPayment
+export default RedirectFullPayment;
