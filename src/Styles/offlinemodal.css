@@ -44,7 +44,7 @@
   color: #b1b1b1;
 }
 
-.closer:hover{
+.closer:hover {
   color: red;
 }
 
@@ -102,19 +102,18 @@
   border-radius: 8px;
   margin-top: 10px;
   font-size: 14px;
-  font-weight: 200;   
+  font-weight: 200;
 }
 
-.modcolor{
+.modcolor {
   color: #f5772f;
 }
-.png{
+.png {
   color: #596275;
 }
-.file{
+.file {
   margin-top: 16px;
 }
-
 
 .cloud {
   font-size: 52px;
@@ -135,10 +134,16 @@
   border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
+  display: flex; /* new  */
+  justify-content: center; /* new  */
+}
+
+.dynamic-btn:hover {
+  background-color: #ff9e66;
 }
 
 .dynamic-btn:disabled {
-  background-color: #ccc;
+  background-color: #f5772f;
 }
 
 /* Error and Success Messages */
@@ -175,5 +180,3 @@
     padding: 1.5rem;
   }
 }
-
-

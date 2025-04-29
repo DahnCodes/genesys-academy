@@ -2,3 +2,7 @@
     overflow-x: hidden;
 }
 
+body.no-scroll {
+    overflow: hidden;
+  }
+  

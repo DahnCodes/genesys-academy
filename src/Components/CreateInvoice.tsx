@@ -5,7 +5,7 @@ import Backbtn from "../Components/Backbtn";
 import genesyslogo from "../assets/Logo.png";
 import "../Styles/createinvoice.css";
 import { InvoiceData } from "../types/sharedtypes";
-import WaveLoader from "../Components/WaveLoader"; 
+import WaveLoader from "../Components/WaveLoader";
 
 const CreateInvoice = () => {
   const { invoiceId } = useParams();
@@ -16,7 +16,7 @@ const CreateInvoice = () => {
   );
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [payOp, setPayOp] = useState("Full Payment"); 
+  const [payOp, setPayOp] = useState("Full Payment");
   const [invoiceDate, setInvoiceDate] = useState<string>("");
 
   useEffect(() => {
@@ -78,9 +78,7 @@ const CreateInvoice = () => {
     }
   };
 
-
   if (loading) return <WaveLoader />;
-
 
   if (error) return <p>Error: {error}</p>;
 
@@ -122,13 +120,13 @@ const CreateInvoice = () => {
           <tr>
             <td>1</td>
             <td>{invoicedetails?.title}</td>
-            <td>{invoicedetails?.amount}</td>
-            <td>{invoicedetails?.amount}</td>
+            <td>{invoicedetails?.amount?.toLocaleString()}</td>
+            <td>{invoicedetails?.amount?.toLocaleString()}</td>
           </tr>
         </tbody>
       </table>
       <div className="sub">
-        <p>Total: {invoicedetails?.amount}</p>
+        <p>Total: {invoicedetails?.amount?.toLocaleString()}</p>
       </div>
       <footer className="payment-info">
         <div className="payment-buttonpn">
