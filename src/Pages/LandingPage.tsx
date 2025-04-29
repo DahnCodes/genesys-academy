@@ -103,7 +103,7 @@ const LandingPage = () => {
     }
   }, [location]);
   return (
-    <div className="body-container">
+    <div className="body-container" id="home">
       <div>
         <Navigationbar />
         <header className="hero-container">

@@ -11,7 +11,7 @@ const Emptynav = () => {
           <img src={logo} alt="" className="logo" />
         </Link>
 
-        <Link to="/personaldata">
+        <Link to="/personaldata" className="links">
           <button className="btn1">
             Get Started
             <FaArrowRightLong className="arrow1" />
