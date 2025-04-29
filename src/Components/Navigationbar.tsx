@@ -53,7 +53,7 @@ const Navigationbar = () => {
           <a href="#pathways" className="link"     onClick={() => handleSectionClick("pathways")}>
             <li className="navs">Pathways</li>
           </a>
-          <a href="#testimonies" className="link"   onClick={() => handleSectionClick("testimony")}>
+          <a href="#testimonies" className="link"   onClick={() => handleSectionClick("testimonies")}>
             <li className="navs">Testimonies</li>
           </a>
           <Link to="/contactus" className="links">
