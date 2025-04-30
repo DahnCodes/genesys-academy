@@ -18,40 +18,35 @@ const PaymentModal = ({
   onClose: () => void;
   personalDataResponse: InternDataResFromPersonalData;
 }) => {
-  const [activeOption, setActiveOption] = useState<string>(personalDataResponse.paymentOption || ""); // Track selected payment option
-  const [buttonContent, setButtonContent] = useState<string>("Make Payment");
-  const [generatedInvoiceData, setGeneratedInvoiceData] = useState<InvoiceGenerateResponse[]>(
-    []
+  const [activeOption, setActiveOption] = useState<string>(
+    personalDataResponse.paymentOption || ""
   );
-  const [showTwoInstallmentModal, setShowTwoInstallmentModal] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false); // Loading state for button
+  const [buttonContent, setButtonContent] = useState<string>("Make Payment");
+  const [generatedInvoiceData, setGeneratedInvoiceData] = useState<
+    InvoiceGenerateResponse[]
+  >([]);
+  const [showTwoInstallmentModal, setShowTwoInstallmentModal] =
+    useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // If a payment option is already selected (via personalDataResponse), disable the rest
     if (personalDataResponse.paymentOption) {
       setActiveOption(personalDataResponse.paymentOption);
     }
   }, [personalDataResponse]);
 
   const handleOptionChange = (option: string, content: string) => {
-    // If a payment option is already selected, prevent changing it
     if (personalDataResponse.paymentOption) return;
 
-    setActiveOption(option); // Set the active payment option
+    setActiveOption(option);
+    setButtonContent(
+      option === "Two Installment" || option === "Pay Small Small"
+        ? "Start Payment"
+        : content
+    );
 
-    // Customize the button text based on the selected option
-    if (option === "Two Installment") {
-      setButtonContent("Start Payment");
-    } else if (option === "Pay Small Small") {
-      setButtonContent("Start Payment");
-    } else {
-      setButtonContent(content); // Default button text for other options
-    }
-
-    if (option === "Two Installment") {
-      setShowTwoInstallmentModal(false);
-    }
+    if (option === "Two Installment") setShowTwoInstallmentModal(false);
   };
 
   const handleButtonClick = async () => {
@@ -85,35 +80,34 @@ const PaymentModal = ({
       );
 
       const invGenData: InvoiceGenerateResponse[] = response.data.data;
-      if (response.data.data) {
+      if (response.data.success && invGenData) {
         setGeneratedInvoiceData(invGenData);
-      }
 
-      if (response.data.success) {
         if (activeOption === "Full Payment") {
-          if (response.data.data) {
-            navigate(`/create-invoice/full-payment/${invGenData[0]?._id}`);
-          } else if (
-            response.data.message === "Redirecting to existing invoice"
-          ) {
+          const invoiceId = invGenData[0]?._id;
+          if (invoiceId) {
+            navigate(`/create-invoice/full-payment/${invoiceId}`);
+          } else {
             navigate(`/redirect/full-payment/${personalDataResponse.email}`);
           }
-        } else if (
-          activeOption === "Two Installments" ||
-          response.data.message === "Redirecting to existing invoice"
-        ) {
+        } else if (activeOption === "Two Installment") {
           setShowTwoInstallmentModal(true);
-        } else if (
-          activeOption === "Pay Small Small" &&
-          response.data.message === "Redirecting to existing invoice"
-        ) {
+        } else if (activeOption === "Pay Small Small") {
+          navigate(`/pay-small/${personalDataResponse.email}`);
+        }
+      } else if (response.data.message === "Redirecting to existing invoice") {
+        if (activeOption === "Full Payment") {
+          navigate(`/redirect/full-payment/${personalDataResponse.email}`);
+        } else if (activeOption === "Pay Small Small") {
           navigate(`/pay-small/${personalDataResponse.email}`);
         }
       } else {
         console.error("Error occurred in creating invoice");
+        toast.error("Failed to create or fetch invoice.");
       }
-    } catch (err) {
-      console.error("Error in creating invoice:", err);
+    } catch (err: any) {
+      console.error("Network or server error during invoice creation:", err);
+      toast.error("Network error while creating invoice.");
     }
   };
 
@@ -129,8 +123,12 @@ const PaymentModal = ({
             <div className="options">
               {/* Full Payment Option */}
               <div
-                className={`full-pay ${activeOption === "Full Payment" ? "active" : ""}`}
-                onClick={() => handleOptionChange("Full Payment", "Generate Invoice")}
+                className={`full-pay ${
+                  activeOption === "Full Payment" ? "active" : ""
+                }`}
+                onClick={() =>
+                  handleOptionChange("Full Payment", "Generate Invoice")
+                }
               >
                 <label htmlFor="Full Payment" className="full-pay">
                   <input
@@ -143,7 +141,7 @@ const PaymentModal = ({
                     onChange={() =>
                       handleOptionChange("Full Payment", "Pay 550,000 Now")
                     }
-                    disabled={!!personalDataResponse.paymentOption} // Disable if already selected
+                    disabled={!!personalDataResponse.paymentOption}
                   />
                   <div className="fullpay-text">
                     <p className="top">Full Payment</p>
@@ -156,8 +154,12 @@ const PaymentModal = ({
 
               {/* Two Installment Option */}
               <div
-                className={`full-pay ${activeOption === "Two Installment" ? "active" : ""}`}
-                onClick={() => handleOptionChange("Two Installment", "Create Invoice")}
+                className={`full-pay ${
+                  activeOption === "Two Installment" ? "active" : ""
+                }`}
+                onClick={() =>
+                  handleOptionChange("Two Installment", "Create Invoice")
+                }
               >
                 <label htmlFor="Two Installment" className="full-pay">
                   <input
@@ -173,7 +175,7 @@ const PaymentModal = ({
                         "Pay First Installment (330,000)"
                       )
                     }
-                    disabled={!!personalDataResponse.paymentOption} // Disable if already selected
+                    disabled={!!personalDataResponse.paymentOption}
                   />
                   <div className="fullpay-text">
                     <p className="top">{paymentOptions.installment.label}</p>
@@ -184,8 +186,12 @@ const PaymentModal = ({
 
               {/* Pay Small Small Option */}
               <div
-                className={`full-pay ${activeOption === "Pay Small Small" ? "active" : ""}`}
-                onClick={() => handleOptionChange("Pay Small Small", "Start Pay Small Small")}
+                className={`full-pay ${
+                  activeOption === "Pay Small Small" ? "active" : ""
+                }`}
+                onClick={() =>
+                  handleOptionChange("Pay Small Small", "Start Pay Small Small")
+                }
               >
                 <label htmlFor="Pay Small Small" className="full-pay">
                   <input
@@ -196,9 +202,12 @@ const PaymentModal = ({
                     className="radio"
                     checked={activeOption === "Pay Small Small"}
                     onChange={() =>
-                      handleOptionChange("Pay Small Small", "Spread Payment Plan")
+                      handleOptionChange(
+                        "Pay Small Small",
+                        "Spread Payment Plan"
+                      )
                     }
-                    disabled={!!personalDataResponse.paymentOption} // Disable if already selected
+                    disabled={!!personalDataResponse.paymentOption}
                   />
                   <div className="fullpay-text">
                     <p className="top">Pay Small Small</p>
@@ -213,13 +222,9 @@ const PaymentModal = ({
                 type="button"
                 className="dynamic-button"
                 onClick={handleButtonClick}
-                disabled={loading} // Disable the button when loading
+                disabled={loading}
               >
-                {loading ? (
-                  <div className="spinner"></div> // Loading spinner
-                ) : (
-                  buttonContent
-                )}
+                {loading ? <div className="spinner"></div> : buttonContent}
               </button>
             </div>
           </section>

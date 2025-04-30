@@ -129,11 +129,13 @@ const CreateInvoice = () => {
         <p>Total: {invoicedetails?.amount?.toLocaleString()}</p>
       </div>
       <footer className="payment-info">
-        <div className="payment-buttonpn">
-          <button className="payment-button" onClick={handleProceedToPayment}>
-            Proceed To Payment
-          </button>
-        </div>
+        {invoicedetails.status === "Unpaid" && (
+          <div className="payment-buttonpn">
+            <button className="payment-button" onClick={handleProceedToPayment}>
+              Proceed To Payment
+            </button>
+          </div>
+        )}
       </footer>
       <div className="bye">{payOp}</div>
     </div>
