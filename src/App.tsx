@@ -11,7 +11,7 @@ import Faq from "./Pages/Faq";
 import Personaldata from "./Components/Personaldata";
 import PaySmall from "./Components/PaySmall";
 import CreateInvoice from "./Components/CreateInvoice";
-import Installment from "./Components/Installment";
+import InstallmentInvoice from "./Components/InstallmentInvoice";
 import Paysmallinvoice from "./Components/Paysmallinvoice";
 import Paysmallsmall from "./Pages/Paysmallsmall";
 import RedirectFullPayment from "./Components/RedirectFullPayment";
@@ -37,7 +37,7 @@ function App() {
         />
         <Route
           path="/create-invoice/installment/:invoiceId"
-          element={<Installment />}
+          element={<InstallmentInvoice />}
         />
         <Route
           path="/create-invoice/pay-small/:invoiceId"

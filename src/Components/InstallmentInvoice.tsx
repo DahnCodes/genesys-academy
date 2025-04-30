@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useParams } from "react-router-dom";
-import Backbtn from "../Components/Backbtn";
+import Backbtn from "./Backbtn";
 import genesyslogo from "../assets/Logo.png";
 import "../Styles/createinvoice.css";
 import { InvoiceData } from "../types/sharedtypes";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import WaveLoader from "../Components/WaveLoader";
+// import { HiArrowNarrowRight } from "react-icons/hi";
+import WaveLoader from "./WaveLoader";
 
-const Installment = () => {
+const InstallmentInvoice = () => {
   const { invoiceId } = useParams();
   const { pathname } = useLocation();
 
@@ -130,16 +130,25 @@ const Installment = () => {
       <div className="sub">
         <p>Total: {invoicedetails?.amount?.toLocaleString()}</p>
       </div>
-      <footer className="payment-info">
+      {/* <footer className="payment-info">
         <div className="payment-buttonpn">
           <button className="payment-button" onClick={handleProceedToPayment}>
             Proceed To Payment <HiArrowNarrowRight />
           </button>
         </div>
+      </footer> */}
+      <footer className="payment-info">
+        {invoicedetails.status === "Unpaid" && (
+          <div className="payment-buttonpn">
+            <button className="payment-button" onClick={handleProceedToPayment}>
+              Proceed To Payment
+            </button>
+          </div>
+        )}
       </footer>
       <div className="bye">{payOp}</div>
     </div>
   );
 };
 
-export default Installment;
+export default InstallmentInvoice;
