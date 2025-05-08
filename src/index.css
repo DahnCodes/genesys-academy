@@ -1,8 +1,7 @@
-*{
-    overflow-x: hidden;
+* {
+  overflow-x: hidden;
 }
 
 body.no-scroll {
-    overflow: hidden;
-  }
-  
+  overflow: hidden;
+}

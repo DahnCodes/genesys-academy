@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/waveloader.css"; 
+import "../Styles/waveloader.css";
 
 const WaveLoader: React.FC = () => {
   return (

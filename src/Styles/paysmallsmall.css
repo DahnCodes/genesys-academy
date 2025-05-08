@@ -5,7 +5,7 @@
   padding: 30px 100px;
   display: block;
 }
-p{
+p {
   line-height: 20px;
 }
 .illustration {
@@ -155,9 +155,9 @@ p{
 }
 .benefit-text {
   overflow: visible;
-margin-top: 30px;
+  margin-top: 30px;
 }
-.benefit-text p{
+.benefit-text p {
   position: relative;
   padding-left: 20px;
   margin-top: 30px;
@@ -169,10 +169,8 @@ margin-top: 30px;
   content: "•"; /* Add the dot character */
   position: absolute; /* Position the dot absolutely within the paragraph */
   left: 0; /* Align the dot to the left */
-  color: #F5772F; /* Set the color of the dot (you can change this to any color you like) */
+  color: #f5772f; /* Set the color of the dot (you can change this to any color you like) */
   font-size: 16px; /* Adjust the size of the dot */
-  
-
 }
 .card-benefit span {
   color: #f5772f;
@@ -196,7 +194,7 @@ margin-top: 30px;
   position: relative;
   overflow: visible;
 }
-.steps{
+.steps {
   position: absolute;
   left: 0;
   z-index: -1;
@@ -224,7 +222,7 @@ margin-top: 30px;
 .stepper-list {
   max-width: 355px;
 }
-.stepper-list h4{
+.stepper-list h4 {
   font-size: 20px;
   line-height: 30px;
 }
@@ -239,14 +237,13 @@ margin-top: 30px;
 .image-step {
   overflow: visible;
 }
-.stepgirl{
+.stepgirl {
   width: 600px;
 }
 .btn12 {
   overflow: visible;
- 
 }
-.btn14{
+.btn14 {
   width: 194px;
   height: 54px;
   padding: 15px 30px 15px 30px;
@@ -285,7 +282,7 @@ margin-top: 30px;
   .how-it-works {
     margin-top: 100px;
   }
-  .line-container{
+  .line-container {
     margin-top: 30px;
   }
   .first-line {
@@ -348,7 +345,7 @@ margin-top: 30px;
   .hand {
     display: none;
   }
-  .how-it-works h1{
+  .how-it-works h1 {
     font-size: 24px;
   }
   .first-line {
@@ -361,7 +358,7 @@ margin-top: 30px;
     flex-direction: column;
     align-items: center;
   }
-  .benefits h1{
+  .benefits h1 {
     font-size: 24px;
   }
   .card-benefit {
@@ -378,7 +375,7 @@ margin-top: 30px;
     max-width: 299px;
     /* overflow: hidden; */
   }
-  .get-title h1{
+  .get-title h1 {
     font-size: 24px;
   }
   .stepper-container {
@@ -388,10 +385,10 @@ margin-top: 30px;
     align-items: center;
     justify-content: space-between;
   }
-  .stepper-list h4{
+  .stepper-list h4 {
     font-size: 18px;
   }
-  .stepper-list p{
+  .stepper-list p {
     font-size: 16px;
   }
   .steppers {
@@ -409,7 +406,6 @@ margin-top: 30px;
     margin-left: auto;
     margin-top: 30px;
   }
-
 }
 @media screen and (max-width: 475px) {
   .pays-container {
@@ -428,16 +424,16 @@ margin-top: 30px;
     gap: 20px;
     margin-top: 30px;
   }
-  .plan-text h1{
+  .plan-text h1 {
     font-size: 24px;
   }
-  .get-title h1{
+  .get-title h1 {
     font-size: 24px;
   }
-  .benefits h1{
+  .benefits h1 {
     font-size: 24px;
   }
-   .how-it-works h1{
+  .how-it-works h1 {
     font-size: 24px;
   }
   .hand {
@@ -477,7 +473,7 @@ margin-top: 30px;
   }
   .steppers {
     overflow: visible;
-margin-top: -100px;
+    margin-top: -100px;
   }
   .stepgirl {
     width: 380px;
@@ -496,7 +492,6 @@ margin-top: -100px;
     margin-top: 50px;
     padding: 30px 20px;
     display: block;
-
   }
 
   .plan-text {
@@ -514,28 +509,26 @@ margin-top: -100px;
     font-weight: 700;
     color: #273043;
   }
-  .plan-text p{
+  .plan-text p {
     font-size: 14px;
   }
   .hand {
     display: none;
   }
-  .how-it-works h1{
+  .how-it-works h1 {
     font-size: 24px;
   }
-  .first-pointer h3{
+  .first-pointer h3 {
     font-size: 16px;
   }
-  .first-pointer p{
+  .first-pointer p {
     font-size: 14px;
   }
-  .fourth-pointer h3{
+  .fourth-pointer h3 {
     font-size: 16px;
-
   }
-  .fourth-pointer p{
+  .fourth-pointer p {
     font-size: 14px;
-
   }
   .first-line {
     display: flex;
@@ -550,17 +543,17 @@ margin-top: -100px;
   .first-pointer {
     width: 340px;
   }
-  .fourth-pointer{
+  .fourth-pointer {
     width: 340px;
   }
-  .benefits h1{
+  .benefits h1 {
     font-size: 24px;
   }
 
-  .benefit-text p{
+  .benefit-text p {
     font-size: 14px;
   }
-  .benefit-text span{
+  .benefit-text span {
     font-size: 18px;
   }
   .card-benefit {
@@ -572,11 +565,10 @@ margin-top: -100px;
     position: absolute;
     right: 0px;
     top: 0;
-  width: 80px;
+    width: 80px;
   }
   .benefit-text {
     margin-top: 10px;
-   
   }
   .card-benefit p {
     margin-top: 20px;
@@ -584,10 +576,10 @@ margin-top: -100px;
     max-width: 299px;
     /* overflow: hidden; */
   }
-  .get-title h1{
+  .get-title h1 {
     font-size: 24px;
   }
-  .stepping{
+  .stepping {
     width: 53px;
     height: 474px;
   }
@@ -596,7 +588,7 @@ margin-top: -100px;
     flex-direction: column;
     gap: 30px;
   }
-  .stepper-list{
+  .stepper-list {
     font-size: 14px;
   }
   .stepper-container {
@@ -620,14 +612,12 @@ margin-top: -100px;
     margin-left: auto;
     margin-top: 30px;
   }
-
 }
 @media screen and (max-width: 375px) {
   .pays-container {
     margin-top: 50px;
     padding: 30px 20px;
     display: block;
-
   }
 
   .plan-text {
@@ -645,28 +635,26 @@ margin-top: -100px;
     font-weight: 700;
     color: #273043;
   }
-  .plan-text p{
+  .plan-text p {
     font-size: 14px;
   }
   .hand {
     display: none;
   }
-  .how-it-works h1{
+  .how-it-works h1 {
     font-size: 24px;
   }
-  .first-pointer h3{
+  .first-pointer h3 {
     font-size: 16px;
   }
-  .first-pointer p{
+  .first-pointer p {
     font-size: 14px;
   }
-  .fourth-pointer h3{
+  .fourth-pointer h3 {
     font-size: 16px;
-
   }
-  .fourth-pointer p{
+  .fourth-pointer p {
     font-size: 14px;
-
   }
   .first-line {
     display: flex;
@@ -681,16 +669,16 @@ margin-top: -100px;
   .first-pointer {
     width: 340px;
   }
-  .fourth-pointer{
+  .fourth-pointer {
     width: 340px;
   }
-  .benefits h1{
+  .benefits h1 {
     font-size: 24px;
   }
-  .benefit-text p{
+  .benefit-text p {
     font-size: 14px;
   }
-  .benefit-text span{
+  .benefit-text span {
     font-size: 18px;
   }
   .card-benefit {
@@ -712,10 +700,10 @@ margin-top: -100px;
     max-width: 299px;
     /* overflow: hidden; */
   }
-  .get-title h1{
+  .get-title h1 {
     font-size: 24px;
   }
-  .stepping{
+  .stepping {
     width: 53px;
     height: 474px;
   }
@@ -724,13 +712,13 @@ margin-top: -100px;
     flex-direction: column;
     gap: 20px;
   }
-  .stepper-list{
+  .stepper-list {
     font-size: 14px;
   }
-  .stepper-list h4{
+  .stepper-list h4 {
     font-size: 18px;
   }
-  .stepper-list p{
+  .stepper-list p {
     font-size: 16px;
   }
   .stepper-container {
@@ -750,8 +738,8 @@ margin-top: -100px;
 
   .application {
     padding: 30px 0px;
-     margin-top: 40px;
-   }
+    margin-top: 40px;
+  }
 }
 
 @media screen and (max-width: 344px) {
@@ -759,7 +747,6 @@ margin-top: -100px;
     margin-top: 50px;
     padding: 30px 20px;
     display: block;
-
   }
 
   .plan-text {
@@ -779,28 +766,26 @@ margin-top: -100px;
     font-weight: 700;
     color: #273043;
   }
-  .plan-text p{
+  .plan-text p {
     font-size: 14px;
   }
   .hand {
     display: none;
   }
-  .how-it-works h1{
+  .how-it-works h1 {
     font-size: 24px;
   }
-  .first-pointer h3{
+  .first-pointer h3 {
     font-size: 16px;
   }
-  .first-pointer p{
+  .first-pointer p {
     font-size: 14px;
   }
-  .fourth-pointer h3{
+  .fourth-pointer h3 {
     font-size: 16px;
-
   }
-  .fourth-pointer p{
+  .fourth-pointer p {
     font-size: 14px;
-
   }
   .first-line {
     display: flex;
@@ -815,16 +800,16 @@ margin-top: -100px;
   .first-pointer {
     width: 280px;
   }
-  .fourth-pointer{
+  .fourth-pointer {
     width: 280px;
   }
-  .benefits h1{
+  .benefits h1 {
     font-size: 24px;
   }
-  .benefit-text p{
+  .benefit-text p {
     font-size: 14px;
   }
-  .benefit-text span{
+  .benefit-text span {
     font-size: 18px;
   }
   .card-benefit {
@@ -842,10 +827,10 @@ margin-top: -100px;
     max-width: 199px;
     overflow: visible;
   }
-  .get-title h1{
+  .get-title h1 {
     font-size: 24px;
   }
-  .stepping{
+  .stepping {
     width: 63px;
     height: 474px;
   }
@@ -854,7 +839,7 @@ margin-top: -100px;
     flex-direction: column;
     gap: 40px;
   }
-  .stepper-list{
+  .stepper-list {
     font-size: 14px;
   }
   .stepper-container {
@@ -871,15 +856,12 @@ margin-top: -100px;
   .stepgirl {
     width: 380px;
   }
-
-
 }
 @media screen and (max-width: 320px) {
   .pays-container {
     margin-top: 50px;
     padding: 30px 20px;
     display: block;
-
   }
 
   .plan-text {
@@ -899,28 +881,26 @@ margin-top: -100px;
     font-weight: 700;
     color: #273043;
   }
-  .plan-text p{
+  .plan-text p {
     font-size: 14px;
   }
   .hand {
     display: none;
   }
-  .how-it-works h1{
+  .how-it-works h1 {
     font-size: 24px;
   }
-  .first-pointer h3{
+  .first-pointer h3 {
     font-size: 16px;
   }
-  .first-pointer p{
+  .first-pointer p {
     font-size: 14px;
   }
-  .fourth-pointer h3{
+  .fourth-pointer h3 {
     font-size: 16px;
-
   }
-  .fourth-pointer p{
+  .fourth-pointer p {
     font-size: 14px;
-
   }
   .first-line {
     display: flex;
@@ -935,16 +915,16 @@ margin-top: -100px;
   .first-pointer {
     width: 280px;
   }
-  .fourth-pointer{
+  .fourth-pointer {
     width: 280px;
   }
-  .benefits h1{
+  .benefits h1 {
     font-size: 24px;
   }
-  .benefit-text p{
+  .benefit-text p {
     font-size: 14px;
   }
-  .benefit-text span{
+  .benefit-text span {
     font-size: 18px;
   }
   .card-benefit {
@@ -962,10 +942,10 @@ margin-top: -100px;
     max-width: 199px;
     overflow: visible;
   }
-  .get-title h1{
+  .get-title h1 {
     font-size: 24px;
   }
-  .stepping{
+  .stepping {
     width: 63px;
     height: 474px;
   }
@@ -975,10 +955,10 @@ margin-top: -100px;
     gap: 20px;
   }
 
-  .stepper-list h4{
+  .stepper-list h4 {
     font-size: 16px;
   }
-  .stepper-list p{
+  .stepper-list p {
     font-size: 14px;
   }
   .stepper-container {
@@ -1002,7 +982,7 @@ margin-top: -100px;
     margin: auto;
     margin-top: 30px;
   }
-  .btn12{
+  .btn12 {
     width: 270px;
     /* margin: auto; */
     /* width: 200px; */

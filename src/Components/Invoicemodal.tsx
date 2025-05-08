@@ -91,13 +91,13 @@ const Invoicemodal = ({
                 </div>
                 {/* <p className="acnumberj2">Zenith Bank PLC</p> */}
 
-                <div className="acnumberj" id="mmmm">                  Account Number:
+                <div className="acnumberj" id="mmmm">
+                  {" "}
+                  Account Number:
                   <span>
-
                     <p className="acnumberj">
                       <span className="mb">1228322121 </span>
                       <span>
-     
                         <MdOutlineContentCopy
                           className="copy"
                           onClick={handleCopyClick1}
@@ -110,14 +110,13 @@ const Invoicemodal = ({
             </section>
           </div>
           <div className="jeffisannoying">
-
-          <p className="azx">
-            Payment can be made directly to the office, to the bank, or through
-            POS terminals.
-          </p>
-          <p className="az1x">
-            Submit/upload receipt(s) with INVOICE NUMBER to validate payment.
-          </p>
+            <p className="azx">
+              Payment can be made directly to the office, to the bank, or
+              through POS terminals.
+            </p>
+            <p className="az1x">
+              Submit/upload receipt(s) with INVOICE NUMBER to validate payment.
+            </p>
           </div>
         </section>
       </div>

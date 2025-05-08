@@ -13,8 +13,6 @@ const Footer = () => {
   const navigate = useNavigate();
   const handleSectionClick = (sectionId: string) => {
     navigate("/", { state: { scrollTo: sectionId } });
-    
-
   };
   const location = useLocation();
 

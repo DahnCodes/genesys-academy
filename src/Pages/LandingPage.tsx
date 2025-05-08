@@ -178,7 +178,7 @@ const LandingPage = () => {
                 <Backcard />
               </Link>
             </div>
-            
+
             <div className="pathway-cards">
               <Link to="/dataanalysis" className="link">
                 <Datacard />
@@ -187,8 +187,6 @@ const LandingPage = () => {
                 <Qualitycard />
               </Link>
             </div>
-
-
           </div>
         </section>
 

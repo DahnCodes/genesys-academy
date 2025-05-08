@@ -11,7 +11,44 @@ import { paymentOptions, formatPrice } from "../configs/paymentOptions";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate } from "react-router-dom"; // <-- import navigate
+import { useNavigate } from "react-router-dom";
+
+const API_BASE = "https://genesys-web-app-revamp.onrender.com/api/v1/invoice";
+
+const PaymentOptionCard = ({
+  option,
+  label,
+  subtext,
+  selected,
+  onChange,
+  disabled,
+}: {
+  option: string;
+  label: string;
+  subtext: string;
+  selected: boolean;
+  onChange: () => void;
+  disabled: boolean;
+}) => (
+  <div className={`full-pay ${selected ? "active" : ""}`} onClick={onChange}>
+    <label htmlFor={option} className="full-pay">
+      <input
+        type="radio"
+        id={option}
+        name="payment"
+        value={option}
+        className="radio"
+        checked={selected}
+        onChange={onChange}
+        disabled={disabled}
+      />
+      <div className="fullpay-text">
+        <p className="top">{label}</p>
+        <p className="down">{subtext}</p>
+      </div>
+    </label>
+  </div>
+);
 
 const PaymentOptionsOffline = ({
   onClose,
@@ -24,12 +61,12 @@ const PaymentOptionsOffline = ({
   const [buttonContent, setButtonContent] = useState("Make Payment");
   const [showInvoiceModal, setShowInvoiceModal] = useState(false);
   const [showTwoInstallmentModal, setShowTwoInstallmentModal] = useState(false);
-  const [newinvoiceid, setNewInvoiceId] = useState("");
-  const [newInvoiceamount, setNewInvoiceamount] = useState<number | string>("");
-  const [newInvoicemethod, setNewInvoicemethod] = useState("");
-  const [loading, setLoading] = useState<boolean>(false);
+  const [invoiceId, setInvoiceId] = useState("");
+  const [invoiceAmount, setInvoiceAmount] = useState<number | string>("");
+  const [invoiceMethod, setInvoiceMethod] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate(); // <-- initialize navigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (personalDataResponse.paymentOption) {
@@ -44,27 +81,33 @@ const PaymentOptionsOffline = ({
     }
   };
 
-  const handleButtonClick = async () => {
-    if (activeOption) {
-      setLoading(true);
-      await handleCreateInvoice();
-    } else {
-      toast.error("Please select a payment option first!");
-    }
-  };
-
   const handleCreateInvoice = async () => {
     try {
       const response = await axios.post(
-        `https://genesys-web-app-revamp.onrender.com/api/v1/invoice/${personalDataResponse.email}`,
-        { paymentOption: activeOption }
+        `${API_BASE}/${personalDataResponse.email}`,
+        {
+          paymentOption: activeOption,
+        }
       );
 
-      const invGenData: InvoiceGenerateResponse[] = response.data.data;
-      if (response.data.data) {
-        setNewInvoiceId(invGenData[0]?.invoiceNo);
-        setNewInvoiceamount(invGenData[0]?.amount);
-        setNewInvoicemethod(invGenData[0]?.method);
+      if (
+        activeOption === "Full Payment" &&
+        response.data.success &&
+        response.data.redirectUrl
+      ) {
+        const invoiceNo = response.data.redirectUrl.split("/").pop();
+        setInvoiceId(invoiceNo || "");
+        setInvoiceAmount(550000); // fallback
+        setInvoiceMethod("Full Payment");
+        setShowInvoiceModal(true);
+        return;
+      }
+
+      const invData: InvoiceGenerateResponse[] = response.data.data;
+      if (invData && invData.length) {
+        setInvoiceId(invData[0].invoiceNo);
+        setInvoiceAmount(invData[0].amount);
+        setInvoiceMethod(invData[0].method);
       }
 
       if (response.data.success) {
@@ -76,19 +119,28 @@ const PaymentOptionsOffline = ({
           setShowInvoiceModal(true);
         }
       } else {
-        console.log("Error occurred while generating the invoice.");
         toast.error("Error occurred while generating the invoice.");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
       toast.error("Error occurred while generating the invoice.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
+  };
+
+  const handleButtonClick = async () => {
+    if (activeOption) {
+      setLoading(true);
+      await handleCreateInvoice();
+    } else {
+      toast.error("Please select a payment option first!");
+    }
   };
 
   return (
     <>
-      {!showInvoiceModal && !showTwoInstallmentModal ? (
+      {!showInvoiceModal && !showTwoInstallmentModal && (
         <div className="payment-background">
           <section className="payment-modal">
             <header className="head-text">
@@ -96,71 +148,39 @@ const PaymentOptionsOffline = ({
               <IoIosCloseCircleOutline className="close" onClick={onClose} />
             </header>
             <div className="options">
-              <div
-                className={`full-pay ${activeOption === "Full Payment" ? "active" : ""}`}
-                onClick={() => handleOptionChange("Full Payment", "Generate Invoice")}
-              >
-                <label htmlFor="Full Payment" className="full-pay">
-                  <input
-                    type="radio"
-                    id="Full Payment"
-                    name="payment"
-                    value="Full Payment"
-                    className="radio"
-                    checked={activeOption === "Full Payment"}
-                    onChange={() => handleOptionChange("Full Payment", "Pay 550,000 Now")}
-                    disabled={!!personalDataResponse.paymentOption}
-                  />
-                  <div className="fullpay-text">
-                    <p className="top">{paymentOptions.fullPayment.label}</p>
-                    <p className="down">{formatPrice(paymentOptions.fullPayment.price)}</p>
-                  </div>
-                </label>
-              </div>
-
-              <div
-                className={`full-pay ${activeOption === "Two Installment" ? "active" : ""}`}
-                onClick={() => handleOptionChange("Two Installment", "Start Payment")}
-              >
-                <label htmlFor="Two Installment" className="full-pay">
-                  <input
-                    type="radio"
-                    id="Two Installment"
-                    name="payment"
-                    value="Two Installment"
-                    className="radio"
-                    checked={activeOption === "Two Installment"}
-                    onChange={() => handleOptionChange("Two Installment", "Pay First Installment (330,000)")}
-                    disabled={!!personalDataResponse.paymentOption}
-                  />
-                  <div className="fullpay-text">
-                    <p className="top">{paymentOptions.installment.label}</p>
-                    <p className="down">Two Part Payment</p>
-                  </div>
-                </label>
-              </div>
-
-              <div
-                className={`full-pay ${activeOption === "Pay Small Small" ? "active" : ""}`}
-                onClick={() => handleOptionChange("Pay Small Small", "Start Payment")}
-              >
-                <label htmlFor="Pay Small Small" className="full-pay">
-                  <input
-                    type="radio"
-                    id="Pay Small Small"
-                    name="payment"
-                    value="Pay Small Small"
-                    className="radio"
-                    checked={activeOption === "Pay Small Small"}
-                    onChange={() => handleOptionChange("Pay Small Small", "Spread Payment Plan")}
-                    disabled={!!personalDataResponse.paymentOption}
-                  />
-                  <div className="fullpay-text">
-                    <p className="top">Pay Small Small</p>
-                    <p className="down">Spread Payment</p>
-                  </div>
-                </label>
-              </div>
+              <PaymentOptionCard
+                option="Full Payment"
+                label={paymentOptions.fullPayment.label}
+                subtext={formatPrice(paymentOptions.fullPayment.price)}
+                selected={activeOption === "Full Payment"}
+                onChange={() =>
+                  handleOptionChange("Full Payment", "Pay 550,000 Now")
+                }
+                disabled={!!personalDataResponse.paymentOption}
+              />
+              <PaymentOptionCard
+                option="Two Installment"
+                label={paymentOptions.installment.label}
+                subtext="Two Part Payment"
+                selected={activeOption === "Two Installment"}
+                onChange={() =>
+                  handleOptionChange(
+                    "Two Installment",
+                    "Pay First Installment (330,000)"
+                  )
+                }
+                disabled={!!personalDataResponse.paymentOption}
+              />
+              <PaymentOptionCard
+                option="Pay Small Small"
+                label="Pay Small Small"
+                subtext="Spread Payment"
+                selected={activeOption === "Pay Small Small"}
+                onChange={() =>
+                  handleOptionChange("Pay Small Small", "Spread Payment Plan")
+                }
+                disabled={!!personalDataResponse.paymentOption}
+              />
             </div>
             <div className="revampbn">
               <button
@@ -169,19 +189,19 @@ const PaymentOptionsOffline = ({
                 onClick={handleButtonClick}
                 disabled={loading}
               >
-                {loading ? <div className="spinner"></div> : buttonContent}
+                {loading ? <div className="spinner" /> : buttonContent}
               </button>
             </div>
           </section>
         </div>
-      ) : null}
+      )}
 
       {showInvoiceModal && (
         <Invoicemodal
           onClose={onClose}
-          invId={newinvoiceid}
-          no={newInvoiceamount}
-          method={newInvoicemethod}
+          invId={invoiceId}
+          no={invoiceAmount}
+          method={invoiceMethod}
         />
       )}
 

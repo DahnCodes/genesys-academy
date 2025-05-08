@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Navigationbar = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -19,7 +18,6 @@ const Navigationbar = () => {
       }
     }, 100);
   };
-
 
   const toggleHome = () => {
     navigate("/");
@@ -50,10 +48,18 @@ const Navigationbar = () => {
           <img src={logo} alt="" className="logo" />
         </Link>
         <ul className="navlinks">
-          <a href="#pathways" className="link"     onClick={() => handleSectionClick("pathways")}>
+          <a
+            href="#pathways"
+            className="link"
+            onClick={() => handleSectionClick("pathways")}
+          >
             <li className="navs">Pathways</li>
           </a>
-          <a href="#testimonies" className="link"   onClick={() => handleSectionClick("testimonies")}>
+          <a
+            href="#testimonies"
+            className="link"
+            onClick={() => handleSectionClick("testimonies")}
+          >
             <li className="navs">Testimonies</li>
           </a>
           <Link to="/contactus" className="links">
@@ -87,10 +93,20 @@ const Navigationbar = () => {
           <>
             <ul className={`navlink-active ${isMenuOpen ? "show" : ""}`}>
               <a href="#pathways" className="link" onClick={toggleHome}>
-                <li className="navs" onClick={() => handleSectionClick("pathways")}>Pathways</li>
+                <li
+                  className="navs"
+                  onClick={() => handleSectionClick("pathways")}
+                >
+                  Pathways
+                </li>
               </a>
               <a href="#testimonies" className="link">
-                <li className="navs" onClick={() => handleSectionClick("testimony")}>Testimonies</li>
+                <li
+                  className="navs"
+                  onClick={() => handleSectionClick("testimony")}
+                >
+                  Testimonies
+                </li>
               </a>
               <Link to="/contactus" className="links">
                 <li className="navs">Contact Us</li>

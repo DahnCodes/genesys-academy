@@ -14,7 +14,7 @@
   text-align: center;
   overflow: visible;
   position: relative;
-margin-top: 10px;
+  margin-top: 10px;
   /* margin-bottom: 20%; */
 }
 .slider-container {
@@ -94,7 +94,7 @@ margin-top: 10px;
 
 @media (max-width: 768px) {
   .testimony-container {
-    margin: 5% 2%; 
+    margin: 5% 2%;
   }
 
   .testimonials {
@@ -104,7 +104,6 @@ margin-top: 10px;
     margin: 0 auto; /* Center the testimonial box */
     margin-top: 10px;
     overflow: visible;
-
   }
 
   .past-interns {
@@ -156,7 +155,7 @@ margin-top: 10px;
 }
 @media screen and (max-width: 500px) {
   .testimony-container {
-    margin: 5% 2%; 
+    margin: 5% 2%;
   }
 
   .testimonials {
@@ -166,7 +165,6 @@ margin-top: 10px;
     margin: 0 auto; /* Center the testimonial box */
     margin-top: 10px;
     overflow: visible;
-
   }
 
   .past-interns {
@@ -215,153 +213,149 @@ margin-top: 10px;
   .slick-next {
     right: 5px; /* Adjust position of next arrow */
   }
-@media screen and (max-width: 475px) {
-  .testimony-container {
-    text-align: center;
-    /* width: 10%; */
-    padding: 0px 10px;
-    margin: 5% 0;
-    overflow: visible;
+  @media screen and (max-width: 475px) {
+    .testimony-container {
+      text-align: center;
+      /* width: 10%; */
+      padding: 0px 10px;
+      margin: 5% 0;
+      overflow: visible;
+    }
+    .testimonials {
+      width: 300px; /* Make the testimonial box take up more width */
+      height: 315px; /* Allow height to adjust based on content */
+      padding: 20px; /* Add padding for better spacing */
+      margin: 0 auto; /* Center the testimonial box */
+      margin-top: 10px;
+      overflow: visible;
+    }
+    .slider-container {
+      width: 180%;
+      max-width: 1200px;
+      margin: auto;
+      overflow: visible;
+    }
+    .quote {
+      position: relative;
+      top: 10px;
+      left: 30px;
+      width: 24px;
+    }
+    .past-interns {
+      width: 86px;
+      top: -30px;
+      left: 40%;
+      position: absolute;
+    }
+    .testimonials h3 {
+      font-size: 14px;
+    }
+    .des {
+      font-size: 10px;
+    }
+    .description {
+      font-size: 12px;
+      font-weight: 400;
+      /* margin-top: ; */
+    }
+    .slick-prev,
+    .slick-next {
+      display: none;
+      /* Ensure full visibility */
+    }
   }
-  .testimonials {
-    width: 300px; /* Make the testimonial box take up more width */
-    height: 315px; /* Allow height to adjust based on content */
-    padding: 20px; /* Add padding for better spacing */
-    margin: 0 auto; /* Center the testimonial box */
-    margin-top: 10px;
-    overflow: visible;
-
+  @media screen and (max-width: 425px) {
+    .testimony-container {
+      margin: 5% 2%;
+      overflow: visible;
+    }
+    .testimonials {
+      width: 350px; /* Make the testimonial box take up more width */
+      height: 315px; /* Allow height to adjust based on content */
+      padding: 20px; /* Add padding for better spacing */
+      margin: 0 auto; /* Center the testimonial box */
+      margin-top: 10px;
+      overflow: visible;
+    }
+    .quote {
+      position: relative;
+      top: 1px;
+      left: 30px;
+      width: 24px;
+    }
+    .past-interns {
+      width: 86px;
+      height: 86px;
+      top: -30px;
+      left: 50%;
+      position: absolute;
+    }
+    .testimonials h3 {
+      font-size: 14px;
+    }
+    .des {
+      font-size: 10px;
+    }
+    .description {
+      font-size: 12px;
+      font-weight: 400;
+      word-wrap: break-word;
+      max-width: 325px;
+      /* margin-top: ; */
+    }
+    .slick-prev,
+    .slick-next {
+      display: none;
+      /* Ensure full visibility */
+    }
   }
-  .slider-container{
-    width: 180%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: visible;
+  @media screen and (max-width: 385px) {
+    .testimonials {
+      width: 320px;
+      height: 251px;
+    }
+    .quote {
+      position: relative;
+      top: 10px;
+      left: 30px;
+      width: 24px;
+    }
   }
-  .quote {
-    position: relative;
-    top: 10px;
-    left: 30px;
-    width: 24px;
+  @media screen and (max-width: 375px) {
+    .testimonials {
+      width: 320px;
+      height: 281px;
+    }
+    .quote {
+      position: relative;
+      top: 20px;
+      left: 30px;
+      width: 24px;
+    }
   }
-  .past-interns {
-    width: 86px;
-    top: -30px;
-    left: 40%;
-    position: absolute;
-  }
-  .testimonials h3 {
-    font-size: 14px;
-  }
-  .des {
-    font-size: 10px;
-  }
-  .description {
-    font-size: 12px;
-    font-weight: 400;
-    /* margin-top: ; */
-  }
-  .slick-prev,
-  .slick-next {
-    display: none;
-    /* Ensure full visibility */
-  }
-}
-@media screen and (max-width: 425px) {
-  .testimony-container {
- 
-    margin: 5% 2%;
-    overflow: visible;
-  }
-  .testimonials {
-    width: 350px; /* Make the testimonial box take up more width */
-    height: 315px; /* Allow height to adjust based on content */
-    padding: 20px; /* Add padding for better spacing */
-    margin: 0 auto; /* Center the testimonial box */
-    margin-top: 10px;
-    overflow: visible;
-
-  }
-  .quote {
-    position: relative;
-    top: 1px;
-    left: 30px;
-    width: 24px;
-  }
-  .past-interns {
-    width: 86px;
-    height: 86px;
-    top: -30px;
-    left: 50%;
-    position: absolute;
-  }
-  .testimonials h3 {
-    font-size: 14px;
-  }
-  .des {
-    font-size: 10px;
-  }
-  .description {
-    font-size: 12px;
-    font-weight: 400;
-    word-wrap: break-word;
-    max-width: 325px;
-    /* margin-top: ; */
-  }
-  .slick-prev,
-  .slick-next {
-    display: none;
-    /* Ensure full visibility */
-  }
-}
-@media screen and (max-width: 385px) {
-  .testimonials {
-    width: 320px;
-    height: 251px;
-  }
-  .quote {
-    position: relative;
-    top: 10px;
-    left: 30px;
-    width: 24px;
-  }
-}
-@media screen and (max-width: 375px) {
-  .testimonials {
-    width: 320px;
-    height: 281px;
-  }
-  .quote {
-    position: relative;
-    top: 20px;
-    left: 30px;
-    width: 24px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .testimony-container {
-    text-align: center;
-    margin:10% 1%;
-    /* padding: 20px; */
-    overflow: visible;
-  }
-  .testimonials {
-    width: 280px;
-    height: 281px;
-    /* margin: 5% 0%; */
-
-  }
-  .quote {
-    position: relative;
-    top: 10px;
-    left: 30px;
-    width: 24px;
-  }
-  .past-interns {
-    width: 86px;
-    top: -20px;
-    left: 50%;
-    position: absolute;
+  @media screen and (max-width: 320px) {
+    .testimony-container {
+      text-align: center;
+      margin: 10% 1%;
+      /* padding: 20px; */
+      overflow: visible;
+    }
+    .testimonials {
+      width: 280px;
+      height: 281px;
+      /* margin: 5% 0%; */
+    }
+    .quote {
+      position: relative;
+      top: 10px;
+      left: 30px;
+      width: 24px;
+    }
+    .past-interns {
+      width: 86px;
+      top: -20px;
+      left: 50%;
+      position: absolute;
+    }
   }
 }
-} 

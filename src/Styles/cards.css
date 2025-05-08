@@ -3,7 +3,6 @@
 }
 .content {
   padding: 10px 20px;
-
 }
 /* General card styling */
 .card {
@@ -27,78 +26,76 @@
   height: 262px;
   background-color: rgb(239, 205, 255);
 }
-  .title,
-  .desc{
-    margin-top: 2%;
-  }
-  .title {
-    color: #111827;
-    font-size:18px;
-    line-height: 1.75rem;
-    font-weight: 400;
-    /* margin-top: -3%; */
-  }
-  
-  .desc {
-    /* margin-top: 0.5rem; */
-    color: #6B7280;
-    font-size: 14px;
-    line-height: 1.25rem;
-    font-weight: 400;
-    color: #596275;
-  }
- .true{
-    margin-top: 10%;
-    color: #F5772F;
- }
- .true1{
-    margin-top: 5%;
-    color: #F5772F;
- }
-  .links{
-    text-decoration: none;
-    color: #596275;
-  }
-@media screen and (max-width: 1024px){
-  .card{
-/* width: 100%; */
+.title,
+.desc {
+  margin-top: 2%;
+}
+.title {
+  color: #111827;
+  font-size: 18px;
+  line-height: 1.75rem;
+  font-weight: 400;
+  /* margin-top: -3%; */
+}
 
+.desc {
+  /* margin-top: 0.5rem; */
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: #596275;
 }
+.true {
+  margin-top: 10%;
+  color: #f5772f;
 }
-  @media screen and (max-width: 425px){
-    .card{
-      width: 100%;
-      /* overflow: visible; */
-    }
-   /* .true{
+.true1 {
+  margin-top: 5%;
+  color: #f5772f;
+}
+.links {
+  text-decoration: none;
+  color: #596275;
+}
+@media screen and (max-width: 1024px) {
+  .card {
+    /* width: 100%; */
+  }
+}
+@media screen and (max-width: 425px) {
+  .card {
+    width: 100%;
+    /* overflow: visible; */
+  }
+  /* .true{
     margin-top: 15%;
    } */
+}
+
+@media screen and (max-width: 375px) {
+  .card {
+    width: 100%;
   }
 
-  @media screen and (max-width: 375px){
-    .card{
-      width: 100% ;
-
-    }
-  
-    .product {
-      object-fit: cover;
-      width: 110%;
-      height: 262px;
-      background-color: rgb(239, 205, 255);
-      /* margin: 10px; */
-    }
+  .product {
+    object-fit: cover;
+    width: 110%;
+    height: 262px;
+    background-color: rgb(239, 205, 255);
+    /* margin: 10px; */
   }
-  @media screen and (max-width: 320px) {
-    .card {
-      width: 100%;
-      max-width: none; /* Ensure no max-width issues */
-    }
-    .product {
-      object-fit: cover;
-      width: 120%;
-      height: 262px;
-      background-color: rgb(239, 205, 255);
-      /* margin: 10px; */
-    }
+}
+@media screen and (max-width: 320px) {
+  .card {
+    width: 100%;
+    max-width: none; /* Ensure no max-width issues */
   }
+  .product {
+    object-fit: cover;
+    width: 120%;
+    height: 262px;
+    background-color: rgb(239, 205, 255);
+    /* margin: 10px; */
+  }
+}
