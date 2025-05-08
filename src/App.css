@@ -251,7 +251,6 @@ body {
 .point-p {
   margin-top: 1%;
   line-height: 40px;
-
 }
 .point-p h2 {
   font-size: 28px; /* Adjust the font size for the heading */
@@ -521,7 +520,7 @@ body {
   border: 0.5px solid #596275;
   padding: 10px 20px;
 }
-.subs:focus{
+.subs:focus {
   outline: none;
 }
 .btn5 {
@@ -1290,7 +1289,7 @@ body {
   }
   .pay-texts p {
     text-align: justify;
-  };
+  }
   .pay-woman {
     margin-top: 20px;
   }
@@ -1517,7 +1516,7 @@ body {
     z-index: 1;
     width: 45.85px;
   }
- .first-team {
+  .first-team {
     display: flex;
     gap: -50px;
     align-items: center;
@@ -1968,17 +1967,7 @@ body {
     font-size: 14px;
   }
 
-  .btn5{
+  .btn5 {
     font-size: 10px;
   }
 }
-
-/* 
-.success-message {
-}
-
-.error-message {
-} */
-
-
-/* Ensure the input box and button are on the same line */

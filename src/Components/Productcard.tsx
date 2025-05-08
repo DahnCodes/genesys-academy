@@ -6,10 +6,6 @@ import product from "../assets/product.png";
 const Productcard = () => {
   const location = useLocation();
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
-
   return (
     <>
       <div className="card-container">

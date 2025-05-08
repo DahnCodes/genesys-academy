@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // You need to import the CSS
+import "react-toastify/dist/ReactToastify.css";
 
 import "../Styles/offlinemodal.css";
 
@@ -138,8 +138,6 @@ const OfflineModal = ({ closeModal }: OfflineModalProps) => {
                     (png, jpg, jpeg, and pdf) <br />
                     Maximum Size: 5MB
                   </p>
-                  {/* (png, jpg, jpeg, and pdf) <br />
-                  Maximum Size: 5MB */}
                 </p>
                 <input
                   type="file"
@@ -156,13 +154,17 @@ const OfflineModal = ({ closeModal }: OfflineModalProps) => {
               onClick={handleSubmit}
               disabled={loading}
             >
-              {loading ? "Processing..." : "Submit Payment Receipt"}
+              {loading ? (
+                <div className="spinner-wrapper">
+                  <div className="spinner" />
+                </div>
+              ) : (
+                "Submit Payment Receipt"
+              )}
             </button>
           </div>
         </div>
       </div>
-
-      {/* Add ToastContainer to display toast messages */}
       <ToastContainer />
     </div>
   );

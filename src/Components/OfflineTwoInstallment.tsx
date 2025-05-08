@@ -14,7 +14,9 @@ const OfflineTwoInstallment: React.FC<{
 }> = ({ onClose, personalDataResponse }) => {
   const [selectedOption, setSelectedOption] = useState<string>(""); // Track selected option
   const [loading, setLoading] = useState<boolean>(false); // Track loading state
-  const [invoiceDetails, setInvoiceDetails] = useState<InvoiceGenerateResponse[]>([]); // Track invoice details
+  const [invoiceDetails, setInvoiceDetails] = useState<
+    InvoiceGenerateResponse[]
+  >([]); // Track invoice details
   const [showInvoiceModal, setShowInvoiceModal] = useState(false); // Track whether modal is shown
   const [newInvoiceId, setNewInvoiceId] = useState(""); // New invoice ID
   const [newInvoiceAmount, setNewInvoiceAmount] = useState<number | string>(""); // New invoice amount
@@ -44,7 +46,8 @@ const OfflineTwoInstallment: React.FC<{
       setInvoiceDetails(response.data.data); // Set the fetched invoice data
       // Check if first installment is paid
       const firstInstallment = response.data.data.find(
-        (invoice: InvoiceGenerateResponse) => invoice.title === "First Installment"
+        (invoice: InvoiceGenerateResponse) =>
+          invoice.title === "First Installment"
       );
       if (firstInstallment?.status === "Paid") {
         setFirstInstallmentPaid(true); // Set first installment status as paid
@@ -105,7 +108,8 @@ const OfflineTwoInstallment: React.FC<{
               {installmentOptions?.map((option, index) => {
                 // Apply logic to disable second installment if first is not paid
                 const isDisabled =
-                  (option.title === "Second Installment" && !firstInstallmentPaid) ||
+                  (option.title === "Second Installment" &&
+                    !firstInstallmentPaid) ||
                   option.status === "Paid";
 
                 return (

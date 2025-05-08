@@ -8,30 +8,11 @@ export type InternDataResFromPersonalData = {
   learningPath: string;
   medium: string;
   paymentOption: string | null;
-  paymentType : null;
+  paymentType: null;
   invoiceId: string[];
-  // invoiceId: Invoice[];
-  createdAt: string; // ISO 8601 date string
-  updatedAt: string; // ISO 8601 date string
+  createdAt: string;
+  updatedAt: string;
 };
-
-// type ApiResponse = {
-//     success: boolean;
-//     message: string;
-//     data: InternDataResFromPersonalData;
-//     redirectUrl: string;
-//   };
-
-// interface Invoice {
-//   _id: string;
-//   title: string;
-//   amount: number;
-//   invoiceNo: string;
-//   method: string;
-//   email: string;
-//   status: string;
-//   paymentDataId: string | null;
-// }
 
 export type InvoiceGenerateResponse = {
   _id: string;
@@ -46,8 +27,6 @@ export type InvoiceGenerateResponse = {
   createdAt: string;
   updatedAt: string;
 };
-
-//   --
 
 export type InvoiceIntern = {
   _id: string;
@@ -75,10 +54,6 @@ export type InvoiceData = {
   updatedAt: string;
 };
 
-// ---
-
-// type InvoiceStatus = "Not paid" | "Paid" | "Pending";
-
 export type PaysmallInvoice = {
   _id: string;
   title: string;
@@ -94,21 +69,10 @@ export type PaysmallInvoice = {
 };
 
 export enum InvoiceStatus {
-  Paid = 'Paid',
-  Unpaid = 'Unpaid',
-  Pending = 'Pending'
+  Paid = "Paid",
+  Unpaid = "Unpaid",
+  Pending = "Pending",
 }
-
-
-
-
-// type ApiResponse = {
-//   success: boolean;
-//   message: string;
-//   data: Invoice[];
-//   redirectUrl: string;
-// };
-
 type InternForInvoice = {
   _id: string;
   firstName: string;
@@ -120,5 +84,3 @@ type InternForInvoice = {
   medium: string;
   paymentOption: string;
 };
-
-// -----

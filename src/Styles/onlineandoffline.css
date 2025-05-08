@@ -230,8 +230,6 @@
   }
 }
 
-
-
 .spinner {
   border: 4px solid #f3f3f3; /* Light gray */
   border-top: 4px solid #ffffff; /* White for spinner */
@@ -242,8 +240,12 @@
 }
 /* Keyframes for spinner animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Button state when it's disabled */
@@ -251,13 +253,13 @@
   background-color: #e56d2b; /* Disabled color */
   cursor: not-allowed;
 }
-.proceed-button{
+.proceed-button {
   display: flex;
   justify-content: center;
   align-items: center; /* This ensures the spinner will be centered */
 }
 
-.nbaz{
+.nbaz {
   display: flex;
   justify-content: center;
 }

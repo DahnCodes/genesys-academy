@@ -14,7 +14,11 @@ interface PaymentModalProps {
   personalDataResponse: InternDataResFromPersonalData;
 }
 
-const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({ open, onClose, personalDataResponse }) => {
+const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({
+  open,
+  onClose,
+  personalDataResponse,
+}) => {
   const [paymentMode, setPaymentMode] = useState<"Online" | "Offline" | "">("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -61,8 +65,12 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({ open, onClose, pe
         throw new Error("Failed to update payment method.");
       }
     } catch (error: any) {
-      setError(error.message || "An error occurred while processing the request.");
-      toast.error(error.message || "An error occurred while processing the request.");
+      setError(
+        error.message || "An error occurred while processing the request."
+      );
+      toast.error(
+        error.message || "An error occurred while processing the request."
+      );
     } finally {
       setLoading(false);
     }
@@ -70,9 +78,19 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({ open, onClose, pe
 
   if (proceedToPayment) {
     if (paymentMode === "Online") {
-      return <PaymentModal onClose={onClose} personalDataResponse={personalDataResponse} />;
+      return (
+        <PaymentModal
+          onClose={onClose}
+          personalDataResponse={personalDataResponse}
+        />
+      );
     } else if (paymentMode === "Offline") {
-      return <PaymentOptionsOffline onClose={onClose} personalDataResponse={personalDataResponse} />;
+      return (
+        <PaymentOptionsOffline
+          onClose={onClose}
+          personalDataResponse={personalDataResponse}
+        />
+      );
     }
   }
 
@@ -86,7 +104,11 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({ open, onClose, pe
         <p className="modal-subtitle">Choose mode of payment.</p>
 
         <div className="payment-options22">
-          <label className={`payment-option ${paymentMode === "Online" ? "selected" : ""}`}>
+          <label
+            className={`payment-option ${
+              paymentMode === "Online" ? "selected" : ""
+            }`}
+          >
             <input
               type="radio"
               name="payment"
@@ -98,7 +120,11 @@ const OnlineAndOfflineOption: React.FC<PaymentModalProps> = ({ open, onClose, pe
             <span className="onpayspan">Online Payment</span>
           </label>
 
-          <label className={`payment-option ${paymentMode === "Offline" ? "selected" : ""}`}>
+          <label
+            className={`payment-option ${
+              paymentMode === "Offline" ? "selected" : ""
+            }`}
+          >
             <input
               type="radio"
               name="payment"

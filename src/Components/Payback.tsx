@@ -1,22 +1,20 @@
-import { HiArrowNarrowLeft } from "react-icons/hi"
-import { useNavigate } from "react-router-dom"
-import "../Styles/goback.css"
-
+import { HiArrowNarrowLeft } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
+import "../Styles/goback.css";
 
 const Payback = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
-
-const handleGoBack = () => {
-  navigate("/", { state: { scrollTo: "pay-smallsmall" } });
-}
+  const handleGoBack = () => {
+    navigate("/", { state: { scrollTo: "pay-smallsmall" } });
+  };
   return (
     <>
-        <button className="backs" onClick={handleGoBack}>
-          <HiArrowNarrowLeft className="lefter" />
-        </button>
-      </>
-  )
-}
+      <button className="backs" onClick={handleGoBack}>
+        <HiArrowNarrowLeft className="lefter" />
+      </button>
+    </>
+  );
+};
 
-export default Payback
+export default Payback;

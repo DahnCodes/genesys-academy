@@ -1,14 +1,13 @@
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
-import "../Styles/goback.css"
+import "../Styles/goback.css";
 
 const Goback = () => {
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
-const handleGoBack = () => {
-  navigate("/", { state: { scrollTo: "pathways" } });
-
-}
+  const handleGoBack = () => {
+    navigate("/", { state: { scrollTo: "pathways" } });
+  };
 
   return (
     <>

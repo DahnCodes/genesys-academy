@@ -45,7 +45,7 @@
   align-items: center;
 }
 
-.mb{
+.mb {
   color: #596275;
 }
 .azx,
@@ -55,7 +55,7 @@
   font-weight: 300;
   text-align: justify;
 }
-.jeffisannoying{
+.jeffisannoying {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -94,13 +94,13 @@
   font-size: 18px;
   font-weight: 400;
 }
-.invnotsame{
+.invnotsame {
   font-size: 18px;
   font-weight: 400;
   color: #273043;
 }
 
-.invnotsame2{
+.invnotsame2 {
   font-size: 14px;
   font-weight: 300;
   color: #596275;
@@ -147,62 +147,63 @@
   line-height: 28.8px;
 }
 
-.account-head1{
+.account-head1 {
   display: flex;
 }
 
-
 @media (max-width: 426px) {
-  .payinv1{
-    font-size:20px ;
+  .payinv1 {
+    font-size: 20px;
     /* background-color: red; */
     font-size: 20px;
     font-weight: 400;
     color: #273043;
   }
 
-  .knjkn{
+  .knjkn {
     font-size: 16px;
     font-weight: 400;
     color: #273043;
   }
 
-  .invnotsame{
+  .invnotsame {
     font-size: 16px;
     font-weight: 400;
     color: #273043;
   }
 
-  .invnotsame2{
+  .invnotsame2 {
     font-size: 12px;
   }
 
-  .hg, .acnumberj{
+  .hg,
+  .acnumberj {
     font-size: 16px;
     /* background-color: red; */
   }
 
-  .mb{
+  .mb {
     font-size: 14px;
   }
 
-  .azx, .az1x{
+  .azx,
+  .az1x {
     font-size: 12px;
   }
 
-  .acces{
+  .acces {
     font-size: 16px;
     /* background-color: red; */
   }
 }
 
 @media (max-width: 321px) {
-  .invoicewrapper{
+  .invoicewrapper {
     /* background-color: red; */
     width: 115%;
     /* height: 100%; */
   }
-  .subhead2{
+  .subhead2 {
     padding: 10px;
   }
 
@@ -210,19 +211,19 @@
     font-size:14px ;
   } */
 
-  .invoice-text{
+  .invoice-text {
     padding-bottom: 0px;
   }
 
-  .display-invoice{
+  .display-invoice {
     margin-top: 10px;
   }
 
-  .display-invoice{
+  .display-invoice {
     gap: 5px;
   }
 
-  #mmmm{
+  #mmmm {
     /* font-size: 12px; */
     display: flex;
     /* background-color: red; */
@@ -230,5 +231,4 @@
     /* border: 1px solid red; */
     /* width:100%; */
   }
-
 }

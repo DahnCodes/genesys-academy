@@ -47,7 +47,6 @@ function App() {
           path="/offlinePaySmallSmall/:email"
           element={<OfflinePaySmallSmall />}
         />
-        {/* <Route path="/pay-small" element={<PaySmall />} /> */}
         <Route path="/pay-smallsmall" element={<Paysmallsmall />} />
         <Route
           path="/redirect/full-payment/:email"

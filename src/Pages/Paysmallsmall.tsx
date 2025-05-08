@@ -15,10 +15,8 @@ const Paysmallsmall = () => {
   const location = useLocation();
 
   useEffect(() => {
-   
-      window.scrollTo({ top: 0, behavior: 'smooth' }); 
-   
-  }, [location]); 
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
   return (
     <>
       <Whitenav />
@@ -103,20 +101,20 @@ const Paysmallsmall = () => {
             <div className="benefit-text">
               <h1>Benefits of “Pay small small”</h1>
               <p>
-                <span>Planning:</span> &nbsp;&nbsp;Choose the cohort that fits your schedule
-                and financial planning
+                <span>Planning:</span> &nbsp;&nbsp;Choose the cohort that fits
+                your schedule and financial planning
               </p>
               <p>
-                <span>Flexibility:</span> &nbsp;&nbsp;Pay at your own pace within 1 year
-                period
+                <span>Flexibility:</span> &nbsp;&nbsp;Pay at your own pace
+                within 1 year period
               </p>
               <p>
-                <span>Affordability:</span> &nbsp;&nbsp;Spread the cost over a year to ease
-                financial pressure
+                <span>Affordability:</span> &nbsp;&nbsp;Spread the cost over a
+                year to ease financial pressure
               </p>
               <p>
-                <span>Accountability:</span> &nbsp;&nbsp;Enhances clarity in the payment
-                structure from both parties, keeping clean records
+                <span>Accountability:</span> &nbsp;&nbsp;Enhances clarity in the
+                payment structure from both parties, keeping clean records
               </p>
             </div>
           </div>
@@ -170,9 +168,9 @@ const Paysmallsmall = () => {
               <img src={stepgirl} alt="" className="stepgirl" />
             </div>
           </div>
-            <Link to="/personaldata">
-              <button className="btn14">Begin Application</button>
-            </Link>
+          <Link to="/personaldata">
+            <button className="btn14">Begin Application</button>
+          </Link>
         </section>
       </div>
       <Footer />

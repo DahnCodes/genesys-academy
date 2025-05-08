@@ -9,11 +9,11 @@ const Carousel = () => {
     infinite: true,
     centerPadding: "60px",
     slidesToShow: 3,
-    speed: 500
+    speed: 500,
   };
   return (
     <>
-     <Slider {...settings}>
+      <Slider {...settings}>
         <div>
           <h3>1</h3>
         </div>
@@ -34,7 +34,7 @@ const Carousel = () => {
         </div>
       </Slider>
     </>
-  )
-}
+  );
+};
 
-export default Carousel
+export default Carousel;
